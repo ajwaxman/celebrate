@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		CAEB910E1C6694DA00D5C652 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB910D1C6694DA00D5C652 /* CreateReminderViewController.swift */; };
 		CAEF2FD71C6192A0001C985D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF2FD61C6192A0001C985D /* AppDelegate.swift */; };
 		CAEF2FD91C6192A0001C985D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF2FD81C6192A0001C985D /* ViewController.swift */; };
 		CAEF2FDC1C6192A0001C985D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEF2FDA1C6192A0001C985D /* Main.storyboard */; };
@@ -15,6 +16,11 @@
 		CAEF2FE41C6192A0001C985D /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = CAEF2FE21C6192A0001C985D /* LaunchScreen.storyboard */; };
 		CAEF2FEF1C6192A0001C985D /* RemindersTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF2FEE1C6192A0001C985D /* RemindersTests.swift */; };
 		CAEF2FFA1C6192A0001C985D /* RemindersUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF2FF91C6192A0001C985D /* RemindersUITests.swift */; };
+		CAEF30081C619433001C985D /* ReminderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF30071C619433001C985D /* ReminderTableViewCell.swift */; };
+		CAEF300A1C619465001C985D /* ReminderTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF30091C619465001C985D /* ReminderTableViewController.swift */; };
+		CAEF300C1C6194A1001C985D /* DataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF300B1C6194A1001C985D /* DataHelper.swift */; };
+		CAEF300F1C6195E3001C985D /* Reminder+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF300D1C6195E3001C985D /* Reminder+CoreDataProperties.swift */; };
+		CAEF30101C6195E3001C985D /* Reminder.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF300E1C6195E3001C985D /* Reminder.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +41,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		CAEB910D1C6694DA00D5C652 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
 		CAEF2FD31C6192A0001C985D /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEF2FD61C6192A0001C985D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAEF2FD81C6192A0001C985D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -49,6 +56,11 @@
 		CAEF2FF51C6192A0001C985D /* RemindersUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = RemindersUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEF2FF91C6192A0001C985D /* RemindersUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemindersUITests.swift; sourceTree = "<group>"; };
 		CAEF2FFB1C6192A0001C985D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		CAEF30071C619433001C985D /* ReminderTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewCell.swift; sourceTree = "<group>"; };
+		CAEF30091C619465001C985D /* ReminderTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderTableViewController.swift; sourceTree = "<group>"; };
+		CAEF300B1C6194A1001C985D /* DataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataHelper.swift; sourceTree = "<group>"; };
+		CAEF300D1C6195E3001C985D /* Reminder+CoreDataProperties.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = "Reminder+CoreDataProperties.swift"; path = "../Reminder+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		CAEF300E1C6195E3001C985D /* Reminder.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Reminder.swift; path = ../Reminder.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -99,9 +111,15 @@
 		CAEF2FD51C6192A0001C985D /* Reminders */ = {
 			isa = PBXGroup;
 			children = (
+				CAEF300D1C6195E3001C985D /* Reminder+CoreDataProperties.swift */,
+				CAEF300E1C6195E3001C985D /* Reminder.swift */,
 				CAEF2FD61C6192A0001C985D /* AppDelegate.swift */,
 				CAEF2FD81C6192A0001C985D /* ViewController.swift */,
 				CAEF2FDA1C6192A0001C985D /* Main.storyboard */,
+				CAEB910D1C6694DA00D5C652 /* CreateReminderViewController.swift */,
+				CAEF30071C619433001C985D /* ReminderTableViewCell.swift */,
+				CAEF30091C619465001C985D /* ReminderTableViewController.swift */,
+				CAEF300B1C6194A1001C985D /* DataHelper.swift */,
 				CAEF2FE01C6192A0001C985D /* Assets.xcassets */,
 				CAEF2FE21C6192A0001C985D /* LaunchScreen.storyboard */,
 				CAEF2FE51C6192A0001C985D /* Info.plist */,
@@ -262,6 +280,12 @@
 				CAEF2FD91C6192A0001C985D /* ViewController.swift in Sources */,
 				CAEF2FDF1C6192A0001C985D /* Reminders.xcdatamodeld in Sources */,
 				CAEF2FD71C6192A0001C985D /* AppDelegate.swift in Sources */,
+				CAEF300C1C6194A1001C985D /* DataHelper.swift in Sources */,
+				CAEF300F1C6195E3001C985D /* Reminder+CoreDataProperties.swift in Sources */,
+				CAEF300A1C619465001C985D /* ReminderTableViewController.swift in Sources */,
+				CAEF30081C619433001C985D /* ReminderTableViewCell.swift in Sources */,
+				CAEF30101C6195E3001C985D /* Reminder.swift in Sources */,
+				CAEB910E1C6694DA00D5C652 /* CreateReminderViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -486,6 +510,7 @@
 				CAEF30001C6192A0001C985D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAEF30011C6192A0001C985D /* Build configuration list for PBXNativeTarget "RemindersTests" */ = {
 			isa = XCConfigurationList;
@@ -494,6 +519,7 @@
 				CAEF30031C6192A0001C985D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		CAEF30041C6192A0001C985D /* Build configuration list for PBXNativeTarget "RemindersUITests" */ = {
 			isa = XCConfigurationList;
@@ -502,6 +528,7 @@
 				CAEF30061C6192A0001C985D /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
