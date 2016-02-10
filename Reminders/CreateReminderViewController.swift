@@ -80,8 +80,13 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         let reminder = NSEntityDescription.insertNewObjectForEntityForName("Reminder", inManagedObjectContext: self.context) as! Reminder
         
         reminder.name = txtName.text
-        reminder.reminderDate = NSDate()
         reminder.reminderType = txtReminderType.text
+        
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "M/d/yy"
+        if let reminderDate = txtReminderDate.text {
+            reminder.reminderDate = dateFormatter.dateFromString(reminderDate)
+        }
         
         do {
             try self.context.save()
