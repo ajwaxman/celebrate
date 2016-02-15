@@ -18,13 +18,13 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        let dataHelper = DataHelper(context: self.managedObjectContext)
+//        let dataHelper = DataHelper(context: self.managedObjectContext)
         
 //        dataHelper.deleteAllReminders()
         
 //        dataHelper.seedDataStore()
         
-        dataHelper.printAllReminders()
+//        dataHelper.printAllReminders()
         
         
         return true
@@ -52,6 +52,29 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
         // Saves changes in the application's managed object context before the application terminates.
         self.saveContext()
+    }
+    
+    // MARK: - Notification Functions
+    
+    func application(application: UIApplication, didReceiveLocalNotification notification: UILocalNotification) {
+        // TBD
+        print("Received Local Notification:")
+        print(notification.alertBody)
+    }
+    
+    func application(application: UIApplication, handleActionWithIdentifier identifier: String?, forLocalNotification notification: UILocalNotification, completionHandler: () -> Void) {
+        
+        if identifier == "call" {
+            NSNotificationCenter.defaultCenter().postNotificationName("callNotification", object: nil, userInfo: notification.userInfo)
+        } else if identifier == "text" {
+            NSNotificationCenter.defaultCenter().postNotificationName("textNotification", object: nil, userInfo: notification.userInfo)
+        }
+        
+        completionHandler()
+    }
+    
+    func application(application: UIApplication, didRegisterUserNotificationSettings notificationSettings: UIUserNotificationSettings) {
+        print(notificationSettings.types.rawValue)
     }
 
     // MARK: - Core Data stack

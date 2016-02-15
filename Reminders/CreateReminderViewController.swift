@@ -37,6 +37,8 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "createReminder")
         navigationItem.rightBarButtonItem = saveBarButtonItem
+        
+        setupNotificationSettings()
     }
 
     override func didReceiveMemoryWarning() {
@@ -74,6 +76,69 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         txtReminderType.text = reminderTypeOptions[row]
     }
     
+    // MARK: - Notification Functions
+    
+    func setupNotificationSettings() {
+        let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
+        
+        if (notificationSettings.types == .None) {
+            
+            // Specify the notification actions
+            
+            let callAction = UIMutableUserNotificationAction()
+            callAction.identifier = "call"
+            callAction.title = "Call"
+            callAction.activationMode = .Foreground
+            callAction.destructive = false
+            callAction.authenticationRequired = false
+            
+            let textAction = UIMutableUserNotificationAction()
+            textAction.identifier = "text"
+            textAction.title = "Text"
+            textAction.activationMode = .Foreground
+            textAction.destructive = false
+            textAction.authenticationRequired = false
+            
+            let actionsArray: [UIUserNotificationAction] = [textAction, callAction]
+            let actionsArrayMinimal: [UIUserNotificationAction] = [textAction, callAction]
+            
+            // Specify the category related to the above actions
+            let reminderCategory = UIMutableUserNotificationCategory()
+            reminderCategory.identifier = "reminderCategory"
+            reminderCategory.setActions(actionsArray, forContext: .Default)
+            reminderCategory.setActions(actionsArrayMinimal, forContext: .Minimal)
+            
+            let categoriesForSettings: Set<UIUserNotificationCategory> = Set([reminderCategory])
+            
+            let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert], categories: categoriesForSettings)
+            
+            UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
+            
+        }
+    }
+    
+    func scheduleLocalNotification(number: NSString) {
+        let localNotification = UILocalNotification()
+        localNotification.fireDate = getCurrentTime()
+        localNotification.alertBody = "Hey, don't forget about this special day!"
+        localNotification.alertAction = "View reminder"
+        localNotification.category = "reminderCategory"
+        localNotification.userInfo = ["phoneNumber": number]
+        
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
+    
+    func getCurrentTime() -> NSDate {
+        let date = NSDate()
+        let calendar = NSCalendar.currentCalendar()
+        let components = calendar.components([.Day, .Month, .Year, .Hour, .Minute, .Second], fromDate: date)
+        components.second = 0
+        components.minute += 1
+        
+        let currentTime: NSDate! = NSCalendar.currentCalendar().dateFromComponents(components)
+        return currentTime
+    }
+    
     // MARK: - Custom Function 
     
     func createReminder() {
@@ -81,6 +146,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         reminder.name = txtName.text
         reminder.reminderType = txtReminderType.text
+        reminder.phoneNumber = "2165331493"
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
@@ -90,10 +156,14 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         do {
             try self.context.save()
+            if let number = reminder.phoneNumber {
+                scheduleLocalNotification(number)
+            }
             navigationController?.popViewControllerAnimated(true)
         } catch {
             fatalError("Failure to save context: \(error)")
         }
+        
     }
 
     /*

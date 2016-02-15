@@ -35,12 +35,42 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         } catch let error as NSError {
             print("Unable to perform fetch: \(error.localizedDescription)" )
         }
+        
+        // Adding notification center observers
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCallNotification:", name: "callNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleTextNotification:", name: "textNotification", object: nil)
     }
     
     // MARK: - IBActions
     
     @IBAction func addReminder(sender: UIBarButtonItem) {
         
+    }
+    
+    // MARK: - Notification handling logic
+    
+    func callNumber(phoneNumber:String) {
+        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.sharedApplication()
+            if (application.canOpenURL(phoneCallURL)) {
+                application.openURL(phoneCallURL);
+            }
+        }
+    }
+    
+    func handleTextNotification(notification: NSNotification) {
+        print("Need to setup text handling")
+    }
+    
+    func handleCallNotification(notification: NSNotification) {
+        
+        let userInfo:Dictionary<String,String!> = notification.userInfo as! Dictionary<String,String!>
+        let numberString = userInfo["phoneNumber"]
+        if let number = numberString {
+            callNumber(number)
+            print("Calling: \(number)")
+        }
+
     }
     
     // MARK: - Table view data source
