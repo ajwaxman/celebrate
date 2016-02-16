@@ -36,6 +36,8 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
             print("Unable to perform fetch: \(error.localizedDescription)" )
         }
         
+        printNotifications()
+        
         // Adding notification center observers
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCallNotification:", name: "callNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleTextNotification:", name: "textNotification", object: nil)
@@ -71,6 +73,28 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
             print("Calling: \(number)")
         }
 
+    }
+    
+    func cancelNotification(idToDelete: String) {
+        let notifications = UIApplication.sharedApplication().scheduledLocalNotifications!
+        for notification in notifications {
+            let userInfo:Dictionary<String,String!> = notification.userInfo as! Dictionary<String,String!>
+            let reminderObjectId = userInfo["reminderObjectId"]
+            if reminderObjectId == idToDelete {
+                //Cancelling local notification
+                UIApplication.sharedApplication().cancelLocalNotification(notification)
+                break;
+            }
+        }
+    }
+    
+    func printNotifications() {
+        let notifications = UIApplication.sharedApplication().scheduledLocalNotifications!
+        print(notifications.count)
+        for notification in notifications {
+            // UIApplication.sharedApplication().cancelLocalNotification(notification)
+            print(notification)
+        }
     }
     
     // MARK: - Table view data source
@@ -140,6 +164,7 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         case .Delete:
             let reminder = fetchedResultsController.objectAtIndexPath(indexPath) as! Reminder
             context.deleteObject(reminder)
+            cancelNotification(reminder.objectID.URIRepresentation().absoluteString)
             
             do {
                 try context.save()

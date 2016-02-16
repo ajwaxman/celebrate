@@ -76,7 +76,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         txtReminderType.text = reminderTypeOptions[row]
     }
     
-    // MARK: - Notification Functions
+    // MARK: - Notification Logic
     
     func setupNotificationSettings() {
         let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
@@ -117,17 +117,54 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
-    func scheduleLocalNotification(number: NSString) {
+    func scheduleLocalNotification(reminder: Reminder) {
         let localNotification = UILocalNotification()
-        localNotification.fireDate = getCurrentTime()
-        localNotification.alertBody = "Hey, don't forget about this special day!"
+        // localNotification.fireDate = getCurrentTime()
+        localNotification.fireDate = getNextOccurenceOfReminderDate(reminder.reminderDate!)
+        localNotification.alertBody = "It's \(reminder.name)'s \(reminder.reminderType) today. Send a note!"
         localNotification.alertAction = "View reminder"
         localNotification.category = "reminderCategory"
-        localNotification.userInfo = ["phoneNumber": number]
-        
+        localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.URIRepresentation().absoluteString]
+        localNotification.repeatInterval = NSCalendarUnit.Year
         UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
     }
     
+    func getDateFromString(date: String) -> NSDate {
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "M/d/yy"
+        return dateFormatter.dateFromString(date)!
+    }
+    
+    func getNextOccurenceOfReminderDate(reminderDate: NSDate) -> NSDate {
+        let cal = NSCalendar.currentCalendar()
+        let today = cal.startOfDayForDate(NSDate())
+        let dayAndMonth = cal.components([.Day, .Month],
+            fromDate: reminderDate)
+        dayAndMonth.hour = 9
+        let nextOccurenceOfReminderDate = cal.nextDateAfterDate(today,
+            matchingComponents: dayAndMonth,
+            options: .MatchNextTimePreservingSmallerUnits)!
+        return nextOccurenceOfReminderDate
+    }
+    
+    // Set reminder datetime to 9am on reminder date
+    func getReminderDateTime() -> NSDate {
+        var reminderDateTime: NSDate!
+        if let reminderDate = txtReminderDate.text {
+            let date = getDateFromString(reminderDate)
+            let calendar = NSCalendar.currentCalendar()
+            let components = calendar.components([.Day, .Month, .Year], fromDate: date)
+            components.second = 0
+            components.minute = 0
+            components.hour = 9
+            reminderDateTime = NSCalendar.currentCalendar().dateFromComponents(components)
+            print(reminderDateTime)
+            
+        }
+        return reminderDateTime
+    }
+    
+    // Get current time when testing notifications
     func getCurrentTime() -> NSDate {
         let date = NSDate()
         let calendar = NSCalendar.currentCalendar()
@@ -151,14 +188,12 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
         if let reminderDate = txtReminderDate.text {
-            reminder.reminderDate = dateFormatter.dateFromString(reminderDate)
+            reminder.reminderDate = getDateFromString(reminderDate)
         }
         
         do {
             try self.context.save()
-            if let number = reminder.phoneNumber {
-                scheduleLocalNotification(number)
-            }
+            scheduleLocalNotification(reminder)
             navigationController?.popViewControllerAnimated(true)
         } catch {
             fatalError("Failure to save context: \(error)")
