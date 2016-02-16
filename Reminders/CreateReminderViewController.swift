@@ -147,23 +147,6 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         return nextOccurenceOfReminderDate
     }
     
-    // Set reminder datetime to 9am on reminder date
-    func getReminderDateTime() -> NSDate {
-        var reminderDateTime: NSDate!
-        if let reminderDate = txtReminderDate.text {
-            let date = getDateFromString(reminderDate)
-            let calendar = NSCalendar.currentCalendar()
-            let components = calendar.components([.Day, .Month, .Year], fromDate: date)
-            components.second = 0
-            components.minute = 0
-            components.hour = 9
-            reminderDateTime = NSCalendar.currentCalendar().dateFromComponents(components)
-            print(reminderDateTime)
-            
-        }
-        return reminderDateTime
-    }
-    
     // Get current time when testing notifications
     func getCurrentTime() -> NSDate {
         let date = NSDate()
