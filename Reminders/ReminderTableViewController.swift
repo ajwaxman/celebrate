@@ -122,6 +122,8 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         dateFormatter.dateStyle = .ShortStyle
         let dateString = dateFormatter.stringFromDate(reminder.reminderDate!)
         cell.detailTextLabel?.text = dateString
+        let nextOccurence = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
+        ReminderHelper.getDaysUntilReminder(nextOccurence)
         return cell
     }
     

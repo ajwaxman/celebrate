@@ -120,7 +120,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     func scheduleLocalNotification(reminder: Reminder) {
         let localNotification = UILocalNotification()
         // localNotification.fireDate = getCurrentTime()
-        localNotification.fireDate = getNextOccurenceOfReminderDate(reminder.reminderDate!)
+        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
         localNotification.alertBody = "It's \(reminder.name)'s \(reminder.reminderType) today. Send a note!"
         localNotification.alertAction = "View reminder"
         localNotification.category = "reminderCategory"
@@ -133,18 +133,6 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
         return dateFormatter.dateFromString(date)!
-    }
-    
-    func getNextOccurenceOfReminderDate(reminderDate: NSDate) -> NSDate {
-        let cal = NSCalendar.currentCalendar()
-        let today = cal.startOfDayForDate(NSDate())
-        let dayAndMonth = cal.components([.Day, .Month],
-            fromDate: reminderDate)
-        dayAndMonth.hour = 9
-        let nextOccurenceOfReminderDate = cal.nextDateAfterDate(today,
-            matchingComponents: dayAndMonth,
-            options: .MatchNextTimePreservingSmallerUnits)!
-        return nextOccurenceOfReminderDate
     }
     
     // Get current time when testing notifications
