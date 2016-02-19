@@ -30,8 +30,17 @@ class ReminderTableViewCell: UITableViewCell {
         
         if let reminder = self.reminder {
             reminderNameTxt.text = reminder.name
-            reminderDetailsTxt.text = reminder.reminderType
+            
+            let dateFormatter = NSDateFormatter()
+            dateFormatter.dateFormat = "M/d"
+            let reminderDateString = dateFormatter.stringFromDate(reminder.reminderDate!)
+            reminderDetailsTxt.text =  reminderDateString + " - " + reminder.reminderType!
+            
             reminderRemainingDays.text = reminder.remainingDays?.stringValue
+            let currentFont = reminderRemainingDays.font
+            let fontName = currentFont.fontName.componentsSeparatedByString("-").first
+            let newFont = UIFont(name: "\(fontName!)-Light", size: currentFont.pointSize)
+            reminderRemainingDays.font = newFont
         }
         
         createReminderCircle()
