@@ -31,7 +31,7 @@ class ReminderTableViewCell: UITableViewCell {
         if let reminder = self.reminder {
             reminderNameTxt.text = reminder.name
             reminderDetailsTxt.text = reminder.reminderType
-            reminderRemainingDays.text = "234"
+            reminderRemainingDays.text = reminder.remainingDays?.stringValue
         }
         
         createReminderCircle()

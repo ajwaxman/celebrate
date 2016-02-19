@@ -158,9 +158,13 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
-        if let reminderDate = txtReminderDate.text {
-            reminder.reminderDate = getDateFromString(reminderDate)
+        if let reminderDateString = txtReminderDate.text {
+            let reminderDate = getDateFromString(reminderDateString)
+            reminder.reminderDate = reminderDate
+            reminder.remainingDays = ReminderHelper.getDaysUntilReminder(reminderDate)
         }
+        
+        
         
         do {
             try self.context.save()

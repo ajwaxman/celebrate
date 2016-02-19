@@ -18,5 +18,6 @@ extension Reminder {
     @NSManaged var phoneNumber: String?
     @NSManaged var reminderDate: NSDate?
     @NSManaged var reminderType: String?
+    @NSManaged var remainingDays: NSNumber?
 
 }
