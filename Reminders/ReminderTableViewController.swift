@@ -36,7 +36,9 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
             print("Unable to perform fetch: \(error.localizedDescription)" )
         }
         
-        printNotifications()
+        tableView.rowHeight = 80
+        
+        // printNotifications()
         
         // Adding notification center observers
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCallNotification:", name: "callNotification", object: nil)
@@ -116,12 +118,10 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let reminder = fetchedResultsController.objectAtIndexPath(indexPath) as! Reminder
-        let cell = tableView.dequeueReusableCellWithIdentifier("ReminderCell")!
-        cell.textLabel?.text = reminder.name
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = .ShortStyle
-        let dateString = dateFormatter.stringFromDate(reminder.reminderDate!)
-        cell.detailTextLabel?.text = dateString
+        let cell = tableView.dequeueReusableCellWithIdentifier("ReminderCell") as! ReminderTableViewCell
+        
+        cell.reminder = reminder
+        
         let nextOccurence = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
         ReminderHelper.getDaysUntilReminder(nextOccurence)
         return cell
