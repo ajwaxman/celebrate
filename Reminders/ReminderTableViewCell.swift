@@ -43,8 +43,16 @@ class ReminderTableViewCell: UITableViewCell {
         circle.backgroundColor = UIColor.whiteColor()
         circle.layer.cornerRadius = circle.frame.size.width/2
         
-        circle.layer.borderColor = UIColor(red: 0.565, green: 0.075, blue:0.996, alpha: 1.0 ).CGColor
+        let alpha = max(1 - (CFloat((reminder?.remainingDays)!) / 365.0), 0.2)
+        circle.layer.borderColor = UIColor(red: 0.565, green: 0.075, blue:0.996, alpha: CGFloat(alpha) ).CGColor
         circle.layer.borderWidth = 2
+        
+        if CFloat(reminder!.remainingDays!) < 30 {
+            let currentFont = reminderRemainingDays.font
+            let fontName = currentFont.fontName.componentsSeparatedByString("-").first
+            let newFont = UIFont(name: "\(fontName!)-Medium", size: currentFont.pointSize)
+            reminderRemainingDays.font = newFont
+        }
     }
     
     override func awakeFromNib() {
