@@ -29,7 +29,6 @@ public class ReminderHelper {
             fromDate: today,
             toDate: nextOccurence,
             options: [])
-        print(diff.day)
         return diff.day
     }
     

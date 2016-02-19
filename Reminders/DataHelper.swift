@@ -47,17 +47,22 @@ public class DataHelper {
     }
     
     public func printAllReminders() {
-        let reminderFetchRequest = NSFetchRequest(entityName: "Reminder")
-        let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
-
-        reminderFetchRequest.sortDescriptors = [primarySortDescriptor]
-        
-        let allReminders = (try! context.executeFetchRequest(reminderFetchRequest)) as! [Reminder]
+        let allReminders = self.getAllReminders() as! [Reminder]
         
         for reminder in allReminders {
             print("Name: \(reminder.name!), reminderDate: \(reminder.reminderDate!)")
         }
         
+    }
+    
+    public func getAllReminders() -> [AnyObject] {
+        let reminderFetchRequest = NSFetchRequest(entityName: "Reminder")
+        let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
+        
+        reminderFetchRequest.sortDescriptors = [primarySortDescriptor]
+        
+        let allReminders = (try! context.executeFetchRequest(reminderFetchRequest)) as! [Reminder]
+        return allReminders
     }
     
     public func deleteAllReminders() {

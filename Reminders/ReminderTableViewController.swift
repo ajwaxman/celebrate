@@ -24,7 +24,7 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         super.viewDidLoad()
         
         let fetchRequest = NSFetchRequest(entityName: "Reminder")
-        let fetchSort = NSSortDescriptor(key: "name", ascending: true)
+        let fetchSort = NSSortDescriptor(key: "remainingDays", ascending: true)
         fetchRequest.sortDescriptors = [fetchSort]
         
         fetchedResultsController = NSFetchedResultsController(fetchRequest: fetchRequest, managedObjectContext: context, sectionNameKeyPath: nil, cacheName: nil)
@@ -38,11 +38,12 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         
         tableView.rowHeight = 80
         
-        // printNotifications()
-        
         // Adding notification center observers
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCallNotification:", name: "callNotification", object: nil)
         NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleTextNotification:", name: "textNotification", object: nil)
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "backgoundNofification:", name: UIApplicationWillEnterForegroundNotification, object: nil);
+        refresh()
     }
     
     // MARK: - IBActions
@@ -152,6 +153,21 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         case .Delete:
             tableView.deleteRowsAtIndexPaths([indexPath!], withRowAnimation: .Automatic)
         default: break
+        }
+    }
+    
+    func backgoundNofification(noftification:NSNotification){
+        refresh();
+    }
+    
+    func refresh() {
+        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let managedObjectContext = appDelegate.managedObjectContext
+        let dataHelper = DataHelper(context: managedObjectContext)
+        let reminders = dataHelper.getAllReminders() as! [Reminder]
+        
+        for reminder in reminders {
+            reminder.remainingDays = ReminderHelper.getDaysUntilReminder(ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!))
         }
     }
     

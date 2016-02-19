@@ -161,7 +161,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         if let reminderDateString = txtReminderDate.text {
             let reminderDate = getDateFromString(reminderDateString)
             reminder.reminderDate = reminderDate
-            reminder.remainingDays = ReminderHelper.getDaysUntilReminder(reminderDate)
+            reminder.remainingDays = ReminderHelper.getDaysUntilReminder(ReminderHelper.getNextOccurenceOfReminderDate(reminderDate))
         }
         
         
