@@ -52,9 +52,20 @@ class ReminderTableViewCell: UITableViewCell {
         circle.backgroundColor = UIColor.whiteColor()
         circle.layer.cornerRadius = circle.frame.size.width/2
         
-        let alpha = max(1 - (CFloat((reminder?.remainingDays)!) / 365.0), 0.2)
-        circle.layer.borderColor = UIColor(red: 0.565, green: 0.075, blue:0.996, alpha: CGFloat(alpha) ).CGColor
         circle.layer.borderWidth = 2
+        
+        // Set color based on days remaining
+        let remainingDays = reminder?.remainingDays as! Int
+        switch remainingDays {
+            case 0...7:
+                circle.layer.borderColor = UIColor(red:0.957, green:0.098, blue:0.325, alpha:1).CGColor
+            case 8...30:
+                circle.layer.borderColor = UIColor(red:1, green:0.8, blue:0.004, alpha:0.6).CGColor
+            case 31...90:
+                circle.layer.borderColor = UIColor(red:0.137, green:0.812, blue:0.373, alpha:0.5).CGColor
+            default:
+                circle.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:1).CGColor
+        }
         
         if CFloat(reminder!.remainingDays!) < 30 {
             let currentFont = reminderRemainingDays.font
