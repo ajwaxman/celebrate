@@ -169,6 +169,12 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         for reminder in reminders {
             reminder.remainingDays = ReminderHelper.getDaysUntilReminder(ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!))
         }
+        
+        do {
+            try self.context.save()
+        } catch {
+            fatalError("Failure to save context: \(error)")
+        }
     }
     
     // MARK: - Table view delegate
