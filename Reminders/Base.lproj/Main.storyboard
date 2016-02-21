@@ -6,16 +6,16 @@
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
-        <!--Reminders-->
+        <!--Upcoming-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ReminderTableViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ReminderTableViewController" customModule="Celebrate" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="129" sectionHeaderHeight="28" sectionFooterHeight="28" id="ARr-TR-r1W">
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReminderCell" id="WeG-5F-CxD" customClass="ReminderTableViewCell" customModule="Reminders" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="ReminderCell" id="WeG-5F-CxD" customClass="ReminderTableViewCell" customModule="Celebrate" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="92" width="600" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WeG-5F-CxD" id="r8P-iu-6st">
@@ -23,13 +23,19 @@
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y7-bz-K9z">
-                                            <rect key="frame" x="91" y="22" width="479" height="20.5"/>
+                                            <rect key="frame" x="88" y="22" width="482" height="20.5"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <color key="textColor" red="0.13331398367881775" green="0.13334444165229797" blue="0.13331207633018494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSF-1d-52h">
+                                            <rect key="frame" x="88" y="45" width="482" height="16"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
+                                            <color key="textColor" red="0.39603209495544434" green="0.39610502123832703" blue="0.39602747559547424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <nil key="highlightedColor"/>
+                                        </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35W-F6-5OR">
-                                            <rect key="frame" x="23" y="15" width="55" height="55"/>
+                                            <rect key="frame" x="20" y="15" width="55" height="55"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUL-zK-fiA">
                                                     <rect key="frame" x="7" y="14" width="41.5" height="20.5"/>
@@ -55,18 +61,12 @@
                                                 <constraint firstAttribute="height" constant="55" id="v8h-gg-E3F"/>
                                             </constraints>
                                         </view>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSF-1d-52h">
-                                            <rect key="frame" x="91" y="45" width="479" height="16"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="13"/>
-                                            <color key="textColor" red="0.39603209495544434" green="0.39610502123832703" blue="0.39602747559547424" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            <nil key="highlightedColor"/>
-                                        </label>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="5Y7-bz-K9z" firstAttribute="top" secondItem="r8P-iu-6st" secondAttribute="topMargin" constant="14" id="3JL-bP-WXK"/>
                                         <constraint firstItem="5Y7-bz-K9z" firstAttribute="leading" secondItem="35W-F6-5OR" secondAttribute="trailing" constant="13" id="MJ8-hm-5Wm"/>
                                         <constraint firstItem="35W-F6-5OR" firstAttribute="top" secondItem="r8P-iu-6st" secondAttribute="topMargin" constant="7" id="PhM-KN-DwX"/>
-                                        <constraint firstItem="35W-F6-5OR" firstAttribute="leading" secondItem="r8P-iu-6st" secondAttribute="leadingMargin" constant="15" id="SNY-5J-Xcq"/>
+                                        <constraint firstItem="35W-F6-5OR" firstAttribute="leading" secondItem="r8P-iu-6st" secondAttribute="leadingMargin" constant="12" id="SNY-5J-Xcq"/>
                                         <constraint firstItem="DSF-1d-52h" firstAttribute="leading" secondItem="5Y7-bz-K9z" secondAttribute="leading" id="hmv-9P-So9"/>
                                         <constraint firstItem="DSF-1d-52h" firstAttribute="top" secondItem="5Y7-bz-K9z" secondAttribute="bottom" constant="3" id="kTc-Tz-D6U"/>
                                     </constraints>
@@ -85,7 +85,7 @@
                             </tableViewCell>
                         </prototypes>
                     </tableView>
-                    <navigationItem key="navigationItem" title="Reminders" id="ZW6-J1-FA6">
+                    <navigationItem key="navigationItem" title="Upcoming" id="ZW6-J1-FA6">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="HrY-pv-h9W">
                             <connections>
                                 <action selector="addReminder:" destination="BYZ-38-t0r" id="gHx-gB-S1L"/>
@@ -101,7 +101,7 @@
         <!--Create Reminder View Controller-->
         <scene sceneID="yGu-Kw-3k9">
             <objects>
-                <viewController id="jMQ-l5-pmn" customClass="CreateReminderViewController" customModule="Reminders" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="jMQ-l5-pmn" customClass="CreateReminderViewController" customModule="Celebrate" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="aT8-S0-Rxz"/>
                         <viewControllerLayoutGuide type="bottom" id="Ak1-dV-vRu"/>

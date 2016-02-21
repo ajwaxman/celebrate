@@ -19,5 +19,22 @@ extension Reminder {
     @NSManaged var reminderDate: NSDate?
     @NSManaged var reminderType: String?
     @NSManaged var remainingDays: NSNumber?
+    
+    var section: String? {
+        
+        let days = remainingDays!.intValue
+        switch days {
+        case 0...7:
+            return "This week"
+        case 8...30:
+            return "This month"
+        case 31...90:
+            return "Coming up"
+        default:
+            return "In a bit..."
+
+        }
+        
+    }
 
 }

@@ -169,7 +169,13 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         do {
             try self.context.save()
             scheduleLocalNotification(reminder)
+            CATransaction.begin()
+            CATransaction.setCompletionBlock({ () -> Void in
+                // ReminderTableViewController.tableVie
+            })
+            
             navigationController?.popViewControllerAnimated(true)
+            CATransaction.commit()
         } catch {
             fatalError("Failure to save context: \(error)")
         }

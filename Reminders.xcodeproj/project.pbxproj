@@ -44,7 +44,7 @@
 /* Begin PBXFileReference section */
 		CA4BB7031C74A42B004907E6 /* ReminderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderHelper.swift; sourceTree = "<group>"; };
 		CAEB910D1C6694DA00D5C652 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
-		CAEF2FD31C6192A0001C985D /* Reminders.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Reminders.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		CAEF2FD31C6192A0001C985D /* Celebrate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celebrate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEF2FD61C6192A0001C985D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		CAEF2FD81C6192A0001C985D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		CAEF2FDB1C6192A0001C985D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -103,7 +103,7 @@
 		CAEF2FD41C6192A0001C985D /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				CAEF2FD31C6192A0001C985D /* Reminders.app */,
+				CAEF2FD31C6192A0001C985D /* Celebrate.app */,
 				CAEF2FEA1C6192A0001C985D /* RemindersTests.xctest */,
 				CAEF2FF51C6192A0001C985D /* RemindersUITests.xctest */,
 			);
@@ -166,7 +166,7 @@
 			);
 			name = Reminders;
 			productName = Reminders;
-			productReference = CAEF2FD31C6192A0001C985D /* Reminders.app */;
+			productReference = CAEF2FD31C6192A0001C985D /* Celebrate.app */;
 			productType = "com.apple.product-type.application";
 		};
 		CAEF2FE91C6192A0001C985D /* RemindersTests */ = {
@@ -432,7 +432,7 @@
 				INFOPLIST_FILE = Reminders/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.Reminders;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Celebrate;
 			};
 			name = Debug;
 		};
@@ -443,7 +443,7 @@
 				INFOPLIST_FILE = Reminders/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.Reminders;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Celebrate;
 			};
 			name = Release;
 		};
