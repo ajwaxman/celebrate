@@ -50,7 +50,7 @@ public class DataHelper {
         let allReminders = self.getAllReminders() as! [Reminder]
         
         for reminder in allReminders {
-            print("Name: \(reminder.name!), reminderDate: \(reminder.reminderDate!)")
+            print("Name: \(reminder.name!)\nReminderDate: \(reminder.reminderDate!)\nPhone Number: \(reminder.phoneNumber!)\n\n")
         }
         
     }

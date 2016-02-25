@@ -26,6 +26,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     @IBOutlet weak var txtPhoneNumber: UITextField!
     
     var reminderTypeOptions = ["Birthday", "Anniversary"]
+    var currentTextField: UITextField?
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,16 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         self.title = "Add Reminder"
         
         txtPhoneNumber.delegate = self
+        
+        txtName.delegate = self
+        txtReminderType.delegate = self
+        txtReminderType.delegate = self
+        addToolBar(txtName)
+        addToolBar(txtReminderDate)
+        addToolBar(txtReminderType)
+        addToolBar(txtPhoneNumber)
+        
+        txtName.becomeFirstResponder()
         
         let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "createReminder")
         navigationItem.rightBarButtonItem = saveBarButtonItem
@@ -125,7 +136,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         let localNotification = UILocalNotification()
         // localNotification.fireDate = getCurrentTime()
         localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
-        localNotification.alertBody = "It's \(reminder.name)'s \(reminder.reminderType) today. Send a note!"
+        localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
         localNotification.alertAction = "View reminder"
         localNotification.category = "reminderCategory"
         localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.URIRepresentation().absoluteString]
@@ -151,7 +162,70 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         return currentTime
     }
     
-    // MARK: - Form formattingS
+    // MARK: - Custom form logic and formatting
+    
+    func textFieldDidBeginEditing(textField: UITextField) {
+        
+        currentTextField = textField
+        
+    }
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if (textField == txtName) {
+            txtReminderDate.becomeFirstResponder()
+        } else if textField == txtReminderDate {
+            txtReminderType.becomeFirstResponder()
+        } else if textField == txtReminderType {
+            txtPhoneNumber.becomeFirstResponder()
+        }
+        
+        return true;
+    }
+    
+    func addToolBar(textField: UITextField){
+        let toolBar = UIToolbar()
+        toolBar.barStyle = UIBarStyle.Default
+        toolBar.translucent = true
+        toolBar.tintColor = UIColor(red:0.51, green:0.23, blue:0.89, alpha:1.0)
+        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Done, target: self, action: "nextPressed")
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelPressed")
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
+        let addFromContactsButton = UIBarButtonItem(title: "Add From Contacts", style: .Plain, target: self, action: "addFromContacts")
+        if textField == txtPhoneNumber {
+            toolBar.setItems([cancelButton, spaceButton, addFromContactsButton], animated: false)
+        }
+        else {
+            toolBar.setItems([cancelButton, spaceButton, nextButton], animated: false)
+        }
+        toolBar.userInteractionEnabled = true
+        toolBar.sizeToFit()
+        
+        textField.delegate = self
+        textField.inputAccessoryView = toolBar
+    }
+    func donePressed(){
+        view.endEditing(true)
+    }
+    func cancelPressed(){
+        view.endEditing(true) // or do something
+    }
+    
+    func nextPressed() -> Bool {
+        
+        if currentTextField == txtName {
+            txtReminderDate.becomeFirstResponder()
+        } else if currentTextField == txtReminderDate {
+            txtReminderType.becomeFirstResponder()
+        } else if currentTextField == txtReminderType {
+            txtPhoneNumber.becomeFirstResponder()
+        }
+        
+        return true;
+    }
+    
+    func addFromContacts() {
+        print("Please connect your contacts")
+    }
     
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
     {
@@ -181,7 +255,6 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             
             if hasLeadingOne
             {
-                print("leading one")
                 formattedString.appendString("1 ")
                 index += 1
             }
@@ -216,7 +289,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         reminder.name = txtName.text
         reminder.reminderType = txtReminderType.text
-        reminder.phoneNumber = "2165331493"
+        reminder.phoneNumber = txtPhoneNumber.text
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
