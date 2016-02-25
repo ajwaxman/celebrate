@@ -9,7 +9,7 @@
 import UIKit
 import CoreData
 
-class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate {
+class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
 
     // Mark: - Properties
     lazy var context: NSManagedObjectContext = {
@@ -23,6 +23,8 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     
     @IBOutlet weak var txtReminderType: UITextField!
     
+    @IBOutlet weak var txtPhoneNumber: UITextField!
+    
     var reminderTypeOptions = ["Birthday", "Anniversary"]
     
     override func viewDidLoad() {
@@ -34,6 +36,8 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         txtReminderType.text = "Birthday"
 
         self.title = "Add Reminder"
+        
+        txtPhoneNumber.delegate = self
         
         let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "createReminder")
         navigationItem.rightBarButtonItem = saveBarButtonItem
@@ -145,6 +149,64 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         let currentTime: NSDate! = NSCalendar.currentCalendar().dateFromComponents(components)
         return currentTime
+    }
+    
+    // MARK: - Form formattingS
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
+    {
+        if textField == txtPhoneNumber
+        {
+            let newString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
+            let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+            
+            let decimalString = components.joinWithSeparator("") as String
+            let decimalNString = components.joinWithSeparator("") as  NSString
+
+            let rangeOfDecimalString = Range(start: decimalString.startIndex,
+                end: decimalString.startIndex.advancedBy(1))
+            let firstCharacterStr = decimalString.substringWithRange(rangeOfDecimalString)
+            
+            let length = decimalNString.length
+            let hasLeadingOne = length > 0 && firstCharacterStr == "1"
+            
+            if length == 0 || (length > 10 && !hasLeadingOne) || length > 11
+            {
+                let newLength = (textField.text! as NSString).length + (string as NSString).length - range.length as Int
+                
+                return (newLength > 10) ? false : true
+            }
+            var index = 0 as Int
+            let formattedString = NSMutableString()
+            
+            if hasLeadingOne
+            {
+                print("leading one")
+                formattedString.appendString("1 ")
+                index += 1
+            }
+            if (length - index) > 3
+            {
+                let areaCode = decimalNString.substringWithRange(NSMakeRange(index, 3))
+                formattedString.appendFormat("(%@) ", areaCode)
+                index += 3
+            }
+            if length - index > 3
+            {
+                let prefix = decimalNString.substringWithRange(NSMakeRange(index, 3))
+                formattedString.appendFormat("%@-", prefix)
+                index += 3
+            }
+            
+            let remainder = decimalNString.substringFromIndex(index)
+            formattedString.appendString(remainder)
+            textField.text = formattedString as String
+            return false
+        }
+        else
+        {
+            return true
+        }
     }
     
     // MARK: - Custom Function 

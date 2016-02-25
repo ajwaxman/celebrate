@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "CAEF2FD21C6192A0001C985D"
-               BuildableName = "Reminders.app"
+               BuildableName = "Celebrate.app"
                BlueprintName = "Reminders"
                ReferencedContainer = "container:Reminders.xcodeproj">
             </BuildableReference>
@@ -53,7 +53,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAEF2FD21C6192A0001C985D"
-            BuildableName = "Reminders.app"
+            BuildableName = "Celebrate.app"
             BlueprintName = "Reminders"
             ReferencedContainer = "container:Reminders.xcodeproj">
          </BuildableReference>
@@ -76,7 +76,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAEF2FD21C6192A0001C985D"
-            BuildableName = "Reminders.app"
+            BuildableName = "Celebrate.app"
             BlueprintName = "Reminders"
             ReferencedContainer = "container:Reminders.xcodeproj">
          </BuildableReference>
@@ -95,7 +95,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "CAEF2FD21C6192A0001C985D"
-            BuildableName = "Reminders.app"
+            BuildableName = "Celebrate.app"
             BlueprintName = "Reminders"
             ReferencedContainer = "container:Reminders.xcodeproj">
          </BuildableReference>
