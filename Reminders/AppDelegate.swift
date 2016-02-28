@@ -22,8 +22,30 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // dataHelper.seedDataStore()
         // dataHelper.printAllReminders()
         
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCallNotificationFromLaunch:", name: "callNotification", object: nil)
         
         return true
+    }
+    
+    func handleCallNotificationFromLaunch(notification: NSNotification) {
+        
+        let userInfo:Dictionary<String,String!> = notification.userInfo as! Dictionary<String,String!>
+        let numberString = userInfo["phoneNumber"]
+        if let number = numberString {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.callNumber(number)
+            }
+        }
+        
+    }
+    
+    func callNumber(phoneNumber:String) {
+        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.sharedApplication()
+            if (application.canOpenURL(phoneCallURL)) {
+                application.openURL(phoneCallURL);
+            }
+        }
     }
 
     func applicationWillResignActive(application: UIApplication) {

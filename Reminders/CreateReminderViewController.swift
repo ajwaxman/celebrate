@@ -110,7 +110,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             callAction.title = "Call"
             callAction.activationMode = .Foreground
             callAction.destructive = false
-            callAction.authenticationRequired = false
+            callAction.authenticationRequired = true
             
             let textAction = UIMutableUserNotificationAction()
             textAction.identifier = "text"
@@ -139,8 +139,8 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     
     func scheduleLocalNotification(reminder: Reminder) {
         let localNotification = UILocalNotification()
-        // localNotification.fireDate = getCurrentTime()
-        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
+        localNotification.fireDate = getCurrentTime()
+        // localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
         localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
         localNotification.alertAction = "View reminder"
         localNotification.category = "reminderCategory"
@@ -308,6 +308,15 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
+    func digitsOnly(string: String) -> String {
+        let stringArray = string.componentsSeparatedByCharactersInSet(
+            NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+        let newString = stringArray.joinWithSeparator("")
+        
+        return newString
+    }
+
+    
     func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
     {
         return formatPhoneNumber(textField, shouldChangeCharactersInRange: range, replacementString: string)
@@ -320,7 +329,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         reminder.name = txtName.text
         reminder.reminderType = txtReminderType.text
-        reminder.phoneNumber = txtPhoneNumber.text
+        reminder.phoneNumber = digitsOnly(txtPhoneNumber.text!)
         
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"

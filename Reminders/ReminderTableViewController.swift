@@ -60,6 +60,11 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
     
     // MARK: - Notification handling logic
     
+    
+    func handleTextNotification(notification: NSNotification) {
+        print("Need to setup text handling")
+    }
+    
     func callNumber(phoneNumber:String) {
         if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
             let application:UIApplication = UIApplication.sharedApplication()
@@ -69,20 +74,8 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
-    func handleTextNotification(notification: NSNotification) {
-        print("Need to setup text handling")
-    }
-    
-    func handleCallNotification(notification: NSNotification) {
-        
-        let userInfo:Dictionary<String,String!> = notification.userInfo as! Dictionary<String,String!>
-        let numberString = userInfo["phoneNumber"]
-        if let number = numberString {
-            callNumber(number)
-            print("Calling: \(number)")
-        }
 
-    }
+    
     
     func cancelNotification(idToDelete: String) {
         let notifications = UIApplication.sharedApplication().scheduledLocalNotifications!
