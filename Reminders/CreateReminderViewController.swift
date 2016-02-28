@@ -199,8 +199,9 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         let addFromContactsButton = UIBarButtonItem(title: "Add From Contacts", style: .Plain, target: self, action: "addFromContacts")
         if textField == txtPhoneNumber {
             toolBar.setItems([cancelButton, spaceButton, addFromContactsButton], animated: false)
-        }
-        else {
+        } else if textField == txtReminderType {
+            toolBar.setItems([cancelButton, spaceButton], animated: false)
+        } else {
             toolBar.setItems([cancelButton, spaceButton, nextButton], animated: false)
         }
         toolBar.userInteractionEnabled = true
@@ -221,8 +222,6 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         if currentTextField == txtName {
             txtReminderDate.becomeFirstResponder()
         } else if currentTextField == txtReminderDate {
-            txtReminderType.becomeFirstResponder()
-        } else if currentTextField == txtReminderType {
             txtPhoneNumber.becomeFirstResponder()
         }
         
