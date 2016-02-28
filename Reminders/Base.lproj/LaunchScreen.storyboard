@@ -8,10 +8,32 @@
         <!--View Controller-->
         <scene sceneID="EHf-IW-A2E">
             <objects>
-                <viewController id="01J-lp-oVM" sceneMemberID="viewController"/>
+                <viewController id="01J-lp-oVM" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="lmW-Yg-6VN"/>
+                        <viewControllerLayoutGuide type="bottom" id="71R-l8-NgS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="E0k-w8-NX0">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="white-heart" translatesAutoresizingMaskIntoConstraints="NO" id="Yg0-Cy-AXQ">
+                                <rect key="frame" x="275" y="277.5" width="50" height="45"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" red="0.51241916418075562" green="0.18821734189987183" blue="0.90415185689926147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Yg0-Cy-AXQ" firstAttribute="centerX" secondItem="E0k-w8-NX0" secondAttribute="centerX" id="UgD-I9-hcG"/>
+                            <constraint firstItem="Yg0-Cy-AXQ" firstAttribute="centerY" secondItem="E0k-w8-NX0" secondAttribute="centerY" id="Z2b-VD-xGo"/>
+                        </constraints>
+                    </view>
+                </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="iYj-Kq-Ea1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="53" y="375"/>
+            <point key="canvasLocation" x="41" y="375"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="white-heart" width="50" height="45"/>
+    </resources>
 </document>
