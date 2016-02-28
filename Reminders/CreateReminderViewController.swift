@@ -8,9 +8,14 @@
 
 import UIKit
 import CoreData
+import ContactsUI
 
-class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate {
+protocol AddContactViewControllerDelegate {
+    func didFetchContacts(contacts: [CNContact])
+}
 
+class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, CNContactPickerDelegate {
+    
     // Mark: - Properties
     lazy var context: NSManagedObjectContext = {
         let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
@@ -184,6 +189,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     
     func addToolBar(textField: UITextField){
         let toolBar = UIToolbar()
+        toolBar.backgroundColor = UIColor.whiteColor()
         toolBar.barStyle = UIBarStyle.Default
         toolBar.translucent = true
         toolBar.tintColor = UIColor(red:0.51, green:0.23, blue:0.89, alpha:1.0)
@@ -224,11 +230,32 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     }
     
     func addFromContacts() {
-        print("Please connect your contacts")
+        let contactPickerViewController = CNContactPickerViewController()
+        
+        contactPickerViewController.predicateForEnablingContact = NSPredicate(format: "phoneNumbers != nil")
+        
+        contactPickerViewController.displayedPropertyKeys = [CNContactGivenNameKey, CNContactPhoneNumbersKey]
+        
+        contactPickerViewController.predicateForSelectionOfProperty = NSPredicate(value:true)
+        
+        contactPickerViewController.delegate = self
+        
+        presentViewController(contactPickerViewController, animated: true, completion: nil)
     }
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
-    {
+    func contactPicker(picker: CNContactPickerViewController, didSelectContactProperty contactProperty: CNContactProperty) {
+        let phoneNumber = contactProperty.value as! CNPhoneNumber
+        
+        txtPhoneNumber.text = phoneNumber.stringValue
+        
+        let currentText = txtPhoneNumber.text ?? ""
+        let range: NSRange = (currentText as NSString).rangeOfString(currentText)
+        
+        formatPhoneNumber(txtPhoneNumber, shouldChangeCharactersInRange: range, replacementString: phoneNumber.stringValue)
+
+    }
+    
+    func formatPhoneNumber(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if textField == txtPhoneNumber
         {
             let newString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
@@ -236,7 +263,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             
             let decimalString = components.joinWithSeparator("") as String
             let decimalNString = components.joinWithSeparator("") as  NSString
-
+            
             let rangeOfDecimalString = Range(start: decimalString.startIndex,
                 end: decimalString.startIndex.advancedBy(1))
             let firstCharacterStr = decimalString.substringWithRange(rangeOfDecimalString)
@@ -280,6 +307,11 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         {
             return true
         }
+    }
+    
+    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
+    {
+        return formatPhoneNumber(textField, shouldChangeCharactersInRange: range, replacementString: string)
     }
     
     // MARK: - Custom Function 
