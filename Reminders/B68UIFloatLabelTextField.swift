@@ -187,7 +187,6 @@ public class B68UIFloatLabelTextField: UITextField {
     }
     
     func hideFloatingLabel () {
-        print("Hide floating label")
         let fl_frame = CGRectMake(
             horizontalPadding,
             verticalPadding,
