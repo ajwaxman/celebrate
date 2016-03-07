@@ -255,7 +255,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     }
     
     func formatPhoneNumber(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
-        if textField == txtPhoneNumber
+        if textField == txtPhoneNumber && string.characters.count > 0
         {
             let newString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
             let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
