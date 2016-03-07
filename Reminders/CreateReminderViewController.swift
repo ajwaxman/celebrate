@@ -139,8 +139,8 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     
     func scheduleLocalNotification(reminder: Reminder) {
         let localNotification = UILocalNotification()
-        localNotification.fireDate = getCurrentTime()
-        // localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
+        // localNotification.fireDate = getCurrentTime()
+        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
         localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
         localNotification.alertAction = "View reminder"
         localNotification.category = "reminderCategory"
