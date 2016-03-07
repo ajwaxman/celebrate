@@ -117,7 +117,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             textAction.title = "Text"
             textAction.activationMode = .Foreground
             textAction.destructive = false
-            textAction.authenticationRequired = false
+            textAction.authenticationRequired = true
             
             let actionsArray: [UIUserNotificationAction] = [textAction, callAction]
             let actionsArrayMinimal: [UIUserNotificationAction] = [textAction, callAction]
@@ -263,8 +263,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             let decimalString = components.joinWithSeparator("") as String
             let decimalNString = components.joinWithSeparator("") as  NSString
             
-            let rangeOfDecimalString = Range(start: decimalString.startIndex,
-                end: decimalString.startIndex.advancedBy(1))
+            let rangeOfDecimalString = Range(start: decimalString.startIndex, end: decimalString.startIndex.advancedBy(1))
             let firstCharacterStr = decimalString.substringWithRange(rangeOfDecimalString)
             
             let length = decimalNString.length

@@ -110,102 +110,71 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y7A-gi-ihQ">
-                                <rect key="frame" x="20" y="102" width="45" height="20.5"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Date" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPn-pt-apf" customClass="B68UIFloatLabelTextField" customModule="Celebrate" customModuleProvider="target">
+                                <rect key="frame" x="20" y="128" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-1L-fD5">
-                                <rect key="frame" x="93" y="98" width="487" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Date" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t4P-3b-UID">
-                                <rect key="frame" x="20" y="157" width="36" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="lPn-pt-apf">
-                                <rect key="frame" x="93" y="153" width="487" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColorfloatingLabel">
+                                        <color key="value" red="0.51241916418075562" green="0.18821734189987183" blue="0.90415185689926147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                                 <connections>
                                     <action selector="dateReminderEditing:" destination="jMQ-l5-pmn" eventType="editingDidBegin" id="wJt-hG-2mc"/>
                                 </connections>
                             </textField>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-gQ-9Wa">
-                                <rect key="frame" x="93" y="263" width="487" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DKw-A6-KhZ">
-                                <rect key="frame" x="20" y="212" width="62" height="20.5"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Phone Number" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-VS-5jn" customClass="B68UIFloatLabelTextField" customModule="Celebrate">
+                                <rect key="frame" x="20" y="164" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Cl-VS-5jn">
-                                <rect key="frame" x="93" y="208" width="487" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" keyboardType="phonePad"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColorfloatingLabel">
+                                        <color key="value" red="0.51241916418075562" green="0.18821734189987183" blue="0.90415185689926147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Type" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g5E-TX-g3r">
-                                <rect key="frame" x="20" y="267" width="37.5" height="20.5"/>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleAspectFit" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Name" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="hmf-1L-fD5" customClass="B68UIFloatLabelTextField" customModule="Celebrate" customModuleProvider="target">
+                                <rect key="frame" x="20" y="92" width="560" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="hintYPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="titleYPadding">
+                                        <real key="value" value="0.0"/>
+                                    </userDefinedRuntimeAttribute>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColorfloatingLabel">
+                                        <color key="value" red="0.51241916418075562" green="0.18821734189987183" blue="0.90415185689926147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Reminder Type" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="cj1-gQ-9Wa" customClass="B68UIFloatLabelTextField" customModule="Celebrate" customModuleProvider="target">
+                                <rect key="frame" x="20" y="200" width="560" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <textInputTraits key="textInputTraits" returnKeyType="next"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="color" keyPath="activeTextColorfloatingLabel">
+                                        <color key="value" red="0.51241916418075562" green="0.18821734189987183" blue="0.90415185689926147" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
-                            <constraint firstItem="lPn-pt-apf" firstAttribute="top" secondItem="hmf-1L-fD5" secondAttribute="bottom" constant="25" id="2OW-sy-a8o"/>
-                            <constraint firstItem="4Cl-VS-5jn" firstAttribute="centerY" secondItem="DKw-A6-KhZ" secondAttribute="centerY" id="4Aj-px-LSJ"/>
-                            <constraint firstItem="DKw-A6-KhZ" firstAttribute="leading" secondItem="g5E-TX-g3r" secondAttribute="leading" id="E8T-Bq-I5h"/>
-                            <constraint firstItem="t4P-3b-UID" firstAttribute="centerY" secondItem="lPn-pt-apf" secondAttribute="centerY" id="EF3-45-MAE"/>
-                            <constraint firstItem="lPn-pt-apf" firstAttribute="leading" secondItem="hmf-1L-fD5" secondAttribute="leading" id="F3Y-N7-NCe"/>
-                            <constraint firstItem="t4P-3b-UID" firstAttribute="leading" secondItem="y7A-gi-ihQ" secondAttribute="leading" id="HjD-8L-ero"/>
-                            <constraint firstItem="cj1-gQ-9Wa" firstAttribute="leading" secondItem="4Cl-VS-5jn" secondAttribute="leading" id="Kbv-TE-UZH"/>
-                            <constraint firstItem="DKw-A6-KhZ" firstAttribute="centerY" secondItem="4Cl-VS-5jn" secondAttribute="centerY" id="Lxu-e2-zNN"/>
-                            <constraint firstItem="g5E-TX-g3r" firstAttribute="centerY" secondItem="cj1-gQ-9Wa" secondAttribute="centerY" id="P92-9T-bFq"/>
-                            <constraint firstAttribute="leadingMargin" secondItem="y7A-gi-ihQ" secondAttribute="leading" id="Q7x-pO-4Ak"/>
-                            <constraint firstItem="4Cl-VS-5jn" firstAttribute="leading" secondItem="cj1-gQ-9Wa" secondAttribute="leading" id="SIr-cS-IVp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="lPn-pt-apf" secondAttribute="trailing" id="SjQ-Nd-wAW"/>
-                            <constraint firstItem="cj1-gQ-9Wa" firstAttribute="leading" secondItem="lPn-pt-apf" secondAttribute="leading" id="UhW-qT-MB3"/>
-                            <constraint firstItem="g5E-TX-g3r" firstAttribute="leading" secondItem="t4P-3b-UID" secondAttribute="leading" id="Uuk-Yy-4OZ"/>
-                            <constraint firstItem="4Cl-VS-5jn" firstAttribute="top" secondItem="cj1-gQ-9Wa" secondAttribute="bottom" constant="31" id="XYp-Ak-k4R"/>
-                            <constraint firstItem="hmf-1L-fD5" firstAttribute="top" secondItem="aT8-S0-Rxz" secondAttribute="bottom" constant="34" id="aY3-52-Yql"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4Cl-VS-5jn" secondAttribute="trailing" id="b9j-pL-Hhz"/>
-                            <constraint firstItem="g5E-TX-g3r" firstAttribute="centerY" secondItem="cj1-gQ-9Wa" secondAttribute="centerY" id="c62-g9-zvJ"/>
-                            <constraint firstItem="y7A-gi-ihQ" firstAttribute="centerY" secondItem="hmf-1L-fD5" secondAttribute="centerY" constant="-0.75" id="fb5-TW-ZLN"/>
-                            <constraint firstItem="4Cl-VS-5jn" firstAttribute="leading" secondItem="lPn-pt-apf" secondAttribute="leading" id="gkS-3Q-60A"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="hmf-1L-fD5" secondAttribute="trailing" id="jCU-Mc-Cz2"/>
-                            <constraint firstItem="hmf-1L-fD5" firstAttribute="leading" secondItem="y7A-gi-ihQ" secondAttribute="trailing" constant="28" id="lM9-LP-XqW"/>
-                            <constraint firstItem="lPn-pt-apf" firstAttribute="leading" secondItem="t4P-3b-UID" secondAttribute="trailing" constant="37" id="lhs-nj-VOb"/>
-                            <constraint firstItem="DKw-A6-KhZ" firstAttribute="leading" secondItem="t4P-3b-UID" secondAttribute="leading" id="pep-lW-QXf"/>
-                            <constraint firstItem="g5E-TX-g3r" firstAttribute="leading" secondItem="DKw-A6-KhZ" secondAttribute="leading" id="puh-Ad-khB"/>
-                            <constraint firstItem="cj1-gQ-9Wa" firstAttribute="top" secondItem="4Cl-VS-5jn" secondAttribute="bottom" constant="25" id="qc0-cy-LNZ"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cj1-gQ-9Wa" secondAttribute="trailing" id="riK-80-vD6"/>
-                            <constraint firstItem="cj1-gQ-9Wa" firstAttribute="top" secondItem="lPn-pt-apf" secondAttribute="bottom" constant="30" id="riu-Ei-Lwu"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4Cl-VS-5jn" secondAttribute="trailing" id="sP1-Kr-yQg"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="cj1-gQ-9Wa" secondAttribute="trailing" id="uP9-Ol-DSK"/>
-                            <constraint firstItem="4Cl-VS-5jn" firstAttribute="top" secondItem="lPn-pt-apf" secondAttribute="bottom" constant="25" id="yUB-nH-agO"/>
+                            <constraint firstItem="cj1-gQ-9Wa" firstAttribute="leading" secondItem="4Cl-VS-5jn" secondAttribute="leading" id="DwS-eW-Imw"/>
+                            <constraint firstItem="lPn-pt-apf" firstAttribute="top" secondItem="hmf-1L-fD5" secondAttribute="bottom" constant="15" id="DwZ-6N-dUp"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="hmf-1L-fD5" secondAttribute="trailing" id="Pcf-1L-w5t"/>
+                            <constraint firstItem="4Cl-VS-5jn" firstAttribute="leading" secondItem="lPn-pt-apf" secondAttribute="leading" id="Qvd-hZ-veS"/>
+                            <constraint firstItem="hmf-1L-fD5" firstAttribute="top" secondItem="aT8-S0-Rxz" secondAttribute="bottom" constant="28" id="Xgc-wC-NXs"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="cj1-gQ-9Wa" secondAttribute="trailing" id="Yfg-y5-BsC"/>
+                            <constraint firstItem="lPn-pt-apf" firstAttribute="leading" secondItem="hmf-1L-fD5" secondAttribute="leading" id="aWb-EO-9qL"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="lPn-pt-apf" secondAttribute="trailing" id="bzi-tI-30V"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="4Cl-VS-5jn" secondAttribute="trailing" id="f5Q-hi-c09"/>
+                            <constraint firstItem="4Cl-VS-5jn" firstAttribute="top" secondItem="lPn-pt-apf" secondAttribute="bottom" constant="15" id="q9R-ah-YCr"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="hmf-1L-fD5" secondAttribute="leading" id="tQW-fP-gzQ"/>
+                            <constraint firstItem="cj1-gQ-9Wa" firstAttribute="top" secondItem="4Cl-VS-5jn" secondAttribute="bottom" constant="15" id="uxK-kN-TMP"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="E8T-Bq-I5h"/>
-                                <exclude reference="4Aj-px-LSJ"/>
-                                <exclude reference="SIr-cS-IVp"/>
-                                <exclude reference="XYp-Ak-k4R"/>
-                                <exclude reference="sP1-Kr-yQg"/>
-                                <exclude reference="P92-9T-bFq"/>
-                                <exclude reference="Uuk-Yy-4OZ"/>
-                                <exclude reference="UhW-qT-MB3"/>
-                                <exclude reference="riu-Ei-Lwu"/>
-                                <exclude reference="uP9-Ol-DSK"/>
-                            </mask>
-                        </variation>
                     </view>
                     <connections>
                         <outlet property="txtName" destination="hmf-1L-fD5" id="III-uw-GDs"/>
