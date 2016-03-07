@@ -60,9 +60,37 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
     
     // MARK: - Notification handling logic
     
+    let messageComposer = MessageComposer()
     
     func handleTextNotification(notification: NSNotification) {
-        print("Need to setup text handling")
+        dispatch_async(dispatch_get_main_queue()) {
+            let userInfo:Dictionary<String,String!> = notification.userInfo as! Dictionary<String,String!>
+            let numberString = userInfo["phoneNumber"]
+            
+            // Make sure the device can send text messages
+            if (self.messageComposer.canSendText()) {
+                // Obtain a configured MFMessageComposeViewController
+                let messageComposeVC = self.messageComposer.configuredMessageComposeViewController([numberString!])
+                
+                self.presentViewController(messageComposeVC, animated: true, completion: nil)
+            } else {
+                // Let the user know if his/her device isn't able to send text messages
+                print("There was an error")
+            }
+        }
+
+    }
+    
+    func handleCallNotificationFromLaunch(notification: NSNotification) {
+        
+        let userInfo:Dictionary<String,String!> = notification.userInfo as! Dictionary<String,String!>
+        let numberString = userInfo["phoneNumber"]
+        if let number = numberString {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.callNumber(number)
+            }
+        }
+        
     }
     
     func callNumber(phoneNumber:String) {
@@ -73,9 +101,6 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
             }
         }
     }
-    
-
-    
     
     func cancelNotification(idToDelete: String) {
         let notifications = UIApplication.sharedApplication().scheduledLocalNotifications!
