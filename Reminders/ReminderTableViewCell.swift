@@ -34,7 +34,7 @@ class ReminderTableViewCell: UITableViewCell {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "M/d"
             let reminderDateString = dateFormatter.stringFromDate(reminder.reminderDate!)
-            reminderDetailsTxt.text = reminderDateString + " - " + reminder.reminderType!
+            reminderDetailsTxt.text = reminderDateString + " - " + getEventYear(reminder.reminderDate!) + " " + reminder.reminderType!
             
             let remainingDays = reminder.remainingDays as! Int
             if remainingDays < 90 {
@@ -56,6 +56,23 @@ class ReminderTableViewCell: UITableViewCell {
         
         createReminderCircle()
 
+    }
+    
+    func getEventYear(reminderDate: NSDate) -> String {
+        let yearOfEvent = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: reminderDate, toDate: ReminderHelper.getNextOccurenceOfReminderDate(reminderDate), options:  NSCalendarOptions(rawValue: 0)).year
+        return addOrdinal(yearOfEvent)
+    }
+    
+    func addOrdinal(yearOfEvent: Int) -> String {
+        if (11...13).contains(yearOfEvent % 100) {
+            return "\(yearOfEvent)th"
+        }
+        switch yearOfEvent % 10 {
+        case 1: return "\(yearOfEvent)st"
+        case 2: return "\(yearOfEvent)nd"
+        case 3: return "\(yearOfEvent)rd"
+        default: return "\(yearOfEvent)th"
+        }
     }
     
     func createReminderCircle() {
