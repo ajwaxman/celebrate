@@ -81,6 +81,7 @@
                                     <outlet property="reminderDetailsTxt" destination="DSF-1d-52h" id="SAk-pK-J9n"/>
                                     <outlet property="reminderNameTxt" destination="5Y7-bz-K9z" id="kKt-OL-sjJ"/>
                                     <outlet property="reminderRemainingDays" destination="dUL-zK-fiA" id="m2w-et-wza"/>
+                                    <segue destination="nTO-D9-GBf" kind="show" identifier="ShowReminderView" id="eQO-ax-R43"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -97,6 +98,54 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1083" y="1039"/>
+        </scene>
+        <!--Reminder View Controller-->
+        <scene sceneID="a8o-wn-TQS">
+            <objects>
+                <viewController id="nTO-D9-GBf" customClass="ReminderViewController" customModule="Celebrate" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="8po-tA-aYw"/>
+                        <viewControllerLayoutGuide type="bottom" id="nRI-6x-4B9"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="w3l-Vt-Jtz">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hello World" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="18" translatesAutoresizingMaskIntoConstraints="NO" id="Pxa-Gj-5vj">
+                                <rect key="frame" x="59" y="114" width="482" height="30"/>
+                                <fontDescription key="fontDescription" type="system" weight="medium" pointSize="25"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="trailing" constant="213.5" id="Krz-iH-h3W"/>
+                            <constraint firstItem="Pxa-Gj-5vj" firstAttribute="centerX" secondItem="w3l-Vt-Jtz" secondAttribute="centerX" id="M9N-HV-kRh"/>
+                            <constraint firstItem="Pxa-Gj-5vj" firstAttribute="top" secondItem="8po-tA-aYw" secondAttribute="bottom" constant="50" id="U8A-rd-xxt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="trailing" id="e4m-0p-Krt"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="trailing" constant="39" id="ekO-s9-8LK"/>
+                            <constraint firstItem="Pxa-Gj-5vj" firstAttribute="leading" secondItem="w3l-Vt-Jtz" secondAttribute="leadingMargin" constant="39" id="g2B-7i-Zkb"/>
+                            <constraint firstItem="Pxa-Gj-5vj" firstAttribute="leading" secondItem="w3l-Vt-Jtz" secondAttribute="leadingMargin" constant="215" id="oqG-l7-OBc"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="leading" constant="50" id="pyo-ai-zpv"/>
+                        </constraints>
+                        <variation key="default">
+                            <mask key="constraints">
+                                <exclude reference="Krz-iH-h3W"/>
+                                <exclude reference="M9N-HV-kRh"/>
+                                <exclude reference="e4m-0p-Krt"/>
+                                <exclude reference="oqG-l7-OBc"/>
+                                <exclude reference="pyo-ai-zpv"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <connections>
+                        <outlet property="reminderTitle" destination="Pxa-Gj-5vj" id="XGx-TR-Yd7"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="UPh-kn-2jX" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1813" y="1039"/>
         </scene>
         <!--Create Reminder View Controller-->
         <scene sceneID="yGu-Kw-3k9">

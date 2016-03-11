@@ -10,6 +10,7 @@
 		CA49E37D1C8346F2002C7ED1 /* MessageComposer.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA49E37C1C8346F2002C7ED1 /* MessageComposer.swift */; };
 		CA49E38A1C83B93A002C7ED1 /* B68UIFloatLabelTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA49E3891C83B93A002C7ED1 /* B68UIFloatLabelTextField.swift */; };
 		CA4BB7041C74A42B004907E6 /* ReminderHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA4BB7031C74A42B004907E6 /* ReminderHelper.swift */; };
+		CA5B04861C926195007209E9 /* ReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CA5B04851C926195007209E9 /* ReminderViewController.swift */; };
 		CAEB910E1C6694DA00D5C652 /* CreateReminderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEB910D1C6694DA00D5C652 /* CreateReminderViewController.swift */; };
 		CAEF2FD71C6192A0001C985D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF2FD61C6192A0001C985D /* AppDelegate.swift */; };
 		CAEF2FD91C6192A0001C985D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = CAEF2FD81C6192A0001C985D /* ViewController.swift */; };
@@ -47,6 +48,7 @@
 		CA49E37C1C8346F2002C7ED1 /* MessageComposer.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MessageComposer.swift; sourceTree = "<group>"; };
 		CA49E3891C83B93A002C7ED1 /* B68UIFloatLabelTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = B68UIFloatLabelTextField.swift; sourceTree = "<group>"; };
 		CA4BB7031C74A42B004907E6 /* ReminderHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderHelper.swift; sourceTree = "<group>"; };
+		CA5B04851C926195007209E9 /* ReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReminderViewController.swift; sourceTree = "<group>"; };
 		CAEB910D1C6694DA00D5C652 /* CreateReminderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CreateReminderViewController.swift; sourceTree = "<group>"; };
 		CAEF2FD31C6192A0001C985D /* Celebrate.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Celebrate.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		CAEF2FD61C6192A0001C985D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 				CA49E3891C83B93A002C7ED1 /* B68UIFloatLabelTextField.swift */,
 				CAEB910D1C6694DA00D5C652 /* CreateReminderViewController.swift */,
 				CAEF30071C619433001C985D /* ReminderTableViewCell.swift */,
+				CA5B04851C926195007209E9 /* ReminderViewController.swift */,
 				CAEF30091C619465001C985D /* ReminderTableViewController.swift */,
 				CAEF300B1C6194A1001C985D /* DataHelper.swift */,
 				CA4BB7031C74A42B004907E6 /* ReminderHelper.swift */,
@@ -290,6 +293,7 @@
 				CAEF2FDF1C6192A0001C985D /* Reminders.xcdatamodeld in Sources */,
 				CAEF2FD71C6192A0001C985D /* AppDelegate.swift in Sources */,
 				CA4BB7041C74A42B004907E6 /* ReminderHelper.swift in Sources */,
+				CA5B04861C926195007209E9 /* ReminderViewController.swift in Sources */,
 				CAEF300C1C6194A1001C985D /* DataHelper.swift in Sources */,
 				CAEF300F1C6195E3001C985D /* Reminder+CoreDataProperties.swift in Sources */,
 				CA49E38A1C83B93A002C7ED1 /* B68UIFloatLabelTextField.swift in Sources */,

@@ -327,14 +327,17 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
     }
     */
 
-    /*
+    let reminderSegueIdentifier = "ShowReminderView"
+    
     // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if segue.identifier == reminderSegueIdentifier {
+            if let destination = segue.destinationViewController as? ReminderViewController {
+                if let indexPath = tableView.indexPathForSelectedRow {
+                    destination.reminder = fetchedResultsController.objectAtIndexPath(indexPath) as? Reminder
+                }
+            }
+        }
     }
-    */
 
 }
