@@ -171,9 +171,29 @@
                                 <color key="textColor" red="0.13331398367881775" green="0.13334444165229797" blue="0.13331207633018494" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Dvn-WY-wX1">
+                                <rect key="frame" x="20" y="520" width="560" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="pBH-yb-5nR"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="TEXT">
+                                    <color key="titleColor" red="0.028528332710266113" green="0.81867307424545288" blue="0.35016763210296631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBN-5Z-pln">
+                                <rect key="frame" x="20" y="440" width="560" height="60"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="60" id="nic-XX-Nf5"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
+                                <state key="normal" title="CALL"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="leadingMargin" secondItem="NBN-5Z-pln" secondAttribute="leading" id="9rR-03-nUJ"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="NBN-5Z-pln" secondAttribute="trailing" id="Bz8-BO-oHM"/>
                             <constraint firstItem="nKv-g9-id7" firstAttribute="top" secondItem="Tpb-of-nle" secondAttribute="bottom" constant="-105" id="JeR-gF-bfM"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="trailing" constant="213.5" id="Krz-iH-h3W"/>
                             <constraint firstItem="Pxa-Gj-5vj" firstAttribute="centerX" secondItem="w3l-Vt-Jtz" secondAttribute="centerX" id="M9N-HV-kRh"/>
@@ -183,11 +203,15 @@
                             <constraint firstItem="Pxa-Gj-5vj" firstAttribute="top" secondItem="8po-tA-aYw" secondAttribute="bottom" constant="50" id="U8A-rd-xxt"/>
                             <constraint firstItem="Tpb-of-nle" firstAttribute="centerX" secondItem="w3l-Vt-Jtz" secondAttribute="centerX" id="X0P-Ng-VBE"/>
                             <constraint firstItem="EAS-Zb-PGO" firstAttribute="centerX" secondItem="Tpb-of-nle" secondAttribute="centerX" id="a8z-iU-4zd"/>
+                            <constraint firstAttribute="leadingMargin" secondItem="Dvn-WY-wX1" secondAttribute="leading" id="bbl-8R-eSo"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="trailing" id="e4m-0p-Krt"/>
                             <constraint firstAttribute="trailingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="trailing" constant="39" id="ekO-s9-8LK"/>
                             <constraint firstItem="Pxa-Gj-5vj" firstAttribute="leading" secondItem="w3l-Vt-Jtz" secondAttribute="leadingMargin" constant="39" id="g2B-7i-Zkb"/>
+                            <constraint firstItem="Dvn-WY-wX1" firstAttribute="top" secondItem="NBN-5Z-pln" secondAttribute="bottom" constant="20" id="g7O-SN-e3c"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="Dvn-WY-wX1" secondAttribute="trailing" id="hVg-uc-e0p"/>
                             <constraint firstItem="Pxa-Gj-5vj" firstAttribute="leading" secondItem="w3l-Vt-Jtz" secondAttribute="leadingMargin" constant="215" id="oqG-l7-OBc"/>
                             <constraint firstAttribute="leadingMargin" secondItem="Pxa-Gj-5vj" secondAttribute="leading" constant="50" id="pyo-ai-zpv"/>
+                            <constraint firstItem="nRI-6x-4B9" firstAttribute="top" secondItem="Dvn-WY-wX1" secondAttribute="bottom" constant="20" id="q7G-yA-1yc"/>
                             <constraint firstItem="EAS-Zb-PGO" firstAttribute="centerY" secondItem="Tpb-of-nle" secondAttribute="centerY" id="qx2-si-7Az"/>
                         </constraints>
                         <variation key="default">
@@ -202,10 +226,12 @@
                         </variation>
                     </view>
                     <connections>
+                        <outlet property="callButton" destination="NBN-5Z-pln" id="MNg-Ko-Ngy"/>
                         <outlet property="remainingBaseCircle" destination="Tpb-of-nle" id="qM6-ft-MQg"/>
                         <outlet property="remainingOverlayCircle" destination="nKv-g9-id7" id="j3J-2s-G8Y"/>
                         <outlet property="reminderRemainingDays" destination="EAS-Zb-PGO" id="msO-IY-yJD"/>
                         <outlet property="reminderTitle" destination="Pxa-Gj-5vj" id="XGx-TR-Yd7"/>
+                        <outlet property="textButton" destination="Dvn-WY-wX1" id="b4S-5I-31y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="UPh-kn-2jX" userLabel="First Responder" sceneMemberID="firstResponder"/>

@@ -17,6 +17,8 @@ class ReminderViewController: UIViewController {
     @IBOutlet weak var remainingBaseCircle: UIView!
     @IBOutlet weak var remainingOverlayCircle: UIView!
     @IBOutlet weak var reminderRemainingDays: UILabel!
+    @IBOutlet weak var textButton: UIButton!
+    @IBOutlet weak var callButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -27,13 +29,10 @@ class ReminderViewController: UIViewController {
         reminderTitle.text =  reminder.name! + "'s " + getEventYear(reminder.reminderDate!) + " " + reminder.reminderType!
         
         reminderRemainingDays.text = reminder.remainingDays?.stringValue
-//        let currentFont = reminderRemainingDays.font
-//        let fontName = currentFont.fontName.componentsSeparatedByString("-").first
-//        let newFont = UIFont(name: "\(fontName!)-Light", size: currentFont.pointSize)
-//        reminderRemainingDays.font = newFont
-        
+
         createReminderCircle()
         createOverlayCircle()
+        styleButtons()
     }
     
     func getEventYear(reminderDate: NSDate) -> String {
@@ -51,6 +50,23 @@ class ReminderViewController: UIViewController {
         case 3: return "\(yearOfEvent)rd"
         default: return "\(yearOfEvent)th"
         }
+    }
+    
+    func styleButtons() {
+        
+        // Style call button
+        callButton.layer.cornerRadius = 3
+        callButton.backgroundColor = UIColor(red:0.14, green:0.81, blue:0.37, alpha:1.0)
+        callButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        let callButtonTitle = "CALL " + (reminder.name?.uppercaseString)!
+        callButton.setTitle(callButtonTitle, forState: .Normal)
+        
+        // Style text button
+        textButton.layer.borderColor = UIColor(red:0.14, green:0.81, blue:0.37, alpha:1.0).CGColor
+        textButton.layer.borderWidth = 1
+        textButton.layer.cornerRadius = 3
+        let textButtonTitle = "TEXT " + (reminder.name?.uppercaseString)!
+        textButton.setTitle(textButtonTitle, forState: .Normal)
     }
     
     func createReminderCircle() {
