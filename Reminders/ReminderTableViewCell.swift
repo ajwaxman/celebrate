@@ -20,6 +20,7 @@ class ReminderTableViewCell: UITableViewCell {
     @IBOutlet weak var reminderDetailsTxt: UILabel!
     @IBOutlet weak var remainingBaseCircle: UIView!
     @IBOutlet weak var reminderRemainingDays: UILabel!
+    @IBOutlet weak var daysTxt: UILabel!
     
     
     func updateUI() {
@@ -34,7 +35,7 @@ class ReminderTableViewCell: UITableViewCell {
             let dateFormatter = NSDateFormatter()
             dateFormatter.dateFormat = "M/d"
             let reminderDateString = dateFormatter.stringFromDate(reminder.reminderDate!)
-            reminderDetailsTxt.text = reminderDateString + " - " + getEventYear(reminder.reminderDate!) + " " + reminder.reminderType!
+            reminderDetailsTxt.text = reminderDateString + " - " + getEventYear(reminder.reminderDate!) + reminder.reminderType!
             
             let remainingDays = reminder.remainingDays as! Int
             if remainingDays < 90 {
@@ -46,8 +47,11 @@ class ReminderTableViewCell: UITableViewCell {
                     default: break
                 }
             }
-            
-            reminderRemainingDays.text = reminder.remainingDays?.stringValue
+            if reminder.remainingDays == 0 {
+                reminderRemainingDays.text = "🎈"
+            } else {
+                reminderRemainingDays.text = reminder.remainingDays?.stringValue
+            }
             let currentFont = reminderRemainingDays.font
             let fontName = currentFont.fontName.componentsSeparatedByString("-").first
             let newFont = UIFont(name: "\(fontName!)-Light", size: currentFont.pointSize)
@@ -64,14 +68,17 @@ class ReminderTableViewCell: UITableViewCell {
     }
     
     func addOrdinal(yearOfEvent: Int) -> String {
+        if yearOfEvent < 5 && reminder?.reminderType == "Birthday" {
+            return ""
+        }
         if (11...13).contains(yearOfEvent % 100) {
-            return "\(yearOfEvent)th"
+            return "\(yearOfEvent)th "
         }
         switch yearOfEvent % 10 {
-        case 1: return "\(yearOfEvent)st"
-        case 2: return "\(yearOfEvent)nd"
-        case 3: return "\(yearOfEvent)rd"
-        default: return "\(yearOfEvent)th"
+        case 1: return "\(yearOfEvent)st "
+        case 2: return "\(yearOfEvent)nd "
+        case 3: return "\(yearOfEvent)rd "
+        default: return "\(yearOfEvent)th "
         }
     }
     
@@ -93,6 +100,12 @@ class ReminderTableViewCell: UITableViewCell {
                 circle.layer.borderColor = UIColor(red:0.91, green:0.23, blue:0.19, alpha:0.6).CGColor
             default:
                 circle.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:0.6).CGColor
+        }
+        
+        if remainingDays == 0 {
+            daysTxt.text = "TODAY"
+        } else if remainingDays == 1 {
+            daysTxt.text = "DAY"
         }
         
         if CFloat(reminder!.remainingDays!) < 30 {

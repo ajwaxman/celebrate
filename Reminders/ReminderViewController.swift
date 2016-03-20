@@ -11,12 +11,14 @@ import UIKit
 class ReminderViewController: UIViewController {
 
     @IBOutlet weak var reminderTitle: UILabel!
+    @IBOutlet weak var reminderSubtitle: UILabel!
     
     var reminder : Reminder!
     
     @IBOutlet weak var remainingBaseCircle: UIView!
     @IBOutlet weak var remainingOverlayCircle: UIView!
     @IBOutlet weak var reminderRemainingDays: UILabel!
+    @IBOutlet weak var daysAwayText: UILabel!
     @IBOutlet weak var textButton: UIButton!
     @IBOutlet weak var callButton: UIButton!
     
@@ -68,9 +70,27 @@ class ReminderViewController: UIViewController {
     }
     
     func setInitialReminderValues() {
-        reminderTitle.text =  reminder.name! + "'s " + getEventYear(reminder.reminderDate!) + " " + reminder.reminderType!
+        let fullName = reminder.name!
+        var fullNameArr = fullName.characters.split{$0 == " "}.map(String.init)
+        let firstName = fullNameArr[0]
+        reminderTitle.text =  firstName + "'s " + getEventYear(reminder.reminderDate!) + reminder.reminderType!
         
-        reminderRemainingDays.text = reminder.remainingDays?.stringValue
+        let dateFormatter = NSDateFormatter()
+        dateFormatter.dateFormat = "EEEE, MMMM d"
+        let reminderDateString = dateFormatter.stringFromDate(reminder.reminderDate!)
+        reminderSubtitle.text = reminderDateString
+    
+        
+        let remainingDays = reminder.remainingDays
+        if remainingDays == 0 {
+            daysAwayText.text = "TODAY"
+            reminderRemainingDays.text = "😀"
+        } else if remainingDays == 1 {
+            daysAwayText.text = "DAY AWAY"
+            reminderRemainingDays.text = reminder.remainingDays?.stringValue
+        } else {
+            reminderRemainingDays.text = reminder.remainingDays?.stringValue
+        }
 
         createReminderCircle()
         createOverlayCircle()
@@ -83,14 +103,17 @@ class ReminderViewController: UIViewController {
     }
     
     func addOrdinal(yearOfEvent: Int) -> String {
+        if yearOfEvent < 5 && reminder?.reminderType == "Birthday" {
+            return ""
+        }
         if (11...13).contains(yearOfEvent % 100) {
-            return "\(yearOfEvent)th"
+            return "\(yearOfEvent)th "
         }
         switch yearOfEvent % 10 {
-        case 1: return "\(yearOfEvent)st"
-        case 2: return "\(yearOfEvent)nd"
-        case 3: return "\(yearOfEvent)rd"
-        default: return "\(yearOfEvent)th"
+        case 1: return "\(yearOfEvent)st "
+        case 2: return "\(yearOfEvent)nd "
+        case 3: return "\(yearOfEvent)rd "
+        default: return "\(yearOfEvent)th "
         }
     }
     
