@@ -180,6 +180,9 @@
                                 <state key="normal" title="TEXT">
                                     <color key="titleColor" red="0.028528332710266113" green="0.81867307424545288" blue="0.35016763210296631" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 </state>
+                                <connections>
+                                    <action selector="textContact:" destination="nTO-D9-GBf" eventType="touchUpInside" id="dxM-lb-yAq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NBN-5Z-pln">
                                 <rect key="frame" x="20" y="440" width="560" height="60"/>
@@ -188,6 +191,9 @@
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" weight="semibold" pointSize="17"/>
                                 <state key="normal" title="CALL"/>
+                                <connections>
+                                    <action selector="callContact:" destination="nTO-D9-GBf" eventType="touchUpInside" id="HfT-lL-J7w"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>

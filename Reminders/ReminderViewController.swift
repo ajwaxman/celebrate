@@ -25,6 +25,48 @@ class ReminderViewController: UIViewController {
         setInitialReminderValues()
     }
     
+    
+    
+    @IBAction func callContact(sender: UIButton) {
+    
+        let numberString = reminder.phoneNumber
+        if let number = numberString {
+            dispatch_async(dispatch_get_main_queue()) {
+                self.callNumber(number)
+            }
+        }
+        
+    }
+    
+    let messageComposer = MessageComposer()
+    
+    @IBAction func textContact(sender: UIButton) {
+        dispatch_async(dispatch_get_main_queue()) {
+
+            let numberString = self.reminder.phoneNumber
+            
+            // Make sure the device can send text messages
+            if (self.messageComposer.canSendText()) {
+                // Obtain a configured MFMessageComposeViewController
+                let messageComposeVC = self.messageComposer.configuredMessageComposeViewController([numberString!])
+                
+                self.presentViewController(messageComposeVC, animated: true, completion: nil)
+            } else {
+                // Let the user know if his/her device isn't able to send text messages
+                print("There was an error")
+            }
+        }
+    }
+    
+    func callNumber(phoneNumber:String) {
+        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.sharedApplication()
+            if (application.canOpenURL(phoneCallURL)) {
+                application.openURL(phoneCallURL);
+            }
+        }
+    }
+    
     func setInitialReminderValues() {
         reminderTitle.text =  reminder.name! + "'s " + getEventYear(reminder.reminderDate!) + " " + reminder.reminderType!
         
@@ -54,18 +96,22 @@ class ReminderViewController: UIViewController {
     
     func styleButtons() {
         
+        let fullName = reminder.name!
+        var fullNameArr = fullName.characters.split{$0 == " "}.map(String.init)
+        let firstName = fullNameArr[0].uppercaseString
+        
         // Style call button
         callButton.layer.cornerRadius = 3
         callButton.backgroundColor = UIColor(red:0.14, green:0.81, blue:0.37, alpha:1.0)
         callButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        let callButtonTitle = "CALL " + (reminder.name?.uppercaseString)!
+        let callButtonTitle = "CALL " + firstName
         callButton.setTitle(callButtonTitle, forState: .Normal)
         
         // Style text button
         textButton.layer.borderColor = UIColor(red:0.14, green:0.81, blue:0.37, alpha:1.0).CGColor
         textButton.layer.borderWidth = 1
         textButton.layer.cornerRadius = 3
-        let textButtonTitle = "TEXT " + (reminder.name?.uppercaseString)!
+        let textButtonTitle = "TEXT " + firstName
         textButton.setTitle(textButtonTitle, forState: .Normal)
     }
     
