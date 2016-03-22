@@ -137,18 +137,6 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
-    func scheduleLocalNotification(reminder: Reminder) {
-        let localNotification = UILocalNotification()
-        // localNotification.fireDate = getCurrentTime()
-        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
-        localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
-        localNotification.alertAction = "View reminder"
-        localNotification.category = "reminderCategory"
-        localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.URIRepresentation().absoluteString]
-        localNotification.repeatInterval = NSCalendarUnit.Year
-        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
-    }
-    
     func getDateFromString(date: String) -> NSDate {
         let dateFormatter = NSDateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
@@ -342,7 +330,8 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         do {
             try self.context.save()
-            scheduleLocalNotification(reminder)
+            ReminderHelper.scheduleLocalNotification(reminder)
+            ReminderHelper.scheduleWeekBeforeLocalNotification(reminder)
             
             navigationController?.popViewControllerAnimated(true)
         } catch {

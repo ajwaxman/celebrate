@@ -6,6 +6,7 @@
 //  Copyright © 2016 Waxman. All rights reserved.
 //
 
+import UIKit
 import Foundation
 
 public class ReminderHelper {
@@ -31,6 +32,31 @@ public class ReminderHelper {
             options: [])
         return diff.day
     }
+    
+    class func scheduleLocalNotification(reminder: Reminder) {
+        let localNotification = UILocalNotification()
+        // localNotification.fireDate = getCurrentTime()
+        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!)
+        localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
+        localNotification.alertAction = "View reminder"
+        localNotification.category = "reminderCategory"
+        localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.URIRepresentation().absoluteString]
+        localNotification.repeatInterval = NSCalendarUnit.Year
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
+    
+    class func scheduleWeekBeforeLocalNotification(reminder: Reminder) {
+        let localNotification = UILocalNotification()
+        // localNotification.fireDate = getCurrentTime()
+        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!).dateByAddingTimeInterval(-7*24*60*60)
+        localNotification.alertBody = "\(reminder.name!)'s \(reminder.reminderType!) is 1 week away. Present time?"
+        localNotification.alertAction = "View reminder"
+        localNotification.category = "reminderCategory"
+        localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.URIRepresentation().absoluteString]
+        localNotification.repeatInterval = NSCalendarUnit.Year
+        UIApplication.sharedApplication().scheduleLocalNotification(localNotification)
+    }
+    
     
 }
 
