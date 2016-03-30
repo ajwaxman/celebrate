@@ -45,10 +45,10 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         updateNavBarStyle()
         
         // Adding notification center observers
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCallNotification:", name: "callNotification", object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleTextNotification:", name: "textNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: Selector("handleCallNotification:"), name: "callNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReminderTableViewController.handleTextNotification(_:)), name: "textNotification", object: nil)
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "backgoundNofification:", name: UIApplicationWillEnterForegroundNotification, object: nil);
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(ReminderTableViewController.backgoundNofification(_:)), name: UIApplicationWillEnterForegroundNotification, object: nil);
         refresh()
     }
     

@@ -119,10 +119,10 @@ public class B68UIFloatLabelTextField: UITextField {
     }
     
     private func setupObservers() {
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"textFieldTextDidChange:", name: UITextFieldTextDidChangeNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "fontSizeDidChange:", name: UIContentSizeCategoryDidChangeNotification, object: nil)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"textFieldTextDidBeginEditing:", name: UITextFieldTextDidBeginEditingNotification, object: self)
-        NSNotificationCenter.defaultCenter().addObserver(self, selector:"textFieldTextDidEndEditing:", name: UITextFieldTextDidEndEditingNotification, object: self)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(B68UIFloatLabelTextField.textFieldTextDidChange(_:)), name: UITextFieldTextDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:Selector("fontSizeDidChange:"), name: UIContentSizeCategoryDidChangeNotification, object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(B68UIFloatLabelTextField.textFieldTextDidBeginEditing(_:)), name: UITextFieldTextDidBeginEditingNotification, object: self)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector:#selector(B68UIFloatLabelTextField.textFieldTextDidEndEditing(_:)), name: UITextFieldTextDidEndEditingNotification, object: self)
     }
     
     private func setupFloatingLabel() {

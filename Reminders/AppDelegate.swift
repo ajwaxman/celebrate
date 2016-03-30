@@ -17,12 +17,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         // Override point for customization after application launch.
         
-        // let dataHelper = DataHelper(context: self.managedObjectContext)
-        // dataHelper.deleteAllReminders()
-        // dataHelper.seedDataStore()
-        // dataHelper.printAllReminders()
+//         let dataHelper = DataHelper(context: self.managedObjectContext)
+//         dataHelper.deleteAllReminders()
+//         dataHelper.seedDataStore()
+//         dataHelper.printAllReminders()
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: "handleCallNotificationFromLaunch:", name: "callNotification", object: nil)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(AppDelegate.handleCallNotificationFromLaunch(_:)), name: "callNotification", object: nil)
         
         return true
     }

@@ -55,7 +55,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         txtName.becomeFirstResponder()
         
-        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: "createReminder")
+        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(CreateReminderViewController.createReminder))
         navigationItem.rightBarButtonItem = saveBarButtonItem
         
         setupNotificationSettings()
@@ -70,7 +70,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         let datePickerView: UIDatePicker = UIDatePicker()
         datePickerView.datePickerMode = UIDatePickerMode.Date
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: Selector("dateReminderValueChanged:"), forControlEvents: .ValueChanged)
+        datePickerView.addTarget(self, action: #selector(CreateReminderViewController.dateReminderValueChanged(_:)), forControlEvents: .ValueChanged)
     }
     
     func dateReminderValueChanged(sender: UIDatePicker) {
@@ -181,10 +181,10 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         toolBar.barStyle = UIBarStyle.Default
         toolBar.translucent = true
         toolBar.tintColor = UIColor(red:0.51, green:0.23, blue:0.89, alpha:1.0)
-        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Done, target: self, action: "nextPressed")
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: "cancelPressed")
+        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Done, target: self, action: #selector(CreateReminderViewController.nextPressed))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CreateReminderViewController.cancelPressed))
         let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        let addFromContactsButton = UIBarButtonItem(title: "Add From Contacts", style: .Plain, target: self, action: "addFromContacts")
+        let addFromContactsButton = UIBarButtonItem(title: "Add From Contacts", style: .Plain, target: self, action: #selector(CreateReminderViewController.addFromContacts))
         if textField == txtPhoneNumber {
             toolBar.setItems([cancelButton, spaceButton, addFromContactsButton], animated: false)
         } else if textField == txtReminderType {
