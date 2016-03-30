@@ -38,7 +38,7 @@ class ReminderTableViewCell: UITableViewCell {
             reminderDetailsTxt.text = reminderDateString + " - " + getEventYear(reminder.reminderDate!) + reminder.reminderType!
             
             let remainingDays = reminder.remainingDays as! Int
-            if remainingDays < 90 {
+            if remainingDays < 31 {
                 switch reminder.reminderType! {
                     case "Birthday":
                         reminderDetailsTxt.text! += " 🎉"
@@ -96,8 +96,8 @@ class ReminderTableViewCell: UITableViewCell {
                 circle.layer.borderColor = UIColor(red:0.137, green:0.812, blue:0.373, alpha:1).CGColor
             case 8...30:
                 circle.layer.borderColor = UIColor(red:0.98, green:0.7, blue:0.19, alpha: 0.5).CGColor
-            case 31...90:
-                circle.layer.borderColor = UIColor(red:0.91, green:0.23, blue:0.19, alpha:0.6).CGColor
+            // case 31...90:
+            //      circle.layer.borderColor = UIColor(red:0.91, green:0.23, blue:0.19, alpha:0.6).CGColor
             default:
                 circle.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:0.6).CGColor
         }
