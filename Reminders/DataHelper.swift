@@ -27,6 +27,8 @@ open class DataHelper {
         let reminders = [
 
             
+            // Testing
+
             (name: "TBD",phoneNumber: "555-555-5555",reminderDate: dateFormatter.date(from: "1/1/11"),reminderType: "birthday")
 
         ]
@@ -47,6 +49,22 @@ open class DataHelper {
         } catch _ {
             
         }
+    }
+    
+    open func isAppAlreadyLaunchedOnce()->Bool{
+        let defaults = UserDefaults.standard
+        
+        if let isAppAlreadyLaunchedOnce = defaults.string(forKey: "isAppAlreadyLaunchedOnce"){
+            print("App already launched")
+            print(isAppAlreadyLaunchedOnce)
+            return true
+        }else{
+            defaults.set(true, forKey: "isAppAlreadyLaunchedOnce")
+            print(isAppAlreadyLaunchedOnce)
+            print("App launched first time")
+            return false
+        }
+        
     }
     
     open func printAllReminders() {

@@ -9,6 +9,7 @@
 import UIKit
 import Foundation
 
+
 open class ReminderHelper {
     
     class func getNextOccurenceOfReminderDate(_ reminderDate: Date) -> Date {
@@ -33,21 +34,32 @@ open class ReminderHelper {
         return diff.day!
     }
     
+    class func getCurrentTime() -> Date {
+        let date = Date()
+        let calendar = Calendar.current
+        var components = (calendar as NSCalendar).components([.day, .month, .year, .hour, .minute, .second], from: date)
+        components.second = 0
+        
+        let currentTime: Date! = Calendar.current.date(from: components)
+        return currentTime
+    }
+    
     class func scheduleLocalNotification(_ reminder: Reminder) {
         let localNotification = UILocalNotification()
-        // localNotification.fireDate = getCurrentTime()
-        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date)
+        localNotification.fireDate = ReminderHelper.getCurrentTime().addingTimeInterval(60)
+        // localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date)
         localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
         localNotification.alertAction = "View reminder"
         localNotification.category = "reminderCategory"
         localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.uriRepresentation().absoluteString]
         localNotification.repeatInterval = NSCalendar.Unit.year
         UIApplication.shared.scheduleLocalNotification(localNotification)
+        print(localNotification)
     }
     
     class func scheduleWeekBeforeLocalNotification(_ reminder: Reminder) {
         let localNotification = UILocalNotification()
-        // localNotification.fireDate = getCurrentTime()
+        // localNotification.fireDate = ReminderHelper.getCurrentTime()
         localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date).addingTimeInterval(-7*24*60*60)
         localNotification.alertBody = "\(reminder.name!)'s \(reminder.reminderType!) is 1 week away. Present time?"
         localNotification.alertAction = "View reminder"
