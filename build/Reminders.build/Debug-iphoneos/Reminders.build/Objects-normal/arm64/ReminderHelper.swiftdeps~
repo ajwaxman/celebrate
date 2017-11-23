@@ -1,0 +1,615 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+- "ReminderHelper"
+provides-nominal:
+- "C9Celebrate14ReminderHelper"
+provides-member:
+- ["C9Celebrate14ReminderHelper", ""]
+provides-dynamic-lookup:
+depends-top-level:
+- "Reminder"
+- "Int"
+- !private "StringLiteralType"
+- !private "Calendar"
+- !private "UIApplication"
+- !private "Dictionary"
+- "ReminderHelper"
+- !private "NSCalendar"
+- !private "Array"
+- "UILocalNotification"
+- "Date"
+- !private "*"
+- "AssignmentPrecedence"
+- "CastingPrecedence"
+depends-member:
+- !private ["Vs11AnyHashable", "deinit"]
+- !private ["Ps9AnyObject", "Calendar"]
+- !private ["Ps9AnyObject", "Date"]
+- !private ["Ps9AnyObject", "NSCalendar"]
+- !private ["Ps9AnyObject", "ReminderHelper"]
+- !private ["Ps9AnyObject", "UIApplication"]
+- !private ["Ps9AnyObject", "UILocalNotification"]
+- !private ["Ps9AnyObject", "Unit"]
+- !private ["Ps9AnyObject", "alertAction"]
+- !private ["Ps9AnyObject", "alertBody"]
+- !private ["Ps9AnyObject", "cancelLocalNotification"]
+- !private ["Ps9AnyObject", "category"]
+- !private ["Ps9AnyObject", "components"]
+- !private ["Ps9AnyObject", "fireDate"]
+- !private ["Ps9AnyObject", "getNextOccurenceOfReminderDate"]
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "name"]
+- !private ["Ps9AnyObject", "nextDate"]
+- !private ["Ps9AnyObject", "objectID"]
+- !private ["Ps9AnyObject", "phoneNumber"]
+- !private ["Ps9AnyObject", "reminderDate"]
+- !private ["Ps9AnyObject", "reminderType"]
+- !private ["Ps9AnyObject", "repeatInterval"]
+- !private ["Ps9AnyObject", "scheduleLocalNotification"]
+- !private ["Ps9AnyObject", "scheduledLocalNotifications"]
+- !private ["Ps9AnyObject", "shared"]
+- !private ["Ps9AnyObject", "uriRepresentation"]
+- !private ["Ps9AnyObject", "userInfo"]
+- ["Ps9AnyObject", ""]
+- !private ["Sa", "Iterator"]
+- !private ["Sa", "_Element"]
+- ["Sa", "deinit"]
+- !private ["Ps23BidirectionalCollection", "Iterator"]
+- !private ["Ps23BidirectionalCollection", "_Element"]
+- !private ["Ps22BidirectionalIndexable", "Iterator"]
+- !private ["Ps22BidirectionalIndexable", "_Element"]
+- !private ["Sb", "deinit"]
+- !private ["PSo15CNKeyDescriptor", "init"]
+- !private ["Ps7CVarArg", "Iterator"]
+- !private ["Ps7CVarArg", "Key"]
+- !private ["Ps7CVarArg", "Unit"]
+- !private ["Ps7CVarArg", "Value"]
+- !private ["Ps7CVarArg", "_Element"]
+- !private ["Ps7CVarArg", "alertAction"]
+- !private ["Ps7CVarArg", "alertBody"]
+- !private ["Ps7CVarArg", "cancelLocalNotification"]
+- !private ["Ps7CVarArg", "category"]
+- !private ["Ps7CVarArg", "components"]
+- !private ["Ps7CVarArg", "fireDate"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "name"]
+- !private ["Ps7CVarArg", "nextDate"]
+- !private ["Ps7CVarArg", "objectID"]
+- !private ["Ps7CVarArg", "phoneNumber"]
+- !private ["Ps7CVarArg", "reminderDate"]
+- !private ["Ps7CVarArg", "reminderType"]
+- !private ["Ps7CVarArg", "repeatInterval"]
+- !private ["Ps7CVarArg", "scheduleLocalNotification"]
+- !private ["Ps7CVarArg", "scheduledLocalNotifications"]
+- !private ["Ps7CVarArg", "shared"]
+- !private ["Ps7CVarArg", "uriRepresentation"]
+- !private ["Ps7CVarArg", "userInfo"]
+- !private ["V10Foundation8Calendar", "current"]
+- ["V10Foundation8Calendar", "deinit"]
+- !private ["V10Foundation8Calendar", "startOfDay"]
+- !private ["Vs9Character", "deinit"]
+- !private ["Ps10Collection", "Iterator"]
+- !private ["Ps10Collection", "Key"]
+- !private ["Ps10Collection", "Value"]
+- !private ["Ps10Collection", "_Element"]
+- !private ["Ps10Comparable", "addingTimeInterval"]
+- !private ["Ps10Comparable", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
+- !private ["Ps28CustomDebugStringConvertible", "Key"]
+- !private ["Ps28CustomDebugStringConvertible", "Unit"]
+- !private ["Ps28CustomDebugStringConvertible", "Value"]
+- !private ["Ps28CustomDebugStringConvertible", "_Element"]
+- !private ["Ps28CustomDebugStringConvertible", "absoluteString"]
+- !private ["Ps28CustomDebugStringConvertible", "addingTimeInterval"]
+- !private ["Ps28CustomDebugStringConvertible", "alertAction"]
+- !private ["Ps28CustomDebugStringConvertible", "alertBody"]
+- !private ["Ps28CustomDebugStringConvertible", "cancelLocalNotification"]
+- !private ["Ps28CustomDebugStringConvertible", "category"]
+- !private ["Ps28CustomDebugStringConvertible", "components"]
+- !private ["Ps28CustomDebugStringConvertible", "current"]
+- !private ["Ps28CustomDebugStringConvertible", "day"]
+- !private ["Ps28CustomDebugStringConvertible", "fireDate"]
+- !private ["Ps28CustomDebugStringConvertible", "hour"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "name"]
+- !private ["Ps28CustomDebugStringConvertible", "nextDate"]
+- !private ["Ps28CustomDebugStringConvertible", "objectID"]
+- !private ["Ps28CustomDebugStringConvertible", "phoneNumber"]
+- !private ["Ps28CustomDebugStringConvertible", "reminderDate"]
+- !private ["Ps28CustomDebugStringConvertible", "reminderType"]
+- !private ["Ps28CustomDebugStringConvertible", "repeatInterval"]
+- !private ["Ps28CustomDebugStringConvertible", "scheduleLocalNotification"]
+- !private ["Ps28CustomDebugStringConvertible", "scheduledLocalNotifications"]
+- !private ["Ps28CustomDebugStringConvertible", "shared"]
+- !private ["Ps28CustomDebugStringConvertible", "startOfDay"]
+- !private ["Ps28CustomDebugStringConvertible", "uriRepresentation"]
+- !private ["Ps28CustomDebugStringConvertible", "userInfo"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "absoluteString"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "addingTimeInterval"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "Iterator"]
+- !private ["Ps17CustomReflectable", "Key"]
+- !private ["Ps17CustomReflectable", "Value"]
+- !private ["Ps17CustomReflectable", "_Element"]
+- !private ["Ps17CustomReflectable", "addingTimeInterval"]
+- !private ["Ps17CustomReflectable", "current"]
+- !private ["Ps17CustomReflectable", "day"]
+- !private ["Ps17CustomReflectable", "hour"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps17CustomReflectable", "startOfDay"]
+- !private ["Ps23CustomStringConvertible", "Iterator"]
+- !private ["Ps23CustomStringConvertible", "Key"]
+- !private ["Ps23CustomStringConvertible", "Unit"]
+- !private ["Ps23CustomStringConvertible", "Value"]
+- !private ["Ps23CustomStringConvertible", "_Element"]
+- !private ["Ps23CustomStringConvertible", "absoluteString"]
+- !private ["Ps23CustomStringConvertible", "addingTimeInterval"]
+- !private ["Ps23CustomStringConvertible", "alertAction"]
+- !private ["Ps23CustomStringConvertible", "alertBody"]
+- !private ["Ps23CustomStringConvertible", "cancelLocalNotification"]
+- !private ["Ps23CustomStringConvertible", "category"]
+- !private ["Ps23CustomStringConvertible", "components"]
+- !private ["Ps23CustomStringConvertible", "current"]
+- !private ["Ps23CustomStringConvertible", "day"]
+- !private ["Ps23CustomStringConvertible", "fireDate"]
+- !private ["Ps23CustomStringConvertible", "hour"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "name"]
+- !private ["Ps23CustomStringConvertible", "nextDate"]
+- !private ["Ps23CustomStringConvertible", "objectID"]
+- !private ["Ps23CustomStringConvertible", "phoneNumber"]
+- !private ["Ps23CustomStringConvertible", "reminderDate"]
+- !private ["Ps23CustomStringConvertible", "reminderType"]
+- !private ["Ps23CustomStringConvertible", "repeatInterval"]
+- !private ["Ps23CustomStringConvertible", "scheduleLocalNotification"]
+- !private ["Ps23CustomStringConvertible", "scheduledLocalNotifications"]
+- !private ["Ps23CustomStringConvertible", "shared"]
+- !private ["Ps23CustomStringConvertible", "startOfDay"]
+- !private ["Ps23CustomStringConvertible", "uriRepresentation"]
+- !private ["Ps23CustomStringConvertible", "userInfo"]
+- !private ["V10Foundation4Date", "addingTimeInterval"]
+- ["V10Foundation4Date", "deinit"]
+- !private ["V10Foundation4Date", "init"]
+- !private ["V10Foundation14DateComponents", "day"]
+- ["V10Foundation14DateComponents", "deinit"]
+- !private ["V10Foundation14DateComponents", "hour"]
+- !private ["Vs10Dictionary", "Key"]
+- !private ["Vs10Dictionary", "Value"]
+- ["Vs10Dictionary", "deinit"]
+- ["Sd", "deinit"]
+- !private ["Ps9Equatable", "Element"]
+- !private ["Ps9Equatable", "Unit"]
+- !private ["Ps9Equatable", "absoluteString"]
+- !private ["Ps9Equatable", "addingTimeInterval"]
+- !private ["Ps9Equatable", "alertAction"]
+- !private ["Ps9Equatable", "alertBody"]
+- !private ["Ps9Equatable", "cancelLocalNotification"]
+- !private ["Ps9Equatable", "category"]
+- !private ["Ps9Equatable", "components"]
+- !private ["Ps9Equatable", "current"]
+- !private ["Ps9Equatable", "day"]
+- !private ["Ps9Equatable", "fireDate"]
+- !private ["Ps9Equatable", "hour"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "matchNextTimePreservingSmallerUnits"]
+- !private ["Ps9Equatable", "month"]
+- !private ["Ps9Equatable", "name"]
+- !private ["Ps9Equatable", "nextDate"]
+- !private ["Ps9Equatable", "objectID"]
+- !private ["Ps9Equatable", "phoneNumber"]
+- !private ["Ps9Equatable", "reminderDate"]
+- !private ["Ps9Equatable", "reminderType"]
+- !private ["Ps9Equatable", "repeatInterval"]
+- !private ["Ps9Equatable", "scheduleLocalNotification"]
+- !private ["Ps9Equatable", "scheduledLocalNotifications"]
+- !private ["Ps9Equatable", "shared"]
+- !private ["Ps9Equatable", "startOfDay"]
+- !private ["Ps9Equatable", "uriRepresentation"]
+- !private ["Ps9Equatable", "userInfo"]
+- !private ["Ps9Equatable", "year"]
+- !private ["Ps25ExpressibleByArrayLiteral", "Element"]
+- !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
+- !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
+- !private ["Ps25ExpressibleByArrayLiteral", "day"]
+- !private ["Ps25ExpressibleByArrayLiteral", "matchNextTimePreservingSmallerUnits"]
+- !private ["Ps25ExpressibleByArrayLiteral", "month"]
+- !private ["Ps25ExpressibleByArrayLiteral", "year"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Key"]
+- !private ["Ps30ExpressibleByDictionaryLiteral", "Value"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Sf", "deinit"]
+- !private ["Ps8Hashable", "Unit"]
+- !private ["Ps8Hashable", "absoluteString"]
+- !private ["Ps8Hashable", "addingTimeInterval"]
+- !private ["Ps8Hashable", "alertAction"]
+- !private ["Ps8Hashable", "alertBody"]
+- !private ["Ps8Hashable", "cancelLocalNotification"]
+- !private ["Ps8Hashable", "category"]
+- !private ["Ps8Hashable", "components"]
+- !private ["Ps8Hashable", "current"]
+- !private ["Ps8Hashable", "day"]
+- !private ["Ps8Hashable", "fireDate"]
+- !private ["Ps8Hashable", "hour"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "name"]
+- !private ["Ps8Hashable", "nextDate"]
+- !private ["Ps8Hashable", "objectID"]
+- !private ["Ps8Hashable", "phoneNumber"]
+- !private ["Ps8Hashable", "reminderDate"]
+- !private ["Ps8Hashable", "reminderType"]
+- !private ["Ps8Hashable", "repeatInterval"]
+- !private ["Ps8Hashable", "scheduleLocalNotification"]
+- !private ["Ps8Hashable", "scheduledLocalNotifications"]
+- !private ["Ps8Hashable", "shared"]
+- !private ["Ps8Hashable", "startOfDay"]
+- !private ["Ps8Hashable", "uriRepresentation"]
+- !private ["Ps8Hashable", "userInfo"]
+- !private ["Ps9Indexable", "Iterator"]
+- !private ["Ps9Indexable", "Key"]
+- !private ["Ps9Indexable", "Value"]
+- !private ["Ps9Indexable", "_Element"]
+- !private ["Ps13IndexableBase", "Iterator"]
+- !private ["Ps13IndexableBase", "Key"]
+- !private ["Ps13IndexableBase", "Value"]
+- !private ["Ps13IndexableBase", "_Element"]
+- !private ["Vs16IndexingIterator", "Element"]
+- ["Si", "deinit"]
+- !private ["Vs5Int16", "deinit"]
+- !private ["Vs5Int32", "deinit"]
+- !private ["Vs5Int64", "deinit"]
+- !private ["Vs4Int8", "deinit"]
+- !private ["Ps16IteratorProtocol", "Element"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "init"]
+- !private ["Ps17MutableCollection", "Iterator"]
+- !private ["Ps17MutableCollection", "_Element"]
+- !private ["Ps16MutableIndexable", "Iterator"]
+- !private ["Ps16MutableIndexable", "_Element"]
+- !private ["CSo10NSCalendar", "Unit"]
+- !private ["CSo10NSCalendar", "components"]
+- ["CSo10NSCalendar", "deinit"]
+- !private ["CSo10NSCalendar", "nextDate"]
+- !private ["PSo8NSCoding", "Unit"]
+- !private ["PSo8NSCoding", "alertAction"]
+- !private ["PSo8NSCoding", "alertBody"]
+- !private ["PSo8NSCoding", "category"]
+- !private ["PSo8NSCoding", "components"]
+- !private ["PSo8NSCoding", "fireDate"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "nextDate"]
+- !private ["PSo8NSCoding", "repeatInterval"]
+- !private ["PSo8NSCoding", "userInfo"]
+- !private ["PSo9NSCopying", "Unit"]
+- !private ["PSo9NSCopying", "alertAction"]
+- !private ["PSo9NSCopying", "alertBody"]
+- !private ["PSo9NSCopying", "category"]
+- !private ["PSo9NSCopying", "components"]
+- !private ["PSo9NSCopying", "fireDate"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "nextDate"]
+- !private ["PSo9NSCopying", "repeatInterval"]
+- !private ["PSo9NSCopying", "uriRepresentation"]
+- !private ["PSo9NSCopying", "userInfo"]
+- !private ["PSo20NSFetchRequestResult", "name"]
+- !private ["PSo20NSFetchRequestResult", "objectID"]
+- !private ["PSo20NSFetchRequestResult", "phoneNumber"]
+- !private ["PSo20NSFetchRequestResult", "reminderDate"]
+- !private ["PSo20NSFetchRequestResult", "reminderType"]
+- !private ["PSo20NSFetchRequestResult", "uriRepresentation"]
+- !private ["CSo15NSManagedObject", "name"]
+- !private ["CSo15NSManagedObject", "objectID"]
+- !private ["CSo15NSManagedObject", "phoneNumber"]
+- !private ["CSo15NSManagedObject", "reminderDate"]
+- !private ["CSo15NSManagedObject", "reminderType"]
+- ["CSo17NSManagedObjectID", "deinit"]
+- !private ["CSo17NSManagedObjectID", "uriRepresentation"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo8NSObject", "Unit"]
+- !private ["CSo8NSObject", "alertAction"]
+- !private ["CSo8NSObject", "alertBody"]
+- !private ["CSo8NSObject", "cancelLocalNotification"]
+- !private ["CSo8NSObject", "category"]
+- !private ["CSo8NSObject", "components"]
+- !private ["CSo8NSObject", "fireDate"]
+- !private ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "name"]
+- !private ["CSo8NSObject", "nextDate"]
+- !private ["CSo8NSObject", "objectID"]
+- !private ["CSo8NSObject", "phoneNumber"]
+- !private ["CSo8NSObject", "reminderDate"]
+- !private ["CSo8NSObject", "reminderType"]
+- !private ["CSo8NSObject", "repeatInterval"]
+- !private ["CSo8NSObject", "scheduleLocalNotification"]
+- !private ["CSo8NSObject", "scheduledLocalNotifications"]
+- !private ["CSo8NSObject", "shared"]
+- !private ["CSo8NSObject", "uriRepresentation"]
+- !private ["CSo8NSObject", "userInfo"]
+- !private ["PSo16NSObjectProtocol", "Unit"]
+- !private ["PSo16NSObjectProtocol", "alertAction"]
+- !private ["PSo16NSObjectProtocol", "alertBody"]
+- !private ["PSo16NSObjectProtocol", "cancelLocalNotification"]
+- !private ["PSo16NSObjectProtocol", "category"]
+- !private ["PSo16NSObjectProtocol", "components"]
+- !private ["PSo16NSObjectProtocol", "fireDate"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "name"]
+- !private ["PSo16NSObjectProtocol", "nextDate"]
+- !private ["PSo16NSObjectProtocol", "objectID"]
+- !private ["PSo16NSObjectProtocol", "phoneNumber"]
+- !private ["PSo16NSObjectProtocol", "reminderDate"]
+- !private ["PSo16NSObjectProtocol", "reminderType"]
+- !private ["PSo16NSObjectProtocol", "repeatInterval"]
+- !private ["PSo16NSObjectProtocol", "scheduleLocalNotification"]
+- !private ["PSo16NSObjectProtocol", "scheduledLocalNotifications"]
+- !private ["PSo16NSObjectProtocol", "shared"]
+- !private ["PSo16NSObjectProtocol", "uriRepresentation"]
+- !private ["PSo16NSObjectProtocol", "userInfo"]
+- !private ["PSo14NSSecureCoding", "Unit"]
+- !private ["PSo14NSSecureCoding", "components"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "nextDate"]
+- !private ["CSo8NSString", "init"]
+- !private ["Ps9OptionSet", "Element"]
+- !private ["Ps9OptionSet", "day"]
+- !private ["Ps9OptionSet", "matchNextTimePreservingSmallerUnits"]
+- !private ["Ps9OptionSet", "month"]
+- !private ["Ps9OptionSet", "year"]
+- ["Sq", "deinit"]
+- !private ["VCSo10NSCalendar7Options", "Element"]
+- ["VCSo10NSCalendar7Options", "deinit"]
+- !private ["VCSo10NSCalendar7Options", "matchNextTimePreservingSmallerUnits"]
+- !private ["Ps22RandomAccessCollection", "Iterator"]
+- !private ["Ps22RandomAccessCollection", "_Element"]
+- !private ["Ps21RandomAccessIndexable", "Iterator"]
+- !private ["Ps21RandomAccessIndexable", "_Element"]
+- !private ["Ps26RangeReplaceableCollection", "Iterator"]
+- !private ["Ps26RangeReplaceableCollection", "_Element"]
+- !private ["Ps25RangeReplaceableIndexable", "Iterator"]
+- !private ["Ps25RangeReplaceableIndexable", "_Element"]
+- !private ["Ps16RawRepresentable", "Element"]
+- !private ["Ps16RawRepresentable", "day"]
+- !private ["Ps16RawRepresentable", "matchNextTimePreservingSmallerUnits"]
+- !private ["Ps16RawRepresentable", "month"]
+- !private ["Ps16RawRepresentable", "year"]
+- !private ["P10Foundation20ReferenceConvertible", "absoluteString"]
+- !private ["P10Foundation20ReferenceConvertible", "addingTimeInterval"]
+- !private ["P10Foundation20ReferenceConvertible", "current"]
+- !private ["P10Foundation20ReferenceConvertible", "day"]
+- !private ["P10Foundation20ReferenceConvertible", "hour"]
+- !private ["P10Foundation20ReferenceConvertible", "init"]
+- !private ["P10Foundation20ReferenceConvertible", "startOfDay"]
+- ["C9Celebrate8Reminder", "deinit"]
+- !private ["C9Celebrate8Reminder", "name"]
+- !private ["C9Celebrate8Reminder", "objectID"]
+- !private ["C9Celebrate8Reminder", "phoneNumber"]
+- !private ["C9Celebrate8Reminder", "reminderDate"]
+- !private ["C9Celebrate8Reminder", "reminderType"]
+- !private ["C9Celebrate14ReminderHelper", "Calendar"]
+- ["C9Celebrate14ReminderHelper", "Date"]
+- ["C9Celebrate14ReminderHelper", "Int"]
+- !private ["C9Celebrate14ReminderHelper", "NSCalendar"]
+- ["C9Celebrate14ReminderHelper", "Reminder"]
+- !private ["C9Celebrate14ReminderHelper", "ReminderHelper"]
+- !private ["C9Celebrate14ReminderHelper", "UIApplication"]
+- ["C9Celebrate14ReminderHelper", "UILocalNotification"]
+- ["C9Celebrate14ReminderHelper", "cancelAllNotifications"]
+- ["C9Celebrate14ReminderHelper", "deinit"]
+- ["C9Celebrate14ReminderHelper", "getDaysUntilReminder"]
+- ["C9Celebrate14ReminderHelper", "getNextOccurenceOfReminderDate"]
+- ["C9Celebrate14ReminderHelper", "getNotifications"]
+- ["C9Celebrate14ReminderHelper", "init"]
+- ["C9Celebrate14ReminderHelper", "scheduleLocalNotification"]
+- ["C9Celebrate14ReminderHelper", "scheduleWeekBeforeLocalNotification"]
+- !private ["Ps8Sequence", "Element"]
+- !private ["Ps8Sequence", "Iterator"]
+- !private ["Ps8Sequence", "Key"]
+- !private ["Ps8Sequence", "Value"]
+- !private ["Ps8Sequence", "_Element"]
+- !private ["Ps10SetAlgebra", "Element"]
+- !private ["Ps10SetAlgebra", "day"]
+- !private ["Ps10SetAlgebra", "matchNextTimePreservingSmallerUnits"]
+- !private ["Ps10SetAlgebra", "month"]
+- !private ["Ps10SetAlgebra", "year"]
+- ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- !private ["CSo13UIApplication", "cancelLocalNotification"]
+- ["CSo13UIApplication", "deinit"]
+- !private ["CSo13UIApplication", "scheduleLocalNotification"]
+- !private ["CSo13UIApplication", "scheduledLocalNotifications"]
+- !private ["CSo13UIApplication", "shared"]
+- !private ["CSo19UILocalNotification", "alertAction"]
+- !private ["CSo19UILocalNotification", "alertBody"]
+- !private ["CSo19UILocalNotification", "category"]
+- ["CSo19UILocalNotification", "deinit"]
+- !private ["CSo19UILocalNotification", "fireDate"]
+- !private ["CSo19UILocalNotification", "init"]
+- !private ["CSo19UILocalNotification", "repeatInterval"]
+- !private ["CSo19UILocalNotification", "userInfo"]
+- !private ["CSo11UIResponder", "cancelLocalNotification"]
+- !private ["CSo11UIResponder", "scheduleLocalNotification"]
+- !private ["CSo11UIResponder", "scheduledLocalNotifications"]
+- !private ["CSo11UIResponder", "shared"]
+- !private ["PSo30UIResponderStandardEditActions", "cancelLocalNotification"]
+- !private ["PSo30UIResponderStandardEditActions", "scheduleLocalNotification"]
+- !private ["PSo30UIResponderStandardEditActions", "scheduledLocalNotifications"]
+- !private ["PSo30UIResponderStandardEditActions", "shared"]
+- !private ["Su", "deinit"]
+- !private ["Vs6UInt16", "deinit"]
+- !private ["Vs6UInt32", "deinit"]
+- !private ["Vs6UInt64", "deinit"]
+- !private ["Vs5UInt8", "deinit"]
+- !private ["V10Foundation3URL", "absoluteString"]
+- ["V10Foundation3URL", "deinit"]
+- !private ["Sc", "deinit"]
+- !private ["VCSo10NSCalendar4Unit", "Element"]
+- !private ["VCSo10NSCalendar4Unit", "day"]
+- ["VCSo10NSCalendar4Unit", "deinit"]
+- !private ["VCSo10NSCalendar4Unit", "month"]
+- !private ["VCSo10NSCalendar4Unit", "year"]
+- !private ["Ps14_ArrayProtocol", "Iterator"]
+- !private ["Ps14_ArrayProtocol", "_Element"]
+- !private ["Ps24_DestructorSafeContainer", "Iterator"]
+- !private ["Ps24_DestructorSafeContainer", "_Element"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps34_ExpressibleByFileReferenceLiteral", "absoluteString"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "Unit"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "components"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "nextDate"]
+- !private ["Ps9_Hashable", "Unit"]
+- !private ["Ps9_Hashable", "absoluteString"]
+- !private ["Ps9_Hashable", "addingTimeInterval"]
+- !private ["Ps9_Hashable", "alertAction"]
+- !private ["Ps9_Hashable", "alertBody"]
+- !private ["Ps9_Hashable", "cancelLocalNotification"]
+- !private ["Ps9_Hashable", "category"]
+- !private ["Ps9_Hashable", "components"]
+- !private ["Ps9_Hashable", "current"]
+- !private ["Ps9_Hashable", "day"]
+- !private ["Ps9_Hashable", "fireDate"]
+- !private ["Ps9_Hashable", "hour"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "name"]
+- !private ["Ps9_Hashable", "nextDate"]
+- !private ["Ps9_Hashable", "objectID"]
+- !private ["Ps9_Hashable", "phoneNumber"]
+- !private ["Ps9_Hashable", "reminderDate"]
+- !private ["Ps9_Hashable", "reminderType"]
+- !private ["Ps9_Hashable", "repeatInterval"]
+- !private ["Ps9_Hashable", "scheduleLocalNotification"]
+- !private ["Ps9_Hashable", "scheduledLocalNotifications"]
+- !private ["Ps9_Hashable", "shared"]
+- !private ["Ps9_Hashable", "startOfDay"]
+- !private ["Ps9_Hashable", "uriRepresentation"]
+- !private ["Ps9_Hashable", "userInfo"]
+- !private ["P10Foundation14_MutableBoxing", "current"]
+- !private ["P10Foundation14_MutableBoxing", "day"]
+- !private ["P10Foundation14_MutableBoxing", "hour"]
+- !private ["P10Foundation14_MutableBoxing", "startOfDay"]
+- !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
+- !private ["Ps21_ObjectiveCBridgeable", "Key"]
+- !private ["Ps21_ObjectiveCBridgeable", "Value"]
+- !private ["Ps21_ObjectiveCBridgeable", "_Element"]
+- !private ["Ps21_ObjectiveCBridgeable", "absoluteString"]
+- !private ["Ps21_ObjectiveCBridgeable", "addingTimeInterval"]
+- !private ["Ps21_ObjectiveCBridgeable", "current"]
+- !private ["Ps21_ObjectiveCBridgeable", "day"]
+- !private ["Ps21_ObjectiveCBridgeable", "hour"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps21_ObjectiveCBridgeable", "startOfDay"]
+depends-nominal:
+- !private "Vs11AnyHashable"
+- "Ps9AnyObject"
+- "Sa"
+- !private "Ps23BidirectionalCollection"
+- !private "Ps22BidirectionalIndexable"
+- !private "Sb"
+- !private "PSo15CNKeyDescriptor"
+- !private "Ps7CVarArg"
+- "V10Foundation8Calendar"
+- !private "Vs9Character"
+- !private "Ps10Collection"
+- !private "Ps10Comparable"
+- !private "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- !private "Ps23CustomStringConvertible"
+- "V10Foundation4Date"
+- "V10Foundation14DateComponents"
+- "Vs10Dictionary"
+- "Sd"
+- !private "Ps9Equatable"
+- !private "Ps25ExpressibleByArrayLiteral"
+- !private "Ps30ExpressibleByDictionaryLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps32ExpressibleByStringInterpolation"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- !private "Sf"
+- !private "Ps8Hashable"
+- !private "Ps9Indexable"
+- !private "Ps13IndexableBase"
+- !private "Vs16IndexingIterator"
+- "Si"
+- !private "Vs5Int16"
+- !private "Vs5Int32"
+- !private "Vs5Int64"
+- !private "Vs4Int8"
+- !private "Ps16IteratorProtocol"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
+- !private "Ps17MutableCollection"
+- !private "Ps16MutableIndexable"
+- "CSo10NSCalendar"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- !private "PSo20NSFetchRequestResult"
+- !private "CSo15NSManagedObject"
+- "CSo17NSManagedObjectID"
+- !private "PSo16NSMutableCopying"
+- !private "CSo8NSObject"
+- !private "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "Ps9OptionSet"
+- "Sq"
+- "VCSo10NSCalendar7Options"
+- !private "Ps22RandomAccessCollection"
+- !private "Ps21RandomAccessIndexable"
+- !private "Ps26RangeReplaceableCollection"
+- !private "Ps25RangeReplaceableIndexable"
+- !private "Ps16RawRepresentable"
+- !private "P10Foundation20ReferenceConvertible"
+- "C9Celebrate8Reminder"
+- "C9Celebrate14ReminderHelper"
+- !private "Ps8Sequence"
+- !private "Ps10SetAlgebra"
+- "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
+- "CSo13UIApplication"
+- "CSo19UILocalNotification"
+- !private "CSo11UIResponder"
+- !private "PSo30UIResponderStandardEditActions"
+- !private "Su"
+- !private "Vs6UInt16"
+- !private "Vs6UInt32"
+- !private "Vs6UInt64"
+- !private "Vs5UInt8"
+- "V10Foundation3URL"
+- !private "Sc"
+- "VCSo10NSCalendar4Unit"
+- !private "Ps14_ArrayProtocol"
+- !private "Ps24_DestructorSafeContainer"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps34_ExpressibleByFileReferenceLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- !private "Ps9_Hashable"
+- !private "P10Foundation14_MutableBoxing"
+- !private "Ps21_ObjectiveCBridgeable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Contacts.swiftmodule"
+interface-hash: "314b7995ebc75a51761bb37e5a830f67"

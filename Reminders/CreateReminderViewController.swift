@@ -11,14 +11,14 @@ import CoreData
 import ContactsUI
 
 protocol AddContactViewControllerDelegate {
-    func didFetchContacts(contacts: [CNContact])
+    func didFetchContacts(_ contacts: [CNContact])
 }
 
 class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UIPickerViewDelegate, UITextFieldDelegate, CNContactPickerDelegate {
     
     // Mark: - Properties
     lazy var context: NSManagedObjectContext = {
-        let appDelegate = UIApplication.sharedApplication().delegate as! AppDelegate
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         return appDelegate.managedObjectContext
     }()
     
@@ -55,7 +55,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         txtName.becomeFirstResponder()
         
-        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .Save, target: self, action: #selector(CreateReminderViewController.createReminder))
+        let saveBarButtonItem = UIBarButtonItem(barButtonSystemItem: .save, target: self, action: #selector(CreateReminderViewController.createReminder))
         navigationItem.rightBarButtonItem = saveBarButtonItem
         
         setupNotificationSettings()
@@ -66,58 +66,58 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func dateReminderEditing(sender: UITextField) {
+    @IBAction func dateReminderEditing(_ sender: UITextField) {
         let datePickerView: UIDatePicker = UIDatePicker()
-        datePickerView.datePickerMode = UIDatePickerMode.Date
+        datePickerView.datePickerMode = UIDatePickerMode.date
         sender.inputView = datePickerView
-        datePickerView.addTarget(self, action: #selector(CreateReminderViewController.dateReminderValueChanged(_:)), forControlEvents: .ValueChanged)
+        datePickerView.addTarget(self, action: #selector(CreateReminderViewController.dateReminderValueChanged(_:)), for: .valueChanged)
     }
     
-    func dateReminderValueChanged(sender: UIDatePicker) {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-        dateFormatter.timeStyle = NSDateFormatterStyle.NoStyle
-        txtReminderDate.text = dateFormatter.stringFromDate(sender.date)
+    func dateReminderValueChanged(_ sender: UIDatePicker) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateStyle = DateFormatter.Style.medium
+        dateFormatter.timeStyle = DateFormatter.Style.none
+        txtReminderDate.text = dateFormatter.string(from: sender.date)
     }
     
-    func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+    func numberOfComponents(in pickerView: UIPickerView) -> Int {
         return 1
     }
     
-    func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+    func pickerView(_ pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
         return reminderTypeOptions.count
     }
     
-    func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
+    func pickerView(_ pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String? {
         return reminderTypeOptions[row]
     }
     
-    func pickerView(pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
+    func pickerView(_ pickerView: UIPickerView, didSelectRow row: Int, inComponent component: Int) {
         txtReminderType.text = reminderTypeOptions[row]
     }
     
     // MARK: - Notification Logic
     
     func setupNotificationSettings() {
-        let notificationSettings: UIUserNotificationSettings! = UIApplication.sharedApplication().currentUserNotificationSettings()
+        let notificationSettings: UIUserNotificationSettings! = UIApplication.shared.currentUserNotificationSettings
         
-        if (notificationSettings.types == .None) {
+        if (notificationSettings.types == UIUserNotificationType()) {
             
             // Specify the notification actions
             
             let callAction = UIMutableUserNotificationAction()
             callAction.identifier = "call"
             callAction.title = "Call"
-            callAction.activationMode = .Foreground
-            callAction.destructive = false
-            callAction.authenticationRequired = true
+            callAction.activationMode = .foreground
+            callAction.isDestructive = false
+            callAction.isAuthenticationRequired = true
             
             let textAction = UIMutableUserNotificationAction()
             textAction.identifier = "text"
             textAction.title = "Text"
-            textAction.activationMode = .Foreground
-            textAction.destructive = false
-            textAction.authenticationRequired = true
+            textAction.activationMode = .foreground
+            textAction.isDestructive = false
+            textAction.isAuthenticationRequired = true
             
             let actionsArray: [UIUserNotificationAction] = [textAction, callAction]
             let actionsArrayMinimal: [UIUserNotificationAction] = [textAction, callAction]
@@ -125,45 +125,44 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             // Specify the category related to the above actions
             let reminderCategory = UIMutableUserNotificationCategory()
             reminderCategory.identifier = "reminderCategory"
-            reminderCategory.setActions(actionsArray, forContext: .Default)
-            reminderCategory.setActions(actionsArrayMinimal, forContext: .Minimal)
+            reminderCategory.setActions(actionsArray, for: .default)
+            reminderCategory.setActions(actionsArrayMinimal, for: .minimal)
             
             let categoriesForSettings: Set<UIUserNotificationCategory> = Set([reminderCategory])
             
-            let newNotificationSettings = UIUserNotificationSettings(forTypes: [.Alert], categories: categoriesForSettings)
+            let newNotificationSettings = UIUserNotificationSettings(types: [.alert], categories: categoriesForSettings)
             
-            UIApplication.sharedApplication().registerUserNotificationSettings(newNotificationSettings)
+            UIApplication.shared.registerUserNotificationSettings(newNotificationSettings)
             
         }
     }
     
-    func getDateFromString(date: String) -> NSDate {
-        let dateFormatter = NSDateFormatter()
+    func getDateFromString(_ date: String) -> Date {
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
-        return dateFormatter.dateFromString(date)!
+        return dateFormatter.date(from: date)!
     }
     
     // Get current time when testing notifications
-    func getCurrentTime() -> NSDate {
-        let date = NSDate()
-        let calendar = NSCalendar.currentCalendar()
-        let components = calendar.components([.Day, .Month, .Year, .Hour, .Minute, .Second], fromDate: date)
+    func getCurrentTime() -> Date {
+        let date = Date()
+        let calendar = Calendar.current
+        var components = (calendar as NSCalendar).components([.day, .month, .year, .hour, .minute, .second], from: date)
         components.second = 0
-        components.minute += 1
         
-        let currentTime: NSDate! = NSCalendar.currentCalendar().dateFromComponents(components)
+        let currentTime: Date! = Calendar.current.date(from: components)
         return currentTime
     }
     
     // MARK: - Custom form logic and formatting
     
-    func textFieldDidBeginEditing(textField: UITextField) {
+    func textFieldDidBeginEditing(_ textField: UITextField) {
         
         currentTextField = textField
         
     }
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if (textField == txtName) {
             txtReminderDate.becomeFirstResponder()
         } else if textField == txtReminderDate {
@@ -175,16 +174,16 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         return true;
     }
     
-    func addToolBar(textField: UITextField){
+    func addToolBar(_ textField: UITextField){
         let toolBar = UIToolbar()
-        toolBar.backgroundColor = UIColor.whiteColor()
-        toolBar.barStyle = UIBarStyle.Default
-        toolBar.translucent = true
+        toolBar.backgroundColor = UIColor.white
+        toolBar.barStyle = UIBarStyle.default
+        toolBar.isTranslucent = true
         toolBar.tintColor = UIColor(red:0.51, green:0.23, blue:0.89, alpha:1.0)
-        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.Done, target: self, action: #selector(CreateReminderViewController.nextPressed))
-        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.Plain, target: self, action: #selector(CreateReminderViewController.cancelPressed))
-        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.FlexibleSpace, target: nil, action: nil)
-        let addFromContactsButton = UIBarButtonItem(title: "Add From Contacts", style: .Plain, target: self, action: #selector(CreateReminderViewController.addFromContacts))
+        let nextButton = UIBarButtonItem(title: "Next", style: UIBarButtonItemStyle.done, target: self, action: #selector(CreateReminderViewController.nextPressed))
+        let cancelButton = UIBarButtonItem(title: "Cancel", style: UIBarButtonItemStyle.plain, target: self, action: #selector(CreateReminderViewController.cancelPressed))
+        let spaceButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil)
+        let addFromContactsButton = UIBarButtonItem(title: "Add From Contacts", style: .plain, target: self, action: #selector(CreateReminderViewController.addFromContacts))
         if textField == txtPhoneNumber {
             toolBar.setItems([cancelButton, spaceButton, addFromContactsButton], animated: false)
         } else if textField == txtReminderType {
@@ -192,7 +191,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         } else {
             toolBar.setItems([cancelButton, spaceButton, nextButton], animated: false)
         }
-        toolBar.userInteractionEnabled = true
+        toolBar.isUserInteractionEnabled = true
         toolBar.sizeToFit()
         
         textField.delegate = self
@@ -227,32 +226,32 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         
         contactPickerViewController.delegate = self
         
-        presentViewController(contactPickerViewController, animated: true, completion: nil)
+        present(contactPickerViewController, animated: true, completion: nil)
     }
     
-    func contactPicker(picker: CNContactPickerViewController, didSelectContactProperty contactProperty: CNContactProperty) {
+    func contactPicker(_ picker: CNContactPickerViewController, didSelect contactProperty: CNContactProperty) {
         let phoneNumber = contactProperty.value as! CNPhoneNumber
         
         txtPhoneNumber.text = phoneNumber.stringValue
         
         let currentText = txtPhoneNumber.text ?? ""
-        let range: NSRange = (currentText as NSString).rangeOfString(currentText)
+        let range: NSRange = (currentText as NSString).range(of: currentText)
         
         formatPhoneNumber(txtPhoneNumber, shouldChangeCharactersInRange: range, replacementString: phoneNumber.stringValue)
 
     }
     
-    func formatPhoneNumber(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
+    func formatPhoneNumber(_ textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool {
         if textField == txtPhoneNumber && string.characters.count > 0
         {
-            let newString = (textField.text! as NSString).stringByReplacingCharactersInRange(range, withString: string)
-            let components = newString.componentsSeparatedByCharactersInSet(NSCharacterSet.decimalDigitCharacterSet().invertedSet)
+            let newString = (textField.text! as NSString).replacingCharacters(in: range, with: string)
+            let components = newString.components(separatedBy: CharacterSet.decimalDigits.inverted)
             
-            let decimalString = components.joinWithSeparator("") as String
-            let decimalNString = components.joinWithSeparator("") as  NSString
+            let decimalString = components.joined(separator: "") as String
+            let decimalNString = components.joined(separator: "") as  NSString
             
-            let rangeOfDecimalString = Range(start: decimalString.startIndex, end: decimalString.startIndex.advancedBy(1))
-            let firstCharacterStr = decimalString.substringWithRange(rangeOfDecimalString)
+            let rangeOfDecimalString = (decimalString.startIndex ..< decimalString.characters.index(decimalString.startIndex, offsetBy: 1))
+            let firstCharacterStr = decimalString.substring(with: rangeOfDecimalString)
             
             let length = decimalNString.length
             let hasLeadingOne = length > 0 && firstCharacterStr == "1"
@@ -268,24 +267,24 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             
             if hasLeadingOne
             {
-                formattedString.appendString("1 ")
+                formattedString.append("1 ")
                 index += 1
             }
             if (length - index) > 3
             {
-                let areaCode = decimalNString.substringWithRange(NSMakeRange(index, 3))
+                let areaCode = decimalNString.substring(with: NSMakeRange(index, 3))
                 formattedString.appendFormat("(%@) ", areaCode)
                 index += 3
             }
             if length - index > 3
             {
-                let prefix = decimalNString.substringWithRange(NSMakeRange(index, 3))
+                let prefix = decimalNString.substring(with: NSMakeRange(index, 3))
                 formattedString.appendFormat("%@-", prefix)
                 index += 3
             }
             
-            let remainder = decimalNString.substringFromIndex(index)
-            formattedString.appendString(remainder)
+            let remainder = decimalNString.substring(from: index)
+            formattedString.append(remainder)
             textField.text = formattedString as String
             return false
         }
@@ -295,16 +294,16 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         }
     }
     
-    func digitsOnly(string: String) -> String {
-        let stringArray = string.componentsSeparatedByCharactersInSet(
-            NSCharacterSet.decimalDigitCharacterSet().invertedSet)
-        let newString = stringArray.joinWithSeparator("")
+    func digitsOnly(_ string: String) -> String {
+        let stringArray = string.components(
+            separatedBy: CharacterSet.decimalDigits.inverted)
+        let newString = stringArray.joined(separator: "")
         
         return newString
     }
 
     
-    func textField(textField: UITextField, shouldChangeCharactersInRange range: NSRange, replacementString string: String) -> Bool
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool
     {
         return formatPhoneNumber(textField, shouldChangeCharactersInRange: range, replacementString: string)
     }
@@ -312,18 +311,18 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     // MARK: - Custom Function 
     
     func createReminder() {
-        let reminder = NSEntityDescription.insertNewObjectForEntityForName("Reminder", inManagedObjectContext: self.context) as! Reminder
+        let reminder = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: self.context) as! Reminder
         
         reminder.name = txtName.text
         reminder.reminderType = txtReminderType.text
         reminder.phoneNumber = digitsOnly(txtPhoneNumber.text!)
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "M/d/yy"
         if let reminderDateString = txtReminderDate.text {
             let reminderDate = getDateFromString(reminderDateString)
             reminder.reminderDate = reminderDate
-            reminder.remainingDays = ReminderHelper.getDaysUntilReminder(ReminderHelper.getNextOccurenceOfReminderDate(reminderDate))
+            reminder.remainingDays = ReminderHelper.getDaysUntilReminder(ReminderHelper.getNextOccurenceOfReminderDate(reminderDate)) as NSNumber?
         }
         
         
@@ -333,7 +332,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
             ReminderHelper.scheduleLocalNotification(reminder)
             ReminderHelper.scheduleWeekBeforeLocalNotification(reminder)
             
-            navigationController?.popViewControllerAnimated(true)
+            navigationController?.popViewController(animated: true)
         } catch {
             fatalError("Failure to save context: \(error)")
         }

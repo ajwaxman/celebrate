@@ -1,0 +1,274 @@
+### Swift dependencies file v0 ###
+provides-top-level:
+provides-nominal:
+provides-member:
+- ["C9Celebrate8Reminder", ""]
+- ["C9Celebrate8Reminder", "name"]
+- ["C9Celebrate8Reminder", "phoneNumber"]
+- ["C9Celebrate8Reminder", "reminderDate"]
+- ["C9Celebrate8Reminder", "reminderType"]
+- ["C9Celebrate8Reminder", "remainingDays"]
+- ["C9Celebrate8Reminder", "section"]
+provides-dynamic-lookup:
+- "reminderType"
+- "phoneNumber"
+- "name"
+- "section"
+- "reminderDate"
+- "remainingDays"
+depends-top-level:
+- "NSNumber"
+- "Reminder"
+- !private "~="
+- !private "..."
+- !private "StringLiteralType"
+- "String"
+- "Date"
+depends-member:
+- !private ["Ps9AnyObject", "init"]
+- !private ["Ps9AnyObject", "int32Value"]
+- ["Ps9AnyObject", "name"]
+- ["Ps9AnyObject", "phoneNumber"]
+- ["Ps9AnyObject", "remainingDays"]
+- ["Ps9AnyObject", "reminderDate"]
+- ["Ps9AnyObject", "reminderType"]
+- ["Ps9AnyObject", "section"]
+- !private ["Ps17BitwiseOperations", "Stride"]
+- !private ["Sb", "_getBuiltinLogicValue"]
+- ["Sb", "deinit"]
+- !private ["PSo15CNKeyDescriptor", "init"]
+- !private ["Ps7CVarArg", "Stride"]
+- !private ["Ps7CVarArg", "init"]
+- !private ["Ps7CVarArg", "int32Value"]
+- ["Ps7CVarArg", "name"]
+- ["Ps7CVarArg", "phoneNumber"]
+- ["Ps7CVarArg", "remainingDays"]
+- ["Ps7CVarArg", "reminderDate"]
+- ["Ps7CVarArg", "reminderType"]
+- ["Ps7CVarArg", "section"]
+- !private ["Ps10Comparable", "Stride"]
+- !private ["Ps10Comparable", "init"]
+- ["Vs20CountableClosedRange", "deinit"]
+- !private ["Ps28CustomDebugStringConvertible", "init"]
+- !private ["Ps28CustomDebugStringConvertible", "int32Value"]
+- ["Ps28CustomDebugStringConvertible", "name"]
+- ["Ps28CustomDebugStringConvertible", "phoneNumber"]
+- ["Ps28CustomDebugStringConvertible", "remainingDays"]
+- ["Ps28CustomDebugStringConvertible", "reminderDate"]
+- ["Ps28CustomDebugStringConvertible", "reminderType"]
+- ["Ps28CustomDebugStringConvertible", "section"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "Stride"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "_getBuiltinLogicValue"]
+- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
+- !private ["Ps17CustomReflectable", "Stride"]
+- !private ["Ps17CustomReflectable", "_getBuiltinLogicValue"]
+- !private ["Ps17CustomReflectable", "init"]
+- !private ["Ps23CustomStringConvertible", "Stride"]
+- !private ["Ps23CustomStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps23CustomStringConvertible", "init"]
+- !private ["Ps23CustomStringConvertible", "int32Value"]
+- ["Ps23CustomStringConvertible", "name"]
+- ["Ps23CustomStringConvertible", "phoneNumber"]
+- ["Ps23CustomStringConvertible", "remainingDays"]
+- ["Ps23CustomStringConvertible", "reminderDate"]
+- ["Ps23CustomStringConvertible", "reminderType"]
+- ["Ps23CustomStringConvertible", "section"]
+- !private ["Ps9Equatable", "Stride"]
+- !private ["Ps9Equatable", "_getBuiltinLogicValue"]
+- !private ["Ps9Equatable", "init"]
+- !private ["Ps9Equatable", "int32Value"]
+- ["Ps9Equatable", "name"]
+- ["Ps9Equatable", "phoneNumber"]
+- ["Ps9Equatable", "remainingDays"]
+- ["Ps9Equatable", "reminderDate"]
+- ["Ps9Equatable", "reminderType"]
+- ["Ps9Equatable", "section"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps27ExpressibleByBooleanLiteral", "int32Value"]
+- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps25ExpressibleByFloatLiteral", "int32Value"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "Stride"]
+- !private ["Ps27ExpressibleByIntegerLiteral", "int32Value"]
+- !private ["Ps32ExpressibleByStringInterpolation", "init"]
+- !private ["Ps26ExpressibleByStringLiteral", "init"]
+- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
+- !private ["Ps8Hashable", "Stride"]
+- !private ["Ps8Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps8Hashable", "init"]
+- !private ["Ps8Hashable", "int32Value"]
+- ["Ps8Hashable", "name"]
+- ["Ps8Hashable", "phoneNumber"]
+- ["Ps8Hashable", "remainingDays"]
+- ["Ps8Hashable", "reminderDate"]
+- ["Ps8Hashable", "reminderType"]
+- ["Ps8Hashable", "section"]
+- !private ["Vs5Int32", "Stride"]
+- ["Vs5Int32", "deinit"]
+- !private ["Ps7Integer", "Stride"]
+- !private ["Ps17IntegerArithmetic", "Stride"]
+- !private ["Ps25LosslessStringConvertible", "_getBuiltinLogicValue"]
+- !private ["Ps25LosslessStringConvertible", "init"]
+- !private ["Ps10MirrorPath", "init"]
+- !private ["PSo8NSCoding", "init"]
+- !private ["PSo8NSCoding", "int32Value"]
+- !private ["PSo9NSCopying", "init"]
+- !private ["PSo9NSCopying", "int32Value"]
+- !private ["PSo20NSFetchRequestResult", "int32Value"]
+- ["PSo20NSFetchRequestResult", "name"]
+- ["PSo20NSFetchRequestResult", "phoneNumber"]
+- ["PSo20NSFetchRequestResult", "remainingDays"]
+- ["PSo20NSFetchRequestResult", "reminderDate"]
+- ["PSo20NSFetchRequestResult", "reminderType"]
+- ["PSo20NSFetchRequestResult", "section"]
+- ["CSo15NSManagedObject", "Date"]
+- ["CSo15NSManagedObject", "NSNumber"]
+- ["CSo15NSManagedObject", "String"]
+- ["CSo15NSManagedObject", "name"]
+- ["CSo15NSManagedObject", "phoneNumber"]
+- ["CSo15NSManagedObject", "remainingDays"]
+- ["CSo15NSManagedObject", "reminderDate"]
+- ["CSo15NSManagedObject", "reminderType"]
+- ["CSo15NSManagedObject", "section"]
+- !private ["PSo16NSMutableCopying", "init"]
+- !private ["CSo8NSNumber", "int32Value"]
+- ["CSo8NSObject", "Date"]
+- ["CSo8NSObject", "NSNumber"]
+- ["CSo8NSObject", "String"]
+- !private ["CSo8NSObject", "init"]
+- !private ["CSo8NSObject", "int32Value"]
+- ["CSo8NSObject", "name"]
+- ["CSo8NSObject", "phoneNumber"]
+- ["CSo8NSObject", "remainingDays"]
+- ["CSo8NSObject", "reminderDate"]
+- ["CSo8NSObject", "reminderType"]
+- ["CSo8NSObject", "section"]
+- !private ["PSo16NSObjectProtocol", "init"]
+- !private ["PSo16NSObjectProtocol", "int32Value"]
+- ["PSo16NSObjectProtocol", "name"]
+- ["PSo16NSObjectProtocol", "phoneNumber"]
+- ["PSo16NSObjectProtocol", "remainingDays"]
+- ["PSo16NSObjectProtocol", "reminderDate"]
+- ["PSo16NSObjectProtocol", "reminderType"]
+- ["PSo16NSObjectProtocol", "section"]
+- !private ["PSo14NSSecureCoding", "init"]
+- !private ["PSo14NSSecureCoding", "int32Value"]
+- !private ["CSo8NSString", "init"]
+- !private ["CSo7NSValue", "int32Value"]
+- !private ["Sq", "deinit"]
+- ["C9Celebrate8Reminder", "Date"]
+- ["C9Celebrate8Reminder", "NSNumber"]
+- ["C9Celebrate8Reminder", "String"]
+- ["C9Celebrate8Reminder", "deinit"]
+- ["C9Celebrate8Reminder", "name"]
+- ["C9Celebrate8Reminder", "phoneNumber"]
+- ["C9Celebrate8Reminder", "remainingDays"]
+- ["C9Celebrate8Reminder", "reminderDate"]
+- ["C9Celebrate8Reminder", "reminderType"]
+- ["C9Celebrate8Reminder", "section"]
+- !private ["Ps13SignedInteger", "Stride"]
+- !private ["Ps12SignedNumber", "Stride"]
+- !private ["Ps10Strideable", "Stride"]
+- ["SS", "deinit"]
+- !private ["SS", "init"]
+- !private ["Ps16TextOutputStream", "init"]
+- !private ["Ps20TextOutputStreamable", "init"]
+- !private ["Ps35_ExpressibleByBuiltinBooleanLiteral", "_getBuiltinLogicValue"]
+- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
+- !private ["Ps35_ExpressibleByBuiltinIntegerLiteral", "Stride"]
+- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
+- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
+- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
+- !private ["Ps35_HasCustomAnyHashableRepresentation", "int32Value"]
+- !private ["Ps9_Hashable", "Stride"]
+- !private ["Ps9_Hashable", "_getBuiltinLogicValue"]
+- !private ["Ps9_Hashable", "init"]
+- !private ["Ps9_Hashable", "int32Value"]
+- ["Ps9_Hashable", "name"]
+- ["Ps9_Hashable", "phoneNumber"]
+- ["Ps9_Hashable", "remainingDays"]
+- ["Ps9_Hashable", "reminderDate"]
+- ["Ps9_Hashable", "reminderType"]
+- ["Ps9_Hashable", "section"]
+- !private ["Ps14_Incrementable", "Stride"]
+- !private ["Ps8_Integer", "Stride"]
+- !private ["Ps18_IntegerArithmetic", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "Stride"]
+- !private ["Ps21_ObjectiveCBridgeable", "_getBuiltinLogicValue"]
+- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["Ps14_SignedInteger", "Stride"]
+- !private ["Ps11_Strideable", "Stride"]
+depends-nominal:
+- "Ps9AnyObject"
+- !private "Ps17BitwiseOperations"
+- "Sb"
+- !private "PSo15CNKeyDescriptor"
+- "Ps7CVarArg"
+- !private "Ps10Comparable"
+- "Vs20CountableClosedRange"
+- "Ps28CustomDebugStringConvertible"
+- !private "Ps29CustomPlaygroundQuickLookable"
+- !private "Ps17CustomReflectable"
+- "Ps23CustomStringConvertible"
+- "Ps9Equatable"
+- !private "Ps27ExpressibleByBooleanLiteral"
+- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
+- !private "Ps25ExpressibleByFloatLiteral"
+- !private "Ps27ExpressibleByIntegerLiteral"
+- !private "Ps32ExpressibleByStringInterpolation"
+- !private "Ps26ExpressibleByStringLiteral"
+- !private "Ps33ExpressibleByUnicodeScalarLiteral"
+- "Ps8Hashable"
+- "Vs5Int32"
+- !private "Ps7Integer"
+- !private "Ps17IntegerArithmetic"
+- !private "Ps25LosslessStringConvertible"
+- !private "Ps10MirrorPath"
+- !private "PSo8NSCoding"
+- !private "PSo9NSCopying"
+- "PSo20NSFetchRequestResult"
+- "CSo15NSManagedObject"
+- !private "PSo16NSMutableCopying"
+- !private "CSo8NSNumber"
+- "CSo8NSObject"
+- "PSo16NSObjectProtocol"
+- !private "PSo14NSSecureCoding"
+- !private "CSo8NSString"
+- !private "CSo7NSValue"
+- !private "Sq"
+- "C9Celebrate8Reminder"
+- !private "Ps13SignedInteger"
+- !private "Ps12SignedNumber"
+- !private "Ps10Strideable"
+- "SS"
+- !private "Ps16TextOutputStream"
+- !private "Ps20TextOutputStreamable"
+- !private "Ps35_ExpressibleByBuiltinBooleanLiteral"
+- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
+- !private "Ps35_ExpressibleByBuiltinIntegerLiteral"
+- !private "Ps34_ExpressibleByBuiltinStringLiteral"
+- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
+- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
+- !private "Ps35_HasCustomAnyHashableRepresentation"
+- "Ps9_Hashable"
+- !private "Ps14_Incrementable"
+- !private "Ps8_Integer"
+- !private "Ps18_IntegerArithmetic"
+- !private "Ps21_ObjectiveCBridgeable"
+- !private "Ps14_SignedInteger"
+- !private "Ps11_Strideable"
+depends-dynamic-lookup:
+depends-external:
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
+interface-hash: "39b0db3f4212f19373f66f862cba5cc3"
