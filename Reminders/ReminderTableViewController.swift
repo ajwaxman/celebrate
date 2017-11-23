@@ -62,7 +62,7 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
     
     let messageComposer = MessageComposer()
     
-    func handleTextNotification(_ notification: Notification) {
+    @objc func handleTextNotification(_ notification: Notification) {
         DispatchQueue.main.async {
             let userInfo:Dictionary<String,String?> = notification.userInfo as! Dictionary<String,String?>
             let numberString = userInfo["phoneNumber"]
@@ -230,7 +230,7 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
         }
     }
     
-    func backgoundNofification(_ noftification:Notification){
+    @objc func backgoundNofification(_ noftification:Notification){
         refresh();
     }
     
@@ -261,7 +261,7 @@ class ReminderTableViewController: UITableViewController, NSFetchedResultsContro
     func updateNavBarStyle() {
         self.navigationController?.navigationBar.barTintColor = UIColor(red:0.42, green:0.14, blue:0.86, alpha:1.0)
         self.navigationController?.navigationBar.tintColor = UIColor.white
-        self.navigationController!.navigationBar.titleTextAttributes = [NSForegroundColorAttributeName : UIColor.white]
+        self.navigationController!.navigationBar.titleTextAttributes = [NSAttributedStringKey.foregroundColor : UIColor.white]
         UIApplication.shared.statusBarStyle = .lightContent
     }
     

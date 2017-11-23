@@ -35,7 +35,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         return true
     }
     
-    func handleCallNotificationFromLaunch(_ notification: Notification) {
+    @objc func handleCallNotificationFromLaunch(_ notification: Notification) {
         
         let userInfo:Dictionary<String,String?> = notification.userInfo as! Dictionary<String,String?>
         let numberString = userInfo["phoneNumber"]

@@ -1,12 +1,12 @@
 version: "Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)"
 options: "9dae423df7a2da50a54c6764d0778f84"
-build_time: [1511462270, 478197000]
+build_time: [1511463319, 324412000]
 inputs:
   "/Users/awaxman/Development/swift/Reminders/Reminders/ViewController.swift": [1456616509, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/AppDelegate.swift": [1511453598, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderHelper.swift": [1511453598, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderViewController.swift": [1511453598, 0]
-  "/Users/awaxman/Development/swift/Reminders/Reminders/DataHelper.swift": [1511462269, 0]
+  "/Users/awaxman/Development/swift/Reminders/Reminders/DataHelper.swift": [1511463312, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminder+CoreDataProperties.swift": [1511453598, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/B68UIFloatLabelTextField.swift": [1511453598, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderTableViewController.swift": [1511453598, 0]

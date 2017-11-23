@@ -73,7 +73,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         datePickerView.addTarget(self, action: #selector(CreateReminderViewController.dateReminderValueChanged(_:)), for: .valueChanged)
     }
     
-    func dateReminderValueChanged(_ sender: UIDatePicker) {
+    @objc func dateReminderValueChanged(_ sender: UIDatePicker) {
         let dateFormatter = DateFormatter()
         dateFormatter.dateStyle = DateFormatter.Style.medium
         dateFormatter.timeStyle = DateFormatter.Style.none
@@ -200,11 +200,11 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     func donePressed(){
         view.endEditing(true)
     }
-    func cancelPressed(){
+    @objc func cancelPressed(){
         view.endEditing(true) // or do something
     }
     
-    func nextPressed() -> Bool {
+    @objc func nextPressed() -> Bool {
         
         if currentTextField == txtName {
             txtReminderDate.becomeFirstResponder()
@@ -215,7 +215,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
         return true;
     }
     
-    func addFromContacts() {
+    @objc func addFromContacts() {
         let contactPickerViewController = CNContactPickerViewController()
         
         contactPickerViewController.predicateForEnablingContact = NSPredicate(format: "phoneNumbers != nil")
@@ -310,7 +310,7 @@ class CreateReminderViewController: UIViewController, UIPickerViewDataSource, UI
     
     // MARK: - Custom Function 
     
-    func createReminder() {
+    @objc func createReminder() {
         let reminder = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: self.context) as! Reminder
         
         reminder.name = txtName.text

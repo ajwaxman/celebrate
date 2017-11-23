@@ -2,224 +2,217 @@
 provides-top-level:
 - "MessageComposer"
 provides-nominal:
-- "C9Celebrate15MessageComposer"
+- "9Celebrate15MessageComposerC"
 provides-member:
-- ["C9Celebrate15MessageComposer", ""]
+- ["9Celebrate15MessageComposerC", ""]
 provides-dynamic-lookup:
-- "configuredMessageComposeViewController"
 - "canSendText"
+- "configuredMessageComposeViewController"
 - "messageComposeViewController"
 depends-top-level:
 - "AssignmentPrecedence"
-- "MFMessageComposeViewController"
 - "Bool"
-- "MessageComposeResult"
 - !private "BooleanLiteralType"
-- "NSObject"
-- "MessageComposer"
-- "String"
+- "MFMessageComposeViewController"
 - "MFMessageComposeViewControllerDelegate"
+- "MessageComposeResult"
+- "MessageComposer"
+- "NSObject"
+- "String"
 depends-member:
-- !private ["Ps9AnyObject", "MFMessageComposeViewController"]
-- ["Ps9AnyObject", "canSendText"]
-- ["Ps9AnyObject", "configuredMessageComposeViewController"]
-- !private ["Ps9AnyObject", "dismiss"]
-- !private ["Ps9AnyObject", "init"]
-- !private ["Ps9AnyObject", "messageComposeDelegate"]
-- ["Ps9AnyObject", "messageComposeViewController"]
-- !private ["Ps9AnyObject", "recipients"]
-- ["Ps9AnyObject", ""]
-- ["Sa", "deinit"]
-- ["Sb", "deinit"]
-- !private ["Ps7CVarArg", "MFMessageComposeViewController"]
-- ["Ps7CVarArg", "canSendText"]
-- ["Ps7CVarArg", "configuredMessageComposeViewController"]
-- !private ["Ps7CVarArg", "dismiss"]
-- !private ["Ps7CVarArg", "init"]
-- !private ["Ps7CVarArg", "messageComposeDelegate"]
-- ["Ps7CVarArg", "messageComposeViewController"]
-- !private ["Ps7CVarArg", "recipients"]
-- ["Ps7CVarArg", ""]
-- !private ["Ps28CustomDebugStringConvertible", "MFMessageComposeViewController"]
-- ["Ps28CustomDebugStringConvertible", "canSendText"]
-- ["Ps28CustomDebugStringConvertible", "configuredMessageComposeViewController"]
-- !private ["Ps28CustomDebugStringConvertible", "dismiss"]
-- !private ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "messageComposeDelegate"]
-- ["Ps28CustomDebugStringConvertible", "messageComposeViewController"]
-- !private ["Ps28CustomDebugStringConvertible", "recipients"]
-- ["Ps28CustomDebugStringConvertible", ""]
-- !private ["Ps23CustomStringConvertible", "MFMessageComposeViewController"]
-- ["Ps23CustomStringConvertible", "canSendText"]
-- ["Ps23CustomStringConvertible", "configuredMessageComposeViewController"]
-- !private ["Ps23CustomStringConvertible", "dismiss"]
-- !private ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "messageComposeDelegate"]
-- ["Ps23CustomStringConvertible", "messageComposeViewController"]
-- !private ["Ps23CustomStringConvertible", "recipients"]
-- ["Ps23CustomStringConvertible", ""]
-- !private ["Ps9Equatable", "MFMessageComposeViewController"]
-- ["Ps9Equatable", "canSendText"]
-- ["Ps9Equatable", "configuredMessageComposeViewController"]
-- !private ["Ps9Equatable", "dismiss"]
-- !private ["Ps9Equatable", "init"]
-- !private ["Ps9Equatable", "messageComposeDelegate"]
-- ["Ps9Equatable", "messageComposeViewController"]
-- !private ["Ps9Equatable", "recipients"]
-- ["Ps9Equatable", ""]
-- !private ["Ps8Hashable", "MFMessageComposeViewController"]
-- ["Ps8Hashable", "canSendText"]
-- ["Ps8Hashable", "configuredMessageComposeViewController"]
-- !private ["Ps8Hashable", "dismiss"]
-- !private ["Ps8Hashable", "init"]
-- !private ["Ps8Hashable", "messageComposeDelegate"]
-- ["Ps8Hashable", "messageComposeViewController"]
-- !private ["Ps8Hashable", "recipients"]
-- ["Ps8Hashable", ""]
-- !private ["CSo30MFMessageComposeViewController", "canSendText"]
-- ["CSo30MFMessageComposeViewController", "deinit"]
-- !private ["CSo30MFMessageComposeViewController", "dismiss"]
-- !private ["CSo30MFMessageComposeViewController", "init"]
-- !private ["CSo30MFMessageComposeViewController", "messageComposeDelegate"]
-- !private ["CSo30MFMessageComposeViewController", "recipients"]
-- !private ["PSo38MFMessageComposeViewControllerDelegate", "MFMessageComposeViewController"]
-- ["PSo38MFMessageComposeViewControllerDelegate", "messageComposeViewController"]
-- ["PSo38MFMessageComposeViewControllerDelegate", ""]
-- ["C9Celebrate15MessageComposer", "Bool"]
-- ["C9Celebrate15MessageComposer", "MFMessageComposeViewController"]
-- ["C9Celebrate15MessageComposer", "MessageComposeResult"]
-- ["C9Celebrate15MessageComposer", "String"]
-- ["C9Celebrate15MessageComposer", "canSendText"]
-- ["C9Celebrate15MessageComposer", "configuredMessageComposeViewController"]
-- ["C9Celebrate15MessageComposer", "deinit"]
-- ["C9Celebrate15MessageComposer", "init"]
-- ["C9Celebrate15MessageComposer", "messageComposeViewController"]
-- !private ["PSo8NSCoding", "canSendText"]
-- !private ["PSo8NSCoding", "dismiss"]
-- !private ["PSo8NSCoding", "init"]
-- !private ["PSo8NSCoding", "messageComposeDelegate"]
-- !private ["PSo8NSCoding", "recipients"]
-- !private ["PSo26NSExtensionRequestHandling", "canSendText"]
-- !private ["PSo26NSExtensionRequestHandling", "dismiss"]
-- !private ["PSo26NSExtensionRequestHandling", "init"]
-- !private ["PSo26NSExtensionRequestHandling", "messageComposeDelegate"]
-- !private ["PSo26NSExtensionRequestHandling", "recipients"]
-- ["CSo8NSObject", "Bool"]
-- ["CSo8NSObject", "MFMessageComposeViewController"]
-- ["CSo8NSObject", "MessageComposeResult"]
-- ["CSo8NSObject", "String"]
-- ["CSo8NSObject", "canSendText"]
-- ["CSo8NSObject", "configuredMessageComposeViewController"]
-- ["CSo8NSObject", "deinit"]
-- !private ["CSo8NSObject", "dismiss"]
-- ["CSo8NSObject", "init"]
-- !private ["CSo8NSObject", "messageComposeDelegate"]
-- ["CSo8NSObject", "messageComposeViewController"]
-- !private ["CSo8NSObject", "recipients"]
-- ["CSo8NSObject", ""]
-- !private ["PSo16NSObjectProtocol", "MFMessageComposeViewController"]
-- ["PSo16NSObjectProtocol", "canSendText"]
-- ["PSo16NSObjectProtocol", "configuredMessageComposeViewController"]
-- !private ["PSo16NSObjectProtocol", "dismiss"]
-- !private ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo16NSObjectProtocol", "messageComposeDelegate"]
-- ["PSo16NSObjectProtocol", "messageComposeViewController"]
-- !private ["PSo16NSObjectProtocol", "recipients"]
-- ["PSo16NSObjectProtocol", ""]
-- ["Sq", "deinit"]
-- !private ["PSo21UIAppearanceContainer", "canSendText"]
-- !private ["PSo21UIAppearanceContainer", "dismiss"]
-- !private ["PSo21UIAppearanceContainer", "init"]
-- !private ["PSo21UIAppearanceContainer", "messageComposeDelegate"]
-- !private ["PSo21UIAppearanceContainer", "recipients"]
-- !private ["PSo18UIContentContainer", "canSendText"]
-- !private ["PSo18UIContentContainer", "dismiss"]
-- !private ["PSo18UIContentContainer", "init"]
-- !private ["PSo18UIContentContainer", "messageComposeDelegate"]
-- !private ["PSo18UIContentContainer", "recipients"]
-- !private ["PSo18UIFocusEnvironment", "canSendText"]
-- !private ["PSo18UIFocusEnvironment", "dismiss"]
-- !private ["PSo18UIFocusEnvironment", "init"]
-- !private ["PSo18UIFocusEnvironment", "messageComposeDelegate"]
-- !private ["PSo18UIFocusEnvironment", "recipients"]
-- !private ["CSo22UINavigationController", "canSendText"]
-- !private ["CSo22UINavigationController", "dismiss"]
-- !private ["CSo22UINavigationController", "init"]
-- !private ["CSo22UINavigationController", "messageComposeDelegate"]
-- !private ["CSo22UINavigationController", "recipients"]
-- !private ["CSo11UIResponder", "canSendText"]
-- !private ["CSo11UIResponder", "dismiss"]
-- !private ["CSo11UIResponder", "init"]
-- !private ["CSo11UIResponder", "messageComposeDelegate"]
-- !private ["CSo11UIResponder", "recipients"]
-- !private ["PSo30UIResponderStandardEditActions", "canSendText"]
-- !private ["PSo30UIResponderStandardEditActions", "dismiss"]
-- !private ["PSo30UIResponderStandardEditActions", "init"]
-- !private ["PSo30UIResponderStandardEditActions", "messageComposeDelegate"]
-- !private ["PSo30UIResponderStandardEditActions", "recipients"]
-- !private ["PSo16UIStateRestoring", "canSendText"]
-- !private ["PSo16UIStateRestoring", "dismiss"]
-- !private ["PSo16UIStateRestoring", "init"]
-- !private ["PSo16UIStateRestoring", "messageComposeDelegate"]
-- !private ["PSo16UIStateRestoring", "recipients"]
-- !private ["PSo18UITraitEnvironment", "canSendText"]
-- !private ["PSo18UITraitEnvironment", "dismiss"]
-- !private ["PSo18UITraitEnvironment", "init"]
-- !private ["PSo18UITraitEnvironment", "messageComposeDelegate"]
-- !private ["PSo18UITraitEnvironment", "recipients"]
-- !private ["CSo16UIViewController", "canSendText"]
-- !private ["CSo16UIViewController", "dismiss"]
-- !private ["CSo16UIViewController", "init"]
-- !private ["CSo16UIViewController", "messageComposeDelegate"]
-- !private ["CSo16UIViewController", "recipients"]
-- !private ["Ps9_Hashable", "MFMessageComposeViewController"]
-- ["Ps9_Hashable", "canSendText"]
-- ["Ps9_Hashable", "configuredMessageComposeViewController"]
-- !private ["Ps9_Hashable", "dismiss"]
-- !private ["Ps9_Hashable", "init"]
-- !private ["Ps9_Hashable", "messageComposeDelegate"]
-- ["Ps9_Hashable", "messageComposeViewController"]
-- !private ["Ps9_Hashable", "recipients"]
-- ["Ps9_Hashable", ""]
+- !private ["s7CVarArgP", "MFMessageComposeViewController"]
+- !private ["s7CVarArgP", "canSendText"]
+- !private ["s7CVarArgP", "dismiss"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "messageComposeDelegate"]
+- ["s7CVarArgP", "messageComposeViewController"]
+- !private ["s7CVarArgP", "recipients"]
+- ["s7CVarArgP", ""]
+- !private ["s28CustomDebugStringConvertibleP", "MFMessageComposeViewController"]
+- !private ["s28CustomDebugStringConvertibleP", "canSendText"]
+- !private ["s28CustomDebugStringConvertibleP", "dismiss"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "messageComposeDelegate"]
+- ["s28CustomDebugStringConvertibleP", "messageComposeViewController"]
+- !private ["s28CustomDebugStringConvertibleP", "recipients"]
+- ["s28CustomDebugStringConvertibleP", ""]
+- !private ["s23CustomStringConvertibleP", "MFMessageComposeViewController"]
+- !private ["s23CustomStringConvertibleP", "canSendText"]
+- !private ["s23CustomStringConvertibleP", "dismiss"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "messageComposeDelegate"]
+- ["s23CustomStringConvertibleP", "messageComposeViewController"]
+- !private ["s23CustomStringConvertibleP", "recipients"]
+- ["s23CustomStringConvertibleP", ""]
+- !private ["s9EquatableP", "MFMessageComposeViewController"]
+- !private ["s9EquatableP", "canSendText"]
+- !private ["s9EquatableP", "dismiss"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "messageComposeDelegate"]
+- ["s9EquatableP", "messageComposeViewController"]
+- !private ["s9EquatableP", "recipients"]
+- ["s9EquatableP", ""]
+- !private ["s8HashableP", "MFMessageComposeViewController"]
+- !private ["s8HashableP", "canSendText"]
+- !private ["s8HashableP", "dismiss"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "messageComposeDelegate"]
+- ["s8HashableP", "messageComposeViewController"]
+- !private ["s8HashableP", "recipients"]
+- ["s8HashableP", ""]
+- !private ["So30MFMessageComposeViewControllerC", "canSendText"]
+- !private ["So30MFMessageComposeViewControllerC", "dismiss"]
+- !private ["So30MFMessageComposeViewControllerC", "init"]
+- !private ["So30MFMessageComposeViewControllerC", "messageComposeDelegate"]
+- !private ["So30MFMessageComposeViewControllerC", "recipients"]
+- !private ["So38MFMessageComposeViewControllerDelegateP", "MFMessageComposeViewController"]
+- ["So38MFMessageComposeViewControllerDelegateP", "messageComposeViewController"]
+- ["So38MFMessageComposeViewControllerDelegateP", ""]
+- ["9Celebrate15MessageComposerC", "Bool"]
+- ["9Celebrate15MessageComposerC", "MFMessageComposeViewController"]
+- ["9Celebrate15MessageComposerC", "MessageComposeResult"]
+- ["9Celebrate15MessageComposerC", "String"]
+- ["9Celebrate15MessageComposerC", "canSendText"]
+- ["9Celebrate15MessageComposerC", "configuredMessageComposeViewController"]
+- ["9Celebrate15MessageComposerC", "deinit"]
+- ["9Celebrate15MessageComposerC", "init"]
+- ["9Celebrate15MessageComposerC", "messageComposeViewController"]
+- !private ["So8NSCodingP", "canSendText"]
+- !private ["So8NSCodingP", "dismiss"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "messageComposeDelegate"]
+- !private ["So8NSCodingP", "recipients"]
+- !private ["So26NSExtensionRequestHandlingP", "canSendText"]
+- !private ["So26NSExtensionRequestHandlingP", "dismiss"]
+- !private ["So26NSExtensionRequestHandlingP", "init"]
+- !private ["So26NSExtensionRequestHandlingP", "messageComposeDelegate"]
+- !private ["So26NSExtensionRequestHandlingP", "recipients"]
+- ["So8NSObjectC", "Bool"]
+- ["So8NSObjectC", "MFMessageComposeViewController"]
+- ["So8NSObjectC", "MessageComposeResult"]
+- ["So8NSObjectC", "String"]
+- ["So8NSObjectC", "canSendText"]
+- ["So8NSObjectC", "configuredMessageComposeViewController"]
+- !private ["So8NSObjectC", "dismiss"]
+- ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "messageComposeDelegate"]
+- ["So8NSObjectC", "messageComposeViewController"]
+- !private ["So8NSObjectC", "recipients"]
+- ["So8NSObjectC", ""]
+- !private ["So16NSObjectProtocolP", "MFMessageComposeViewController"]
+- !private ["So16NSObjectProtocolP", "canSendText"]
+- !private ["So16NSObjectProtocolP", "dismiss"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "messageComposeDelegate"]
+- ["So16NSObjectProtocolP", "messageComposeViewController"]
+- !private ["So16NSObjectProtocolP", "recipients"]
+- ["So16NSObjectProtocolP", ""]
+- !private ["So21UIAppearanceContainerP", "canSendText"]
+- !private ["So21UIAppearanceContainerP", "dismiss"]
+- !private ["So21UIAppearanceContainerP", "init"]
+- !private ["So21UIAppearanceContainerP", "messageComposeDelegate"]
+- !private ["So21UIAppearanceContainerP", "recipients"]
+- !private ["So18UIContentContainerP", "canSendText"]
+- !private ["So18UIContentContainerP", "dismiss"]
+- !private ["So18UIContentContainerP", "init"]
+- !private ["So18UIContentContainerP", "messageComposeDelegate"]
+- !private ["So18UIContentContainerP", "recipients"]
+- !private ["So18UIFocusEnvironmentP", "canSendText"]
+- !private ["So18UIFocusEnvironmentP", "dismiss"]
+- !private ["So18UIFocusEnvironmentP", "init"]
+- !private ["So18UIFocusEnvironmentP", "messageComposeDelegate"]
+- !private ["So18UIFocusEnvironmentP", "recipients"]
+- !private ["So22UINavigationControllerC", "canSendText"]
+- !private ["So22UINavigationControllerC", "dismiss"]
+- !private ["So22UINavigationControllerC", "init"]
+- !private ["So22UINavigationControllerC", "messageComposeDelegate"]
+- !private ["So22UINavigationControllerC", "recipients"]
+- !private ["So30UIPasteConfigurationSupportingP", "canSendText"]
+- !private ["So30UIPasteConfigurationSupportingP", "dismiss"]
+- !private ["So30UIPasteConfigurationSupportingP", "init"]
+- !private ["So30UIPasteConfigurationSupportingP", "messageComposeDelegate"]
+- !private ["So30UIPasteConfigurationSupportingP", "recipients"]
+- !private ["So11UIResponderC", "canSendText"]
+- !private ["So11UIResponderC", "dismiss"]
+- !private ["So11UIResponderC", "init"]
+- !private ["So11UIResponderC", "messageComposeDelegate"]
+- !private ["So11UIResponderC", "recipients"]
+- !private ["So30UIResponderStandardEditActionsP", "canSendText"]
+- !private ["So30UIResponderStandardEditActionsP", "dismiss"]
+- !private ["So30UIResponderStandardEditActionsP", "init"]
+- !private ["So30UIResponderStandardEditActionsP", "messageComposeDelegate"]
+- !private ["So30UIResponderStandardEditActionsP", "recipients"]
+- !private ["So16UIStateRestoringP", "canSendText"]
+- !private ["So16UIStateRestoringP", "dismiss"]
+- !private ["So16UIStateRestoringP", "init"]
+- !private ["So16UIStateRestoringP", "messageComposeDelegate"]
+- !private ["So16UIStateRestoringP", "recipients"]
+- !private ["So18UITraitEnvironmentP", "canSendText"]
+- !private ["So18UITraitEnvironmentP", "dismiss"]
+- !private ["So18UITraitEnvironmentP", "init"]
+- !private ["So18UITraitEnvironmentP", "messageComposeDelegate"]
+- !private ["So18UITraitEnvironmentP", "recipients"]
+- !private ["So16UIViewControllerC", "canSendText"]
+- !private ["So16UIViewControllerC", "dismiss"]
+- !private ["So16UIViewControllerC", "init"]
+- !private ["So16UIViewControllerC", "messageComposeDelegate"]
+- !private ["So16UIViewControllerC", "recipients"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "MFMessageComposeViewController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "canSendText"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dismiss"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "messageComposeDelegate"]
+- ["10Foundation27_KeyValueCodingAndObservingP", "messageComposeViewController"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "recipients"]
+- ["10Foundation27_KeyValueCodingAndObservingP", ""]
 depends-nominal:
-- "Ps9AnyObject"
-- "Sa"
-- "Sb"
-- "Ps7CVarArg"
-- "Ps28CustomDebugStringConvertible"
-- "Ps23CustomStringConvertible"
-- "Ps9Equatable"
-- "Ps8Hashable"
-- "CSo30MFMessageComposeViewController"
-- "PSo38MFMessageComposeViewControllerDelegate"
-- "C9Celebrate15MessageComposer"
-- !private "PSo8NSCoding"
-- !private "PSo26NSExtensionRequestHandling"
-- "CSo8NSObject"
-- "PSo16NSObjectProtocol"
-- "Sq"
-- !private "PSo21UIAppearanceContainer"
-- !private "PSo18UIContentContainer"
-- !private "PSo18UIFocusEnvironment"
-- !private "CSo22UINavigationController"
-- !private "CSo11UIResponder"
-- !private "PSo30UIResponderStandardEditActions"
-- !private "PSo16UIStateRestoring"
-- !private "PSo18UITraitEnvironment"
-- !private "CSo16UIViewController"
-- "Ps9_Hashable"
+- "s7CVarArgP"
+- "s28CustomDebugStringConvertibleP"
+- "s23CustomStringConvertibleP"
+- "s9EquatableP"
+- "s8HashableP"
+- !private "So30MFMessageComposeViewControllerC"
+- "So38MFMessageComposeViewControllerDelegateP"
+- "9Celebrate15MessageComposerC"
+- !private "So8NSCodingP"
+- !private "So26NSExtensionRequestHandlingP"
+- "So8NSObjectC"
+- "So16NSObjectProtocolP"
+- !private "So21UIAppearanceContainerP"
+- !private "So18UIContentContainerP"
+- !private "So18UIFocusEnvironmentP"
+- !private "So22UINavigationControllerC"
+- !private "So30UIPasteConfigurationSupportingP"
+- !private "So11UIResponderC"
+- !private "So30UIResponderStandardEditActionsP"
+- !private "So16UIStateRestoringP"
+- !private "So18UITraitEnvironmentP"
+- !private "So16UIViewControllerC"
+- "10Foundation27_KeyValueCodingAndObservingP"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Contacts.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/SDKs/iPhoneSimulator11.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 interface-hash: "85b013c71d42124481dffa34fedaa3cf"

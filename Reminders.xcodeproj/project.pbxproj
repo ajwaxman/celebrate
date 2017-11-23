@@ -227,19 +227,19 @@
 					CAEF2FD21C6192A0001C985D = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = B637WUYHC5;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0910;
 						ProvisioningStyle = Automatic;
 					};
 					CAEF2FE91C6192A0001C985D = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = N957A723BV;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0910;
 						TestTargetID = CAEF2FD21C6192A0001C985D;
 					};
 					CAEF2FF41C6192A0001C985D = {
 						CreatedOnToolsVersion = 7.2;
 						DevelopmentTeam = B637WUYHC5;
-						LastSwiftMigration = 0810;
+						LastSwiftMigration = 0910;
 						TestTargetID = CAEF2FD21C6192A0001C985D;
 					};
 				};
@@ -459,7 +459,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.Reminders;
 				PRODUCT_NAME = Celebrate;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -473,7 +474,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.Reminders;
 				PRODUCT_NAME = Celebrate;
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -486,7 +488,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.RemindersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Celebrate.app/Celebrate";
 			};
 			name = Debug;
@@ -500,7 +503,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.RemindersTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Celebrate.app/Celebrate";
 			};
 			name = Release;
@@ -513,7 +517,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.RemindersUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Reminders;
 				USES_XCTRUNNER = YES;
 			};
@@ -527,7 +532,8 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.waxman.RemindersUITests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 				TEST_TARGET_NAME = Reminders;
 				USES_XCTRUNNER = YES;
 			};
