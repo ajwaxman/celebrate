@@ -9,34 +9,37 @@
 import Foundation
 import CoreData
 
-public class DataHelper {
+open class DataHelper {
     let context: NSManagedObjectContext
     
     init(context: NSManagedObjectContext){
         self.context = context
     }
     
-    public func seedDataStore() {
+    open func seedDataStore() {
         self.seedReminders()
     }
     
-    private func seedReminders() {
-        let dateFormatter = NSDateFormatter()
-        dateFormatter.dateFormat = "M/d/yy"
+    fileprivate func seedReminders() {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "M/d/yyyy"
         
         let reminders = [
-            (name: "Adam Waxman",phoneNumber: "216-533-1493",reminderDate: dateFormatter.dateFromString("9/16/88"),reminderType: "birthday"),
-            (name: "Melissa Marcus",phoneNumber: "201-555-5555",reminderDate: dateFormatter.dateFromString("12/31/91"),reminderType: "birthday"),
-            (name: "Michael Waxman",phoneNumber: "440-725-1377",reminderDate: dateFormatter.dateFromString("10/17/86"),reminderType: "birthday"),
-            (name: "Jen Waxman",phoneNumber: "216-272-1234",reminderDate: dateFormatter.dateFromString("8/11/91"),reminderType: "birthday")
+
+            
+            (name: "TBD",phoneNumber: "555-555-5555",reminderDate: dateFormatter.date(from: "1/1/11"),reminderType: "birthday")
+
         ]
         
         for reminder in reminders {
-            let newReminder = NSEntityDescription.insertNewObjectForEntityForName("Reminder", inManagedObjectContext: context) as! Reminder
+            let newReminder = NSEntityDescription.insertNewObject(forEntityName: "Reminder", into: context) as! Reminder
             newReminder.name = reminder.name
             newReminder.phoneNumber = reminder.phoneNumber
             newReminder.reminderDate = reminder.reminderDate
             newReminder.reminderType = reminder.reminderType
+            newReminder.remainingDays = ReminderHelper.getDaysUntilReminder(ReminderHelper.getNextOccurenceOfReminderDate(newReminder.reminderDate!)) as NSNumber?
+            ReminderHelper.scheduleLocalNotification(newReminder)
+            ReminderHelper.scheduleWeekBeforeLocalNotification(newReminder)
         }
         
         do {
@@ -46,7 +49,7 @@ public class DataHelper {
         }
     }
     
-    public func printAllReminders() {
+    open func printAllReminders() {
         let allReminders = self.getAllReminders() as! [Reminder]
         
         for reminder in allReminders {
@@ -55,23 +58,23 @@ public class DataHelper {
         
     }
     
-    public func getAllReminders() -> [AnyObject] {
-        let reminderFetchRequest = NSFetchRequest(entityName: "Reminder")
+    open func getAllReminders() -> [AnyObject] {
+        let reminderFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminder")
         let primarySortDescriptor = NSSortDescriptor(key: "name", ascending: true)
         
         reminderFetchRequest.sortDescriptors = [primarySortDescriptor]
         
-        let allReminders = (try! context.executeFetchRequest(reminderFetchRequest)) as! [Reminder]
+        let allReminders = (try! context.fetch(reminderFetchRequest)) as! [Reminder]
         return allReminders
     }
     
-    public func deleteAllReminders() {
-        let reminderFetchRequest = NSFetchRequest(entityName: "Reminder")
+    open func deleteAllReminders() {
+        let reminderFetchRequest = NSFetchRequest<NSFetchRequestResult>(entityName: "Reminder")
         let allReminders = (try!
-            context.executeFetchRequest(reminderFetchRequest)) as! [Reminder]
+            context.fetch(reminderFetchRequest)) as! [Reminder]
         
         for reminder in allReminders {
-            context.deleteObject(reminder)
+            context.delete(reminder)
             
             do {
                 try context.save()

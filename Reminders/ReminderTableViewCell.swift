@@ -32,10 +32,10 @@ class ReminderTableViewCell: UITableViewCell {
         if let reminder = self.reminder {
             reminderNameTxt.text = reminder.name
             
-            let dateFormatter = NSDateFormatter()
+            let dateFormatter = DateFormatter()
             dateFormatter.dateFormat = "M/d"
-            let reminderDateString = dateFormatter.stringFromDate(reminder.reminderDate!)
-            reminderDetailsTxt.text = reminderDateString + " - " + getEventYear(reminder.reminderDate!) + reminder.reminderType!
+            let reminderDateString = dateFormatter.string(from: reminder.reminderDate! as Date)
+            reminderDetailsTxt.text = reminderDateString + " - " + getEventYear(reminder.reminderDate! as Date) + reminder.reminderType!
             
             let remainingDays = reminder.remainingDays as! Int
             if remainingDays < 31 {
@@ -53,8 +53,8 @@ class ReminderTableViewCell: UITableViewCell {
                 reminderRemainingDays.text = reminder.remainingDays?.stringValue
             }
             let currentFont = reminderRemainingDays.font
-            let fontName = currentFont.fontName.componentsSeparatedByString("-").first
-            let newFont = UIFont(name: "\(fontName!)-Light", size: currentFont.pointSize)
+            let fontName = currentFont?.fontName.components(separatedBy: "-").first
+            let newFont = UIFont(name: "\(fontName!)-Light", size: (currentFont?.pointSize)!)
             reminderRemainingDays.font = newFont
         }
         
@@ -62,12 +62,12 @@ class ReminderTableViewCell: UITableViewCell {
 
     }
     
-    func getEventYear(reminderDate: NSDate) -> String {
-        let yearOfEvent = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: reminderDate, toDate: ReminderHelper.getNextOccurenceOfReminderDate(reminderDate), options:  NSCalendarOptions(rawValue: 0)).year
-        return addOrdinal(yearOfEvent)
+    func getEventYear(_ reminderDate: Date) -> String {
+        let yearOfEvent = (Calendar.current as NSCalendar).components(NSCalendar.Unit.year, from: reminderDate, to: ReminderHelper.getNextOccurenceOfReminderDate(reminderDate), options:  NSCalendar.Options(rawValue: 0)).year
+        return addOrdinal(yearOfEvent!)
     }
     
-    func addOrdinal(yearOfEvent: Int) -> String {
+    func addOrdinal(_ yearOfEvent: Int) -> String {
         if yearOfEvent < 5 && reminder?.reminderType == "Birthday" {
             return ""
         }
@@ -84,22 +84,22 @@ class ReminderTableViewCell: UITableViewCell {
     
     func createReminderCircle() {
         let circle = remainingBaseCircle
-        circle.backgroundColor = UIColor.whiteColor()
-        circle.layer.cornerRadius = circle.frame.size.width/2
+        circle?.backgroundColor = UIColor.white
+        circle?.layer.cornerRadius = (circle?.frame.size.width)!/2
         
-        circle.layer.borderWidth = 2
+        circle?.layer.borderWidth = 2
         
         // Set color based on days remaining
         let remainingDays = reminder?.remainingDays as! Int
         switch remainingDays {
             case 0...7:
-                circle.layer.borderColor = UIColor(red:0.137, green:0.812, blue:0.373, alpha:1).CGColor
+                circle?.layer.borderColor = UIColor(red:0.137, green:0.812, blue:0.373, alpha:1).cgColor
             case 8...30:
-                circle.layer.borderColor = UIColor(red:0.98, green:0.7, blue:0.19, alpha: 0.5).CGColor
+                circle?.layer.borderColor = UIColor(red:0.98, green:0.7, blue:0.19, alpha: 0.5).cgColor
             // case 31...90:
             //      circle.layer.borderColor = UIColor(red:0.91, green:0.23, blue:0.19, alpha:0.6).CGColor
             default:
-                circle.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:0.6).CGColor
+                circle?.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:0.6).cgColor
         }
         
         if remainingDays == 0 {
@@ -110,8 +110,8 @@ class ReminderTableViewCell: UITableViewCell {
         
         if CFloat(reminder!.remainingDays!) < 30 {
             let currentFont = reminderRemainingDays.font
-            let fontName = currentFont.fontName.componentsSeparatedByString("-").first
-            let newFont = UIFont(name: "\(fontName!)-Medium", size: currentFont.pointSize)
+            let fontName = currentFont?.fontName.components(separatedBy: "-").first
+            let newFont = UIFont(name: "\(fontName!)-Medium", size: (currentFont?.pointSize)!)
             reminderRemainingDays.font = newFont
         }
     }
@@ -121,7 +121,7 @@ class ReminderTableViewCell: UITableViewCell {
         // Initialization code
     }
 
-    override func setSelected(selected: Bool, animated: Bool) {
+    override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
 
         // Configure the view for the selected state

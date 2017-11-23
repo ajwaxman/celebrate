@@ -29,11 +29,11 @@ class ReminderViewController: UIViewController {
     
     
     
-    @IBAction func callContact(sender: UIButton) {
+    @IBAction func callContact(_ sender: UIButton) {
     
         let numberString = reminder.phoneNumber
         if let number = numberString {
-            dispatch_async(dispatch_get_main_queue()) {
+            DispatchQueue.main.async {
                 self.callNumber(number)
             }
         }
@@ -42,8 +42,8 @@ class ReminderViewController: UIViewController {
     
     let messageComposer = MessageComposer()
     
-    @IBAction func textContact(sender: UIButton) {
-        dispatch_async(dispatch_get_main_queue()) {
+    @IBAction func textContact(_ sender: UIButton) {
+        DispatchQueue.main.async {
 
             let numberString = self.reminder.phoneNumber
             
@@ -52,7 +52,7 @@ class ReminderViewController: UIViewController {
                 // Obtain a configured MFMessageComposeViewController
                 let messageComposeVC = self.messageComposer.configuredMessageComposeViewController([numberString!])
                 
-                self.presentViewController(messageComposeVC, animated: true, completion: nil)
+                self.present(messageComposeVC, animated: true, completion: nil)
             } else {
                 // Let the user know if his/her device isn't able to send text messages
                 print("There was an error")
@@ -60,9 +60,9 @@ class ReminderViewController: UIViewController {
         }
     }
     
-    func callNumber(phoneNumber:String) {
-        if let phoneCallURL:NSURL = NSURL(string: "tel://\(phoneNumber)") {
-            let application:UIApplication = UIApplication.sharedApplication()
+    func callNumber(_ phoneNumber:String) {
+        if let phoneCallURL:URL = URL(string: "tel://\(phoneNumber)") {
+            let application:UIApplication = UIApplication.shared
             if (application.canOpenURL(phoneCallURL)) {
                 application.openURL(phoneCallURL);
             }
@@ -73,11 +73,11 @@ class ReminderViewController: UIViewController {
         let fullName = reminder.name!
         var fullNameArr = fullName.characters.split{$0 == " "}.map(String.init)
         let firstName = fullNameArr[0]
-        reminderTitle.text =  firstName + "'s " + getEventYear(reminder.reminderDate!) + reminder.reminderType!
+        reminderTitle.text =  firstName + "'s " + getEventYear(reminder.reminderDate! as Date) + reminder.reminderType!
         
-        let dateFormatter = NSDateFormatter()
+        let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEEE, MMMM d"
-        let reminderDateString = dateFormatter.stringFromDate(ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!))
+        let reminderDateString = dateFormatter.string(from: ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate!))
         reminderSubtitle.text = reminderDateString
     
         
@@ -97,12 +97,12 @@ class ReminderViewController: UIViewController {
         styleButtons()
     }
     
-    func getEventYear(reminderDate: NSDate) -> String {
-        let yearOfEvent = NSCalendar.currentCalendar().components(NSCalendarUnit.Year, fromDate: reminderDate, toDate: ReminderHelper.getNextOccurenceOfReminderDate(reminderDate), options:  NSCalendarOptions(rawValue: 0)).year
-        return addOrdinal(yearOfEvent)
+    func getEventYear(_ reminderDate: Date) -> String {
+        let yearOfEvent = (Calendar.current as NSCalendar).components(NSCalendar.Unit.year, from: reminderDate, to: ReminderHelper.getNextOccurenceOfReminderDate(reminderDate), options:  NSCalendar.Options(rawValue: 0)).year
+        return addOrdinal(yearOfEvent!)
     }
     
-    func addOrdinal(yearOfEvent: Int) -> String {
+    func addOrdinal(_ yearOfEvent: Int) -> String {
         if yearOfEvent < 5 && reminder?.reminderType == "Birthday" {
             return ""
         }
@@ -121,46 +121,46 @@ class ReminderViewController: UIViewController {
         
         let fullName = reminder.name!
         var fullNameArr = fullName.characters.split{$0 == " "}.map(String.init)
-        let firstName = fullNameArr[0].uppercaseString
+        let firstName = fullNameArr[0].uppercased()
         
         // Style call button
         callButton.layer.cornerRadius = 3
         callButton.backgroundColor = UIColor(red:0.14, green:0.81, blue:0.37, alpha:1.0)
-        callButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        callButton.setTitleColor(UIColor.white, for: UIControlState())
         let callButtonTitle = "CALL " + firstName
-        callButton.setTitle(callButtonTitle, forState: .Normal)
+        callButton.setTitle(callButtonTitle, for: UIControlState())
         
         // Style text button
-        textButton.layer.borderColor = UIColor(red:0.14, green:0.81, blue:0.37, alpha:1.0).CGColor
+        textButton.layer.borderColor = UIColor(red:0.14, green:0.81, blue:0.37, alpha:1.0).cgColor
         textButton.layer.borderWidth = 1
         textButton.layer.cornerRadius = 3
         let textButtonTitle = "TEXT " + firstName
-        textButton.setTitle(textButtonTitle, forState: .Normal)
+        textButton.setTitle(textButtonTitle, for: UIControlState())
     }
     
     func createReminderCircle() {
         let circle = remainingBaseCircle
-        circle.backgroundColor = UIColor.whiteColor()
-        circle.layer.cornerRadius = circle.frame.size.width/2
+        circle?.backgroundColor = UIColor.white
+        circle?.layer.cornerRadius = (circle?.frame.size.width)!/2
         
-        circle.layer.borderWidth = 4
+        circle?.layer.borderWidth = 4
         
         // Set color based on days remaining
         let remainingDays = reminder?.remainingDays as! Int
         switch remainingDays {
         case 0...7:
-            circle.layer.borderColor = UIColor(red:0.137, green:0.812, blue:0.373, alpha:1).CGColor
+            circle?.layer.borderColor = UIColor(red:0.137, green:0.812, blue:0.373, alpha:1).cgColor
         case 8...30:
-            circle.layer.borderColor = UIColor(red:0.98, green:0.7, blue:0.19, alpha: 0.5).CGColor
+            circle?.layer.borderColor = UIColor(red:0.98, green:0.7, blue:0.19, alpha: 0.5).cgColor
         // case 31...90:
             // circle.layer.borderColor = UIColor(red:0.91, green:0.23, blue:0.19, alpha:0.6).CGColor
         default:
-            circle.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:0.6).CGColor
+            circle?.layer.borderColor = UIColor(red:0.8, green:0.8, blue:0.8, alpha:0.6).cgColor
         }
         
         if CFloat(reminder!.remainingDays!) > 99 {
             let currentFont = reminderRemainingDays.font
-            let fontName = currentFont.fontName.componentsSeparatedByString("-").first
+            let fontName = currentFont?.fontName.components(separatedBy: "-").first
             let newFont = UIFont(name: "\(fontName!)-Thin", size: 80)
             reminderRemainingDays.font = newFont
         }
@@ -168,8 +168,8 @@ class ReminderViewController: UIViewController {
     
     func createOverlayCircle() {
         let circle = remainingOverlayCircle
-        circle.backgroundColor = UIColor.whiteColor()
-        circle.layer.cornerRadius = circle.frame.size.width/2
+        circle?.backgroundColor = UIColor.white
+        circle?.layer.cornerRadius = (circle?.frame.size.width)!/2
     }
 
 }

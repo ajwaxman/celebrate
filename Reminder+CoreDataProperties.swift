@@ -16,13 +16,13 @@ extension Reminder {
 
     @NSManaged var name: String?
     @NSManaged var phoneNumber: String?
-    @NSManaged var reminderDate: NSDate?
+    @NSManaged var reminderDate: Date?
     @NSManaged var reminderType: String?
     @NSManaged var remainingDays: NSNumber?
     
     var section: String? {
         
-        let days = remainingDays!.intValue
+        let days = remainingDays!.int32Value
         switch days {
         case 0...7:
             return "This week"
