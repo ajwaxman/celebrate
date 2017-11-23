@@ -232,7 +232,7 @@ open class B68UIFloatLabelTextField: UITextField {
     
     
     //MARK: - Observers
-    func textFieldTextDidChange(_ notification : Notification) {
+    @objc func textFieldTextDidChange(_ notification : Notification) {
         let previousShouldDrawPlaceholderValue = shouldDrawPlaceholder
         shouldDrawPlaceholder = !hasText
         
@@ -246,13 +246,13 @@ open class B68UIFloatLabelTextField: UITextField {
         }
     }
     //MARK: TextField Editing Observer
-    func textFieldTextDidEndEditing(_ notification : Notification) {
+    @objc func textFieldTextDidEndEditing(_ notification : Notification) {
         if (hasText)  {
             floatingLabel.textColor = inactiveTextColorfloatingLabel
         }
     }
     
-    func textFieldTextDidBeginEditing(_ notification : Notification) {
+    @objc func textFieldTextDidBeginEditing(_ notification : Notification) {
         floatingLabel.textColor = activeTextColorfloatingLabel
     }
     

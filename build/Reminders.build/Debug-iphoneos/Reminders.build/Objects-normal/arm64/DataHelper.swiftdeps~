@@ -2,439 +2,327 @@
 provides-top-level:
 - "DataHelper"
 provides-nominal:
-- "C9Celebrate10DataHelper"
+- "9Celebrate10DataHelperC"
 provides-member:
-- ["C9Celebrate10DataHelper", ""]
+- ["9Celebrate10DataHelperC", ""]
 provides-dynamic-lookup:
 depends-top-level:
-- !private "Reminder"
-- "DataHelper"
-- !private "NSFetchRequest"
-- "AssignmentPrecedence"
 - "AnyObject"
-- !private "print"
-- "CastingPrecedence"
-- !private "NSEntityDescription"
-- !private "DateFormatter"
-- "NSManagedObjectContext"
-- !private "NSFetchRequestResult"
-- !private "StringLiteralType"
-- !private "NSNumber"
 - !private "Array"
-- !private "NSSortDescriptor"
-- !private "ReminderHelper"
+- "AssignmentPrecedence"
 - !private "BooleanLiteralType"
+- "CastingPrecedence"
+- "DataHelper"
+- !private "DateFormatter"
+- !private "NSEntityDescription"
+- !private "NSFetchRequest"
+- !private "NSFetchRequestResult"
+- "NSManagedObjectContext"
+- !private "NSNumber"
+- !private "NSSortDescriptor"
+- !private "Reminder"
+- !private "ReminderHelper"
+- !private "StringLiteralType"
+- !private "print"
 depends-member:
-- !private ["Ps9AnyObject", "DateFormatter"]
-- !private ["Ps9AnyObject", "NSEntityDescription"]
-- !private ["Ps9AnyObject", "NSFetchRequest"]
-- !private ["Ps9AnyObject", "NSSortDescriptor"]
-- !private ["Ps9AnyObject", "ReminderHelper"]
-- !private ["Ps9AnyObject", "context"]
-- !private ["Ps9AnyObject", "date"]
-- !private ["Ps9AnyObject", "dateFormat"]
-- !private ["Ps9AnyObject", "delete"]
-- !private ["Ps9AnyObject", "fetch"]
-- !private ["Ps9AnyObject", "getAllReminders"]
-- !private ["Ps9AnyObject", "getDaysUntilReminder"]
-- !private ["Ps9AnyObject", "getNextOccurenceOfReminderDate"]
-- !private ["Ps9AnyObject", "init"]
-- !private ["Ps9AnyObject", "insertNewObject"]
-- !private ["Ps9AnyObject", "name"]
-- !private ["Ps9AnyObject", "phoneNumber"]
-- !private ["Ps9AnyObject", "print"]
-- !private ["Ps9AnyObject", "remainingDays"]
-- !private ["Ps9AnyObject", "reminderDate"]
-- !private ["Ps9AnyObject", "reminderType"]
-- !private ["Ps9AnyObject", "save"]
-- !private ["Ps9AnyObject", "scheduleLocalNotification"]
-- !private ["Ps9AnyObject", "scheduleWeekBeforeLocalNotification"]
-- !private ["Ps9AnyObject", "seedReminders"]
-- !private ["Ps9AnyObject", "sortDescriptors"]
-- ["Ps9AnyObject", ""]
-- !private ["Sa", "Element"]
-- !private ["Sa", "Iterator"]
-- !private ["Sa", "_Element"]
-- ["Sa", "deinit"]
-- !private ["Ps23BidirectionalCollection", "Element"]
-- !private ["Ps23BidirectionalCollection", "Iterator"]
-- !private ["Ps23BidirectionalCollection", "_Element"]
-- !private ["Ps22BidirectionalIndexable", "Element"]
-- !private ["Ps22BidirectionalIndexable", "Iterator"]
-- !private ["Ps22BidirectionalIndexable", "_Element"]
-- ["Sb", "deinit"]
-- !private ["PSo15CNKeyDescriptor", "init"]
-- !private ["Ps7CVarArg", "Element"]
-- !private ["Ps7CVarArg", "Iterator"]
-- !private ["Ps7CVarArg", "_Element"]
-- !private ["Ps7CVarArg", "date"]
-- !private ["Ps7CVarArg", "dateFormat"]
-- !private ["Ps7CVarArg", "delete"]
-- !private ["Ps7CVarArg", "fetch"]
-- !private ["Ps7CVarArg", "init"]
-- !private ["Ps7CVarArg", "insertNewObject"]
-- !private ["Ps7CVarArg", "name"]
-- !private ["Ps7CVarArg", "phoneNumber"]
-- !private ["Ps7CVarArg", "remainingDays"]
-- !private ["Ps7CVarArg", "reminderDate"]
-- !private ["Ps7CVarArg", "reminderType"]
-- !private ["Ps7CVarArg", "save"]
-- !private ["Ps7CVarArg", "sortDescriptors"]
-- !private ["Vs9Character", "deinit"]
-- !private ["Ps10Collection", "Element"]
-- !private ["Ps10Collection", "Iterator"]
-- !private ["Ps10Collection", "_Element"]
-- !private ["Ps10Comparable", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "Element"]
-- !private ["Ps28CustomDebugStringConvertible", "Iterator"]
-- !private ["Ps28CustomDebugStringConvertible", "_Element"]
-- !private ["Ps28CustomDebugStringConvertible", "date"]
-- !private ["Ps28CustomDebugStringConvertible", "dateFormat"]
-- !private ["Ps28CustomDebugStringConvertible", "delete"]
-- !private ["Ps28CustomDebugStringConvertible", "fetch"]
-- !private ["Ps28CustomDebugStringConvertible", "init"]
-- !private ["Ps28CustomDebugStringConvertible", "insertNewObject"]
-- !private ["Ps28CustomDebugStringConvertible", "name"]
-- !private ["Ps28CustomDebugStringConvertible", "phoneNumber"]
-- !private ["Ps28CustomDebugStringConvertible", "remainingDays"]
-- !private ["Ps28CustomDebugStringConvertible", "reminderDate"]
-- !private ["Ps28CustomDebugStringConvertible", "reminderType"]
-- !private ["Ps28CustomDebugStringConvertible", "save"]
-- !private ["Ps28CustomDebugStringConvertible", "sortDescriptors"]
-- !private ["Ps29CustomPlaygroundQuickLookable", "init"]
-- !private ["Ps17CustomReflectable", "Element"]
-- !private ["Ps17CustomReflectable", "Iterator"]
-- !private ["Ps17CustomReflectable", "_Element"]
-- !private ["Ps17CustomReflectable", "init"]
-- !private ["Ps23CustomStringConvertible", "Element"]
-- !private ["Ps23CustomStringConvertible", "Iterator"]
-- !private ["Ps23CustomStringConvertible", "_Element"]
-- !private ["Ps23CustomStringConvertible", "date"]
-- !private ["Ps23CustomStringConvertible", "dateFormat"]
-- !private ["Ps23CustomStringConvertible", "delete"]
-- !private ["Ps23CustomStringConvertible", "fetch"]
-- !private ["Ps23CustomStringConvertible", "init"]
-- !private ["Ps23CustomStringConvertible", "insertNewObject"]
-- !private ["Ps23CustomStringConvertible", "name"]
-- !private ["Ps23CustomStringConvertible", "phoneNumber"]
-- !private ["Ps23CustomStringConvertible", "remainingDays"]
-- !private ["Ps23CustomStringConvertible", "reminderDate"]
-- !private ["Ps23CustomStringConvertible", "reminderType"]
-- !private ["Ps23CustomStringConvertible", "save"]
-- !private ["Ps23CustomStringConvertible", "sortDescriptors"]
-- ["C9Celebrate10DataHelper", "AnyObject"]
-- !private ["C9Celebrate10DataHelper", "DateFormatter"]
-- !private ["C9Celebrate10DataHelper", "NSEntityDescription"]
-- !private ["C9Celebrate10DataHelper", "NSFetchRequest"]
-- !private ["C9Celebrate10DataHelper", "NSFetchRequestResult"]
-- ["C9Celebrate10DataHelper", "NSManagedObjectContext"]
-- !private ["C9Celebrate10DataHelper", "NSNumber"]
-- !private ["C9Celebrate10DataHelper", "NSSortDescriptor"]
-- !private ["C9Celebrate10DataHelper", "Reminder"]
-- !private ["C9Celebrate10DataHelper", "ReminderHelper"]
-- ["C9Celebrate10DataHelper", "context"]
-- ["C9Celebrate10DataHelper", "deinit"]
-- ["C9Celebrate10DataHelper", "deleteAllReminders"]
-- ["C9Celebrate10DataHelper", "getAllReminders"]
-- ["C9Celebrate10DataHelper", "init"]
-- !private ["C9Celebrate10DataHelper", "print"]
-- ["C9Celebrate10DataHelper", "printAllReminders"]
-- ["C9Celebrate10DataHelper", "seedDataStore"]
-- !private ["C9Celebrate10DataHelper", "seedReminders"]
-- !private ["V10Foundation4Date", "deinit"]
-- !private ["CSo13DateFormatter", "date"]
-- !private ["CSo13DateFormatter", "dateFormat"]
-- !private ["CSo13DateFormatter", "deinit"]
-- !private ["CSo13DateFormatter", "init"]
-- !private ["Sd", "deinit"]
-- !private ["Ps9Equatable", "date"]
-- !private ["Ps9Equatable", "dateFormat"]
-- !private ["Ps9Equatable", "delete"]
-- !private ["Ps9Equatable", "fetch"]
-- !private ["Ps9Equatable", "init"]
-- !private ["Ps9Equatable", "insertNewObject"]
-- !private ["Ps9Equatable", "name"]
-- !private ["Ps9Equatable", "phoneNumber"]
-- !private ["Ps9Equatable", "remainingDays"]
-- !private ["Ps9Equatable", "reminderDate"]
-- !private ["Ps9Equatable", "reminderType"]
-- !private ["Ps9Equatable", "save"]
-- !private ["Ps9Equatable", "sortDescriptors"]
-- !private ["Ps25ExpressibleByArrayLiteral", "Element"]
-- !private ["Ps25ExpressibleByArrayLiteral", "Iterator"]
-- !private ["Ps25ExpressibleByArrayLiteral", "_Element"]
-- !private ["Ps43ExpressibleByExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps32ExpressibleByStringInterpolation", "init"]
-- !private ["Ps26ExpressibleByStringLiteral", "init"]
-- !private ["Ps33ExpressibleByUnicodeScalarLiteral", "init"]
-- !private ["Sf", "deinit"]
-- !private ["CSo9Formatter", "date"]
-- !private ["CSo9Formatter", "dateFormat"]
-- !private ["CSo9Formatter", "init"]
-- !private ["Ps8Hashable", "date"]
-- !private ["Ps8Hashable", "dateFormat"]
-- !private ["Ps8Hashable", "delete"]
-- !private ["Ps8Hashable", "fetch"]
-- !private ["Ps8Hashable", "init"]
-- !private ["Ps8Hashable", "insertNewObject"]
-- !private ["Ps8Hashable", "name"]
-- !private ["Ps8Hashable", "phoneNumber"]
-- !private ["Ps8Hashable", "remainingDays"]
-- !private ["Ps8Hashable", "reminderDate"]
-- !private ["Ps8Hashable", "reminderType"]
-- !private ["Ps8Hashable", "save"]
-- !private ["Ps8Hashable", "sortDescriptors"]
-- !private ["SQ", "deinit"]
-- !private ["Ps9Indexable", "Element"]
-- !private ["Ps9Indexable", "Iterator"]
-- !private ["Ps9Indexable", "_Element"]
-- !private ["Ps13IndexableBase", "Element"]
-- !private ["Ps13IndexableBase", "Iterator"]
-- !private ["Ps13IndexableBase", "_Element"]
-- !private ["Vs16IndexingIterator", "Element"]
-- !private ["Si", "deinit"]
-- !private ["Vs5Int16", "deinit"]
-- !private ["Vs5Int32", "deinit"]
-- !private ["Vs5Int64", "deinit"]
-- !private ["Vs4Int8", "deinit"]
-- !private ["Ps16IteratorProtocol", "Element"]
-- !private ["Ps25LosslessStringConvertible", "init"]
-- !private ["Ps10MirrorPath", "init"]
-- !private ["Ps17MutableCollection", "Element"]
-- !private ["Ps17MutableCollection", "Iterator"]
-- !private ["Ps17MutableCollection", "_Element"]
-- !private ["Ps16MutableIndexable", "Element"]
-- !private ["Ps16MutableIndexable", "Iterator"]
-- !private ["Ps16MutableIndexable", "_Element"]
-- !private ["PSo8NSCoding", "date"]
-- !private ["PSo8NSCoding", "dateFormat"]
-- !private ["PSo8NSCoding", "delete"]
-- !private ["PSo8NSCoding", "fetch"]
-- !private ["PSo8NSCoding", "init"]
-- !private ["PSo8NSCoding", "insertNewObject"]
-- !private ["PSo8NSCoding", "save"]
-- !private ["PSo8NSCoding", "sortDescriptors"]
-- !private ["PSo9NSCopying", "date"]
-- !private ["PSo9NSCopying", "dateFormat"]
-- !private ["PSo9NSCopying", "init"]
-- !private ["PSo9NSCopying", "insertNewObject"]
-- !private ["PSo9NSCopying", "sortDescriptors"]
-- !private ["CSo19NSEntityDescription", "insertNewObject"]
-- !private ["PSo17NSFastEnumeration", "insertNewObject"]
-- ["CSo14NSFetchRequest", "deinit"]
-- !private ["CSo14NSFetchRequest", "init"]
-- !private ["CSo14NSFetchRequest", "sortDescriptors"]
-- ["PSo20NSFetchRequestResult", "deinit"]
-- !private ["PSo20NSFetchRequestResult", "name"]
-- !private ["PSo20NSFetchRequestResult", "phoneNumber"]
-- !private ["PSo20NSFetchRequestResult", "remainingDays"]
-- !private ["PSo20NSFetchRequestResult", "reminderDate"]
-- !private ["PSo20NSFetchRequestResult", "reminderType"]
-- !private ["PSo9NSLocking", "delete"]
-- !private ["PSo9NSLocking", "fetch"]
-- !private ["PSo9NSLocking", "save"]
-- !private ["CSo15NSManagedObject", "deinit"]
-- !private ["CSo15NSManagedObject", "name"]
-- !private ["CSo15NSManagedObject", "phoneNumber"]
-- !private ["CSo15NSManagedObject", "remainingDays"]
-- !private ["CSo15NSManagedObject", "reminderDate"]
-- !private ["CSo15NSManagedObject", "reminderType"]
-- ["CSo22NSManagedObjectContext", "deinit"]
-- !private ["CSo22NSManagedObjectContext", "delete"]
-- !private ["CSo22NSManagedObjectContext", "fetch"]
-- !private ["CSo22NSManagedObjectContext", "save"]
-- !private ["PSo16NSMutableCopying", "init"]
-- !private ["CSo8NSObject", "date"]
-- !private ["CSo8NSObject", "dateFormat"]
-- !private ["CSo8NSObject", "delete"]
-- !private ["CSo8NSObject", "fetch"]
-- !private ["CSo8NSObject", "init"]
-- !private ["CSo8NSObject", "insertNewObject"]
-- !private ["CSo8NSObject", "name"]
-- !private ["CSo8NSObject", "phoneNumber"]
-- !private ["CSo8NSObject", "remainingDays"]
-- !private ["CSo8NSObject", "reminderDate"]
-- !private ["CSo8NSObject", "reminderType"]
-- !private ["CSo8NSObject", "save"]
-- !private ["CSo8NSObject", "sortDescriptors"]
-- !private ["PSo16NSObjectProtocol", "date"]
-- !private ["PSo16NSObjectProtocol", "dateFormat"]
-- !private ["PSo16NSObjectProtocol", "delete"]
-- !private ["PSo16NSObjectProtocol", "fetch"]
-- !private ["PSo16NSObjectProtocol", "init"]
-- !private ["PSo16NSObjectProtocol", "insertNewObject"]
-- !private ["PSo16NSObjectProtocol", "name"]
-- !private ["PSo16NSObjectProtocol", "phoneNumber"]
-- !private ["PSo16NSObjectProtocol", "remainingDays"]
-- !private ["PSo16NSObjectProtocol", "reminderDate"]
-- !private ["PSo16NSObjectProtocol", "reminderType"]
-- !private ["PSo16NSObjectProtocol", "save"]
-- !private ["PSo16NSObjectProtocol", "sortDescriptors"]
-- !private ["CSo24NSPersistentStoreRequest", "sortDescriptors"]
-- !private ["PSo14NSSecureCoding", "init"]
-- ["CSo16NSSortDescriptor", "deinit"]
-- !private ["CSo16NSSortDescriptor", "init"]
-- !private ["CSo8NSString", "init"]
-- !private ["Sq", "deinit"]
-- !private ["Ps22RandomAccessCollection", "Element"]
-- !private ["Ps22RandomAccessCollection", "Iterator"]
-- !private ["Ps22RandomAccessCollection", "_Element"]
-- !private ["Ps21RandomAccessIndexable", "Element"]
-- !private ["Ps21RandomAccessIndexable", "Iterator"]
-- !private ["Ps21RandomAccessIndexable", "_Element"]
-- !private ["Ps26RangeReplaceableCollection", "Element"]
-- !private ["Ps26RangeReplaceableCollection", "Iterator"]
-- !private ["Ps26RangeReplaceableCollection", "_Element"]
-- !private ["Ps25RangeReplaceableIndexable", "Element"]
-- !private ["Ps25RangeReplaceableIndexable", "Iterator"]
-- !private ["Ps25RangeReplaceableIndexable", "_Element"]
-- ["C9Celebrate8Reminder", "deinit"]
-- !private ["C9Celebrate8Reminder", "name"]
-- !private ["C9Celebrate8Reminder", "phoneNumber"]
-- !private ["C9Celebrate8Reminder", "remainingDays"]
-- !private ["C9Celebrate8Reminder", "reminderDate"]
-- !private ["C9Celebrate8Reminder", "reminderType"]
-- !private ["C9Celebrate14ReminderHelper", "getDaysUntilReminder"]
-- !private ["C9Celebrate14ReminderHelper", "getNextOccurenceOfReminderDate"]
-- !private ["C9Celebrate14ReminderHelper", "scheduleLocalNotification"]
-- !private ["C9Celebrate14ReminderHelper", "scheduleWeekBeforeLocalNotification"]
-- !private ["Ps8Sequence", "Element"]
-- !private ["Ps8Sequence", "Iterator"]
-- !private ["Ps8Sequence", "_Element"]
-- ["SS", "deinit"]
+- !private ["s23BidirectionalCollectionP", "init"]
+- !private ["So15CNKeyDescriptorP", "init"]
+- !private ["s7CVarArgP", "date"]
+- !private ["s7CVarArgP", "dateFormat"]
+- !private ["s7CVarArgP", "delete"]
+- !private ["s7CVarArgP", "fetch"]
+- !private ["s7CVarArgP", "init"]
+- !private ["s7CVarArgP", "insertNewObject"]
+- !private ["s7CVarArgP", "name"]
+- !private ["s7CVarArgP", "phoneNumber"]
+- !private ["s7CVarArgP", "remainingDays"]
+- !private ["s7CVarArgP", "reminderDate"]
+- !private ["s7CVarArgP", "reminderType"]
+- !private ["s7CVarArgP", "save"]
+- !private ["s7CVarArgP", "sortDescriptors"]
+- !private ["s10CollectionP", "init"]
+- !private ["s10ComparableP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "date"]
+- !private ["s28CustomDebugStringConvertibleP", "dateFormat"]
+- !private ["s28CustomDebugStringConvertibleP", "delete"]
+- !private ["s28CustomDebugStringConvertibleP", "fetch"]
+- !private ["s28CustomDebugStringConvertibleP", "init"]
+- !private ["s28CustomDebugStringConvertibleP", "insertNewObject"]
+- !private ["s28CustomDebugStringConvertibleP", "name"]
+- !private ["s28CustomDebugStringConvertibleP", "phoneNumber"]
+- !private ["s28CustomDebugStringConvertibleP", "remainingDays"]
+- !private ["s28CustomDebugStringConvertibleP", "reminderDate"]
+- !private ["s28CustomDebugStringConvertibleP", "reminderType"]
+- !private ["s28CustomDebugStringConvertibleP", "save"]
+- !private ["s28CustomDebugStringConvertibleP", "sortDescriptors"]
+- !private ["s29CustomPlaygroundQuickLookableP", "init"]
+- !private ["s17CustomReflectableP", "init"]
+- !private ["s23CustomStringConvertibleP", "date"]
+- !private ["s23CustomStringConvertibleP", "dateFormat"]
+- !private ["s23CustomStringConvertibleP", "delete"]
+- !private ["s23CustomStringConvertibleP", "fetch"]
+- !private ["s23CustomStringConvertibleP", "init"]
+- !private ["s23CustomStringConvertibleP", "insertNewObject"]
+- !private ["s23CustomStringConvertibleP", "name"]
+- !private ["s23CustomStringConvertibleP", "phoneNumber"]
+- !private ["s23CustomStringConvertibleP", "remainingDays"]
+- !private ["s23CustomStringConvertibleP", "reminderDate"]
+- !private ["s23CustomStringConvertibleP", "reminderType"]
+- !private ["s23CustomStringConvertibleP", "save"]
+- !private ["s23CustomStringConvertibleP", "sortDescriptors"]
+- ["9Celebrate10DataHelperC", "AnyObject"]
+- !private ["9Celebrate10DataHelperC", "DateFormatter"]
+- !private ["9Celebrate10DataHelperC", "NSEntityDescription"]
+- !private ["9Celebrate10DataHelperC", "NSFetchRequest"]
+- !private ["9Celebrate10DataHelperC", "NSFetchRequestResult"]
+- ["9Celebrate10DataHelperC", "NSManagedObjectContext"]
+- !private ["9Celebrate10DataHelperC", "NSNumber"]
+- !private ["9Celebrate10DataHelperC", "NSSortDescriptor"]
+- !private ["9Celebrate10DataHelperC", "Reminder"]
+- !private ["9Celebrate10DataHelperC", "ReminderHelper"]
+- ["9Celebrate10DataHelperC", "context"]
+- ["9Celebrate10DataHelperC", "deinit"]
+- ["9Celebrate10DataHelperC", "deleteAllReminders"]
+- ["9Celebrate10DataHelperC", "getAllReminders"]
+- ["9Celebrate10DataHelperC", "init"]
+- !private ["9Celebrate10DataHelperC", "print"]
+- ["9Celebrate10DataHelperC", "printAllReminders"]
+- ["9Celebrate10DataHelperC", "seedDataStore"]
+- !private ["9Celebrate10DataHelperC", "seedReminders"]
+- !private ["So13DateFormatterC", "date"]
+- !private ["So13DateFormatterC", "dateFormat"]
+- !private ["So13DateFormatterC", "init"]
+- !private ["s9DecodableP", "init"]
+- !private ["s9EncodableP", "init"]
+- !private ["s9EquatableP", "date"]
+- !private ["s9EquatableP", "dateFormat"]
+- !private ["s9EquatableP", "delete"]
+- !private ["s9EquatableP", "fetch"]
+- !private ["s9EquatableP", "init"]
+- !private ["s9EquatableP", "insertNewObject"]
+- !private ["s9EquatableP", "name"]
+- !private ["s9EquatableP", "phoneNumber"]
+- !private ["s9EquatableP", "remainingDays"]
+- !private ["s9EquatableP", "reminderDate"]
+- !private ["s9EquatableP", "reminderType"]
+- !private ["s9EquatableP", "save"]
+- !private ["s9EquatableP", "sortDescriptors"]
+- !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s26ExpressibleByStringLiteralP", "init"]
+- !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
+- !private ["So9FormatterC", "date"]
+- !private ["So9FormatterC", "dateFormat"]
+- !private ["So9FormatterC", "init"]
+- !private ["s8HashableP", "date"]
+- !private ["s8HashableP", "dateFormat"]
+- !private ["s8HashableP", "delete"]
+- !private ["s8HashableP", "fetch"]
+- !private ["s8HashableP", "init"]
+- !private ["s8HashableP", "insertNewObject"]
+- !private ["s8HashableP", "name"]
+- !private ["s8HashableP", "phoneNumber"]
+- !private ["s8HashableP", "remainingDays"]
+- !private ["s8HashableP", "reminderDate"]
+- !private ["s8HashableP", "reminderType"]
+- !private ["s8HashableP", "save"]
+- !private ["s8HashableP", "sortDescriptors"]
+- !private ["s25LosslessStringConvertibleP", "init"]
+- !private ["s10MirrorPathP", "init"]
+- !private ["So8NSCodingP", "date"]
+- !private ["So8NSCodingP", "dateFormat"]
+- !private ["So8NSCodingP", "delete"]
+- !private ["So8NSCodingP", "fetch"]
+- !private ["So8NSCodingP", "init"]
+- !private ["So8NSCodingP", "insertNewObject"]
+- !private ["So8NSCodingP", "save"]
+- !private ["So8NSCodingP", "sortDescriptors"]
+- !private ["So9NSCopyingP", "date"]
+- !private ["So9NSCopyingP", "dateFormat"]
+- !private ["So9NSCopyingP", "init"]
+- !private ["So9NSCopyingP", "insertNewObject"]
+- !private ["So9NSCopyingP", "sortDescriptors"]
+- !private ["So19NSEntityDescriptionC", "insertNewObject"]
+- !private ["So17NSFastEnumerationP", "insertNewObject"]
+- !private ["So14NSFetchRequestC", "init"]
+- !private ["So14NSFetchRequestC", "sortDescriptors"]
+- !private ["So20NSFetchRequestResultP", "name"]
+- !private ["So20NSFetchRequestResultP", "phoneNumber"]
+- !private ["So20NSFetchRequestResultP", "remainingDays"]
+- !private ["So20NSFetchRequestResultP", "reminderDate"]
+- !private ["So20NSFetchRequestResultP", "reminderType"]
+- !private ["So21NSItemProviderReadingP", "init"]
+- !private ["So21NSItemProviderWritingP", "init"]
+- !private ["So9NSLockingP", "delete"]
+- !private ["So9NSLockingP", "fetch"]
+- !private ["So9NSLockingP", "save"]
+- !private ["So15NSManagedObjectC", "name"]
+- !private ["So15NSManagedObjectC", "phoneNumber"]
+- !private ["So15NSManagedObjectC", "remainingDays"]
+- !private ["So15NSManagedObjectC", "reminderDate"]
+- !private ["So15NSManagedObjectC", "reminderType"]
+- !private ["So22NSManagedObjectContextC", "delete"]
+- !private ["So22NSManagedObjectContextC", "fetch"]
+- !private ["So22NSManagedObjectContextC", "save"]
+- !private ["So16NSMutableCopyingP", "init"]
+- !private ["So8NSObjectC", "date"]
+- !private ["So8NSObjectC", "dateFormat"]
+- !private ["So8NSObjectC", "delete"]
+- !private ["So8NSObjectC", "fetch"]
+- !private ["So8NSObjectC", "init"]
+- !private ["So8NSObjectC", "insertNewObject"]
+- !private ["So8NSObjectC", "name"]
+- !private ["So8NSObjectC", "phoneNumber"]
+- !private ["So8NSObjectC", "remainingDays"]
+- !private ["So8NSObjectC", "reminderDate"]
+- !private ["So8NSObjectC", "reminderType"]
+- !private ["So8NSObjectC", "save"]
+- !private ["So8NSObjectC", "sortDescriptors"]
+- !private ["So16NSObjectProtocolP", "date"]
+- !private ["So16NSObjectProtocolP", "dateFormat"]
+- !private ["So16NSObjectProtocolP", "delete"]
+- !private ["So16NSObjectProtocolP", "fetch"]
+- !private ["So16NSObjectProtocolP", "init"]
+- !private ["So16NSObjectProtocolP", "insertNewObject"]
+- !private ["So16NSObjectProtocolP", "name"]
+- !private ["So16NSObjectProtocolP", "phoneNumber"]
+- !private ["So16NSObjectProtocolP", "remainingDays"]
+- !private ["So16NSObjectProtocolP", "reminderDate"]
+- !private ["So16NSObjectProtocolP", "reminderType"]
+- !private ["So16NSObjectProtocolP", "save"]
+- !private ["So16NSObjectProtocolP", "sortDescriptors"]
+- !private ["So24NSPersistentStoreRequestC", "sortDescriptors"]
+- !private ["So14NSSecureCodingP", "init"]
+- !private ["So16NSSortDescriptorC", "init"]
+- !private ["So8NSStringC", "init"]
+- !private ["s26RangeReplaceableCollectionP", "init"]
+- !private ["9Celebrate8ReminderC", "name"]
+- !private ["9Celebrate8ReminderC", "phoneNumber"]
+- !private ["9Celebrate8ReminderC", "remainingDays"]
+- !private ["9Celebrate8ReminderC", "reminderDate"]
+- !private ["9Celebrate8ReminderC", "reminderType"]
+- !private ["9Celebrate14ReminderHelperC", "getDaysUntilReminder"]
+- !private ["9Celebrate14ReminderHelperC", "getNextOccurenceOfReminderDate"]
+- !private ["9Celebrate14ReminderHelperC", "scheduleLocalNotification"]
+- !private ["9Celebrate14ReminderHelperC", "scheduleWeekBeforeLocalNotification"]
+- !private ["s8SequenceP", "init"]
 - !private ["SS", "init"]
-- !private ["Ps16TextOutputStream", "init"]
-- !private ["Ps20TextOutputStreamable", "init"]
-- !private ["Su", "deinit"]
-- !private ["Vs6UInt16", "deinit"]
-- !private ["Vs6UInt32", "deinit"]
-- !private ["Vs6UInt64", "deinit"]
-- !private ["Vs5UInt8", "deinit"]
-- !private ["Sc", "deinit"]
-- !private ["Ps14_ArrayProtocol", "Element"]
-- !private ["Ps14_ArrayProtocol", "Iterator"]
-- !private ["Ps14_ArrayProtocol", "_Element"]
-- !private ["Ps24_DestructorSafeContainer", "Element"]
-- !private ["Ps24_DestructorSafeContainer", "Iterator"]
-- !private ["Ps24_DestructorSafeContainer", "_Element"]
-- !private ["Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral", "init"]
-- !private ["Ps34_ExpressibleByBuiltinStringLiteral", "init"]
-- !private ["Ps39_ExpressibleByBuiltinUTF16StringLiteral", "init"]
-- !private ["Ps41_ExpressibleByBuiltinUnicodeScalarLiteral", "init"]
-- !private ["Ps35_HasCustomAnyHashableRepresentation", "init"]
-- !private ["Ps9_Hashable", "date"]
-- !private ["Ps9_Hashable", "dateFormat"]
-- !private ["Ps9_Hashable", "delete"]
-- !private ["Ps9_Hashable", "fetch"]
-- !private ["Ps9_Hashable", "init"]
-- !private ["Ps9_Hashable", "insertNewObject"]
-- !private ["Ps9_Hashable", "name"]
-- !private ["Ps9_Hashable", "phoneNumber"]
-- !private ["Ps9_Hashable", "remainingDays"]
-- !private ["Ps9_Hashable", "reminderDate"]
-- !private ["Ps9_Hashable", "reminderType"]
-- !private ["Ps9_Hashable", "save"]
-- !private ["Ps9_Hashable", "sortDescriptors"]
-- !private ["Ps21_ObjectiveCBridgeable", "Element"]
-- !private ["Ps21_ObjectiveCBridgeable", "Iterator"]
-- !private ["Ps21_ObjectiveCBridgeable", "_Element"]
-- !private ["Ps21_ObjectiveCBridgeable", "init"]
+- !private ["s14StringProtocolP", "init"]
+- !private ["s16TextOutputStreamP", "init"]
+- !private ["s20TextOutputStreamableP", "init"]
+- !private ["s23_BidirectionalIndexableP", "init"]
+- !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
+- !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
+- !private ["s39_ExpressibleByBuiltinUTF16StringLiteralP", "init"]
+- !private ["s41_ExpressibleByBuiltinUnicodeScalarLiteralP", "init"]
+- !private ["s33_ExpressibleByStringInterpolationP", "init"]
+- !private ["s35_HasCustomAnyHashableRepresentationP", "init"]
+- !private ["s10_IndexableP", "init"]
+- !private ["s14_IndexableBaseP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "date"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "dateFormat"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "delete"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "fetch"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "init"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "insertNewObject"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "name"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "phoneNumber"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "remainingDays"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "reminderDate"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "reminderType"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "save"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "sortDescriptors"]
+- !private ["s21_ObjectiveCBridgeableP", "init"]
+- !private ["s26_RangeReplaceableIndexableP", "init"]
+- !private ["s16_SwiftStringViewP", "init"]
 depends-nominal:
-- "Ps9AnyObject"
-- "Sa"
-- !private "Ps23BidirectionalCollection"
-- !private "Ps22BidirectionalIndexable"
-- "Sb"
-- !private "PSo15CNKeyDescriptor"
-- !private "Ps7CVarArg"
-- !private "Vs9Character"
-- !private "Ps10Collection"
-- !private "Ps10Comparable"
-- !private "Ps28CustomDebugStringConvertible"
-- !private "Ps29CustomPlaygroundQuickLookable"
-- !private "Ps17CustomReflectable"
-- !private "Ps23CustomStringConvertible"
-- "C9Celebrate10DataHelper"
-- !private "V10Foundation4Date"
-- !private "CSo13DateFormatter"
-- !private "Sd"
-- !private "Ps9Equatable"
-- !private "Ps25ExpressibleByArrayLiteral"
-- !private "Ps43ExpressibleByExtendedGraphemeClusterLiteral"
-- !private "Ps32ExpressibleByStringInterpolation"
-- !private "Ps26ExpressibleByStringLiteral"
-- !private "Ps33ExpressibleByUnicodeScalarLiteral"
-- !private "Sf"
-- !private "CSo9Formatter"
-- !private "Ps8Hashable"
-- !private "SQ"
-- !private "Ps9Indexable"
-- !private "Ps13IndexableBase"
-- !private "Vs16IndexingIterator"
-- !private "Si"
-- !private "Vs5Int16"
-- !private "Vs5Int32"
-- !private "Vs5Int64"
-- !private "Vs4Int8"
-- !private "Ps16IteratorProtocol"
-- !private "Ps25LosslessStringConvertible"
-- !private "Ps10MirrorPath"
-- !private "Ps17MutableCollection"
-- !private "Ps16MutableIndexable"
-- !private "PSo8NSCoding"
-- !private "PSo9NSCopying"
-- !private "CSo19NSEntityDescription"
-- !private "PSo17NSFastEnumeration"
-- "CSo14NSFetchRequest"
-- "PSo20NSFetchRequestResult"
-- !private "PSo9NSLocking"
-- !private "CSo15NSManagedObject"
-- "CSo22NSManagedObjectContext"
-- !private "PSo16NSMutableCopying"
-- !private "CSo8NSObject"
-- !private "PSo16NSObjectProtocol"
-- !private "CSo24NSPersistentStoreRequest"
-- !private "PSo14NSSecureCoding"
-- "CSo16NSSortDescriptor"
-- !private "CSo8NSString"
-- !private "Sq"
-- !private "Ps22RandomAccessCollection"
-- !private "Ps21RandomAccessIndexable"
-- !private "Ps26RangeReplaceableCollection"
-- !private "Ps25RangeReplaceableIndexable"
-- "C9Celebrate8Reminder"
-- !private "C9Celebrate14ReminderHelper"
-- !private "Ps8Sequence"
-- "SS"
-- !private "Ps16TextOutputStream"
-- !private "Ps20TextOutputStreamable"
-- !private "Su"
-- !private "Vs6UInt16"
-- !private "Vs6UInt32"
-- !private "Vs6UInt64"
-- !private "Vs5UInt8"
-- !private "Sc"
-- !private "Ps14_ArrayProtocol"
-- !private "Ps24_DestructorSafeContainer"
-- !private "Ps51_ExpressibleByBuiltinExtendedGraphemeClusterLiteral"
-- !private "Ps34_ExpressibleByBuiltinStringLiteral"
-- !private "Ps39_ExpressibleByBuiltinUTF16StringLiteral"
-- !private "Ps41_ExpressibleByBuiltinUnicodeScalarLiteral"
-- !private "Ps35_HasCustomAnyHashableRepresentation"
-- !private "Ps9_Hashable"
-- !private "Ps21_ObjectiveCBridgeable"
+- !private "s23BidirectionalCollectionP"
+- !private "So15CNKeyDescriptorP"
+- !private "s7CVarArgP"
+- !private "s10CollectionP"
+- !private "s10ComparableP"
+- !private "s28CustomDebugStringConvertibleP"
+- !private "s29CustomPlaygroundQuickLookableP"
+- !private "s17CustomReflectableP"
+- !private "s23CustomStringConvertibleP"
+- "9Celebrate10DataHelperC"
+- !private "So13DateFormatterC"
+- !private "s9DecodableP"
+- !private "s9EncodableP"
+- !private "s9EquatableP"
+- !private "s43ExpressibleByExtendedGraphemeClusterLiteralP"
+- !private "s26ExpressibleByStringLiteralP"
+- !private "s33ExpressibleByUnicodeScalarLiteralP"
+- !private "So9FormatterC"
+- !private "s8HashableP"
+- !private "s25LosslessStringConvertibleP"
+- !private "s10MirrorPathP"
+- !private "So8NSCodingP"
+- !private "So9NSCopyingP"
+- !private "So19NSEntityDescriptionC"
+- !private "So17NSFastEnumerationP"
+- !private "So14NSFetchRequestC"
+- !private "So20NSFetchRequestResultP"
+- !private "So21NSItemProviderReadingP"
+- !private "So21NSItemProviderWritingP"
+- !private "So9NSLockingP"
+- !private "So15NSManagedObjectC"
+- !private "So22NSManagedObjectContextC"
+- !private "So16NSMutableCopyingP"
+- !private "So8NSObjectC"
+- !private "So16NSObjectProtocolP"
+- !private "So24NSPersistentStoreRequestC"
+- !private "So14NSSecureCodingP"
+- !private "So16NSSortDescriptorC"
+- !private "So8NSStringC"
+- !private "s26RangeReplaceableCollectionP"
+- !private "9Celebrate8ReminderC"
+- !private "9Celebrate14ReminderHelperC"
+- !private "s8SequenceP"
+- !private "SS"
+- !private "s14StringProtocolP"
+- !private "s16TextOutputStreamP"
+- !private "s20TextOutputStreamableP"
+- !private "s23_BidirectionalIndexableP"
+- !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
+- !private "s34_ExpressibleByBuiltinStringLiteralP"
+- !private "s39_ExpressibleByBuiltinUTF16StringLiteralP"
+- !private "s41_ExpressibleByBuiltinUnicodeScalarLiteralP"
+- !private "s33_ExpressibleByStringInterpolationP"
+- !private "s35_HasCustomAnyHashableRepresentationP"
+- !private "s10_IndexableP"
+- !private "s14_IndexableBaseP"
+- !private "10Foundation27_KeyValueCodingAndObservingP"
+- !private "s21_ObjectiveCBridgeableP"
+- !private "s26_RangeReplaceableIndexableP"
+- !private "s16_SwiftStringViewP"
 depends-dynamic-lookup:
 depends-external:
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.apinotesc"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/ObjectiveC.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
-- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreData.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreImage.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/QuartzCore.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Dispatch.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Metal.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Darwin.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Foundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreFoundation.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/CoreGraphics.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Contacts.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/Swift.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/UIKit.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphoneos/arm64/SwiftOnoneSupport.swiftmodule"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/usr/include/objc/ObjectiveC.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/MessageUI.framework/Headers/MessageUI.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/OpenGLES.framework/Headers/OpenGLES.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreData.framework/Headers/CoreData.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreImage.framework/Headers/CoreImage.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/QuartzCore.framework/Headers/QuartzCore.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/Metal.framework/Headers/Metal.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/usr/include/Darwin.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/Foundation.framework/Headers/Foundation.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreGraphics.framework/Headers/CoreGraphics.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/Contacts.framework/Headers/Contacts.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/UIKit.framework/Headers/UIKit.apinotes"
+- "/Applications/Xcode.app/Contents/Developer/Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS11.1.sdk/System/Library/Frameworks/CoreText.framework/Headers/CoreText.apinotes"
 interface-hash: "6ae320c6e98b031f05e2d48deb01cc78"
