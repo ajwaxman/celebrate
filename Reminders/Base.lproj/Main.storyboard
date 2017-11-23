@@ -1,11 +1,11 @@
-<?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mNM-k5-hL3">
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="mNM-k5-hL3">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -23,17 +23,17 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="129"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="WeG-5F-CxD" id="r8P-iu-6st">
-                                    <rect key="frame" x="0.0" y="0.0" width="342" height="128.5"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="341" height="128.5"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DSF-1d-52h">
-                                            <rect key="frame" x="88" y="42" width="482" height="16"/>
+                                            <rect key="frame" x="76" y="42" width="482" height="16"/>
                                             <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                             <color key="textColor" red="0.32206565141677856" green="0.32212740182876587" blue="0.32205522060394287" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="35W-F6-5OR">
-                                            <rect key="frame" x="20" y="12" width="55" height="55"/>
+                                            <rect key="frame" x="16" y="15" width="55" height="55"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dUL-zK-fiA">
                                                     <rect key="frame" x="7" y="14" width="42" height="21"/>
@@ -60,7 +60,7 @@
                                             </constraints>
                                         </view>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5Y7-bz-K9z">
-                                            <rect key="frame" x="88" y="19" width="482" height="21"/>
+                                            <rect key="frame" x="76" y="19" width="482" height="21"/>
                                             <fontDescription key="fontDescription" type="system" weight="medium" pointSize="17"/>
                                             <color key="textColor" red="0.10050271451473236" green="0.1005219966173172" blue="0.10049951076507568" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             <nil key="highlightedColor"/>
@@ -70,7 +70,7 @@
                                         <constraint firstItem="5Y7-bz-K9z" firstAttribute="top" secondItem="r8P-iu-6st" secondAttribute="topMargin" constant="11" id="3JL-bP-WXK"/>
                                         <constraint firstItem="5Y7-bz-K9z" firstAttribute="leading" secondItem="35W-F6-5OR" secondAttribute="trailing" constant="13" id="MJ8-hm-5Wm"/>
                                         <constraint firstItem="35W-F6-5OR" firstAttribute="top" secondItem="r8P-iu-6st" secondAttribute="topMargin" constant="4" id="PhM-KN-DwX"/>
-                                        <constraint firstItem="35W-F6-5OR" firstAttribute="leading" secondItem="r8P-iu-6st" secondAttribute="leadingMargin" constant="12" id="SNY-5J-Xcq"/>
+                                        <constraint firstItem="35W-F6-5OR" firstAttribute="leading" secondItem="r8P-iu-6st" secondAttribute="leadingMargin" id="SNY-5J-Xcq"/>
                                         <constraint firstItem="DSF-1d-52h" firstAttribute="leading" secondItem="5Y7-bz-K9z" secondAttribute="leading" id="hmv-9P-So9"/>
                                         <constraint firstItem="DSF-1d-52h" firstAttribute="top" secondItem="5Y7-bz-K9z" secondAttribute="bottom" constant="3" id="kTc-Tz-D6U"/>
                                     </constraints>
@@ -354,7 +354,7 @@
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mNM-k5-hL3" sceneMemberID="viewController">
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="JOO-25-kDV">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>

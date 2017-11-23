@@ -1,16 +1,16 @@
 version: "Apple Swift version 4.0.2 (swiftlang-900.0.69.2 clang-900.0.38)"
-options: "a08d7d6e49d72d82ca75addf7b6d38bf"
-build_time: [1511464301, 337379000]
+options: "d2a191be08896682e08d44c71c79da2a"
+build_time: [1511468066, 484799000]
 inputs:
   "/Users/awaxman/Development/swift/Reminders/Reminders/ViewController.swift": [1456616509, 0]
-  "/Users/awaxman/Development/swift/Reminders/Reminders/AppDelegate.swift": [1511453598, 0]
-  "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderHelper.swift": [1511453598, 0]
+  "/Users/awaxman/Development/swift/Reminders/Reminders/AppDelegate.swift": [1511467980, 0]
+  "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderHelper.swift": [1511466083, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderViewController.swift": [1511453598, 0]
-  "/Users/awaxman/Development/swift/Reminders/Reminders/DataHelper.swift": [1511464299, 0]
+  "/Users/awaxman/Development/swift/Reminders/Reminders/DataHelper.swift": [1511468064, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminder+CoreDataProperties.swift": [1511453598, 0]
-  "/Users/awaxman/Development/swift/Reminders/Reminders/B68UIFloatLabelTextField.swift": [1511453598, 0]
-  "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderTableViewController.swift": [1511453598, 0]
+  "/Users/awaxman/Development/swift/Reminders/Reminders/B68UIFloatLabelTextField.swift": [1511464948, 0]
+  "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderTableViewController.swift": [1511464948, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/ReminderTableViewCell.swift": [1511453598, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminder.swift": [1454464611, 0]
-  "/Users/awaxman/Development/swift/Reminders/Reminders/CreateReminderViewController.swift": [1511453598, 0]
+  "/Users/awaxman/Development/swift/Reminders/Reminders/CreateReminderViewController.swift": [1511464948, 0]
   "/Users/awaxman/Development/swift/Reminders/Reminders/MessageComposer.swift": [1511453598, 0]

@@ -17,18 +17,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-         let dataHelper = DataHelper(context: self.managedObjectContext)
-         dataHelper.deleteAllReminders()
-         ReminderHelper.cancelAllNotifications()
-         dataHelper.seedDataStore()
-         dataHelper.printAllReminders()
+        
+        let dataHelper = DataHelper(context: self.managedObjectContext)
+        
+        if dataHelper.isAppAlreadyLaunchedOnce() {
+            dataHelper.printAllReminders()
+        } else {
+            dataHelper.deleteAllReminders()
+            ReminderHelper.cancelAllNotifications()
+            dataHelper.seedDataStore()
+            dataHelper.printAllReminders()
+        }
         
 //        let notifications = ReminderHelper.getNotifications()
 //        print(notifications.count)
 //        for notification in notifications {
 //            print(notification.userInfo!["phoneNumber"]!)
 //        }
-        
+
         
         NotificationCenter.default.addObserver(self, selector: #selector(AppDelegate.handleCallNotificationFromLaunch(_:)), name: NSNotification.Name(rawValue: "callNotification"), object: nil)
         
@@ -71,6 +77,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     }
 
     func applicationDidBecomeActive(_ application: UIApplication) {
+
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
     }
 
