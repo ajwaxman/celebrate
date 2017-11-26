@@ -10,6 +10,7 @@ depends-top-level:
 - "AnyObject"
 - !private "Array"
 - "AssignmentPrecedence"
+- "Bool"
 - !private "BooleanLiteralType"
 - "CastingPrecedence"
 - "DataHelper"
@@ -23,6 +24,7 @@ depends-top-level:
 - !private "Reminder"
 - !private "ReminderHelper"
 - !private "StringLiteralType"
+- !private "UserDefaults"
 - !private "print"
 depends-member:
 - !private ["s23BidirectionalCollectionP", "init"]
@@ -39,7 +41,10 @@ depends-member:
 - !private ["s7CVarArgP", "reminderDate"]
 - !private ["s7CVarArgP", "reminderType"]
 - !private ["s7CVarArgP", "save"]
+- !private ["s7CVarArgP", "set"]
 - !private ["s7CVarArgP", "sortDescriptors"]
+- !private ["s7CVarArgP", "standard"]
+- !private ["s7CVarArgP", "string"]
 - !private ["s10CollectionP", "init"]
 - !private ["s10ComparableP", "init"]
 - !private ["s28CustomDebugStringConvertibleP", "date"]
@@ -54,7 +59,10 @@ depends-member:
 - !private ["s28CustomDebugStringConvertibleP", "reminderDate"]
 - !private ["s28CustomDebugStringConvertibleP", "reminderType"]
 - !private ["s28CustomDebugStringConvertibleP", "save"]
+- !private ["s28CustomDebugStringConvertibleP", "set"]
 - !private ["s28CustomDebugStringConvertibleP", "sortDescriptors"]
+- !private ["s28CustomDebugStringConvertibleP", "standard"]
+- !private ["s28CustomDebugStringConvertibleP", "string"]
 - !private ["s29CustomPlaygroundQuickLookableP", "init"]
 - !private ["s17CustomReflectableP", "init"]
 - !private ["s23CustomStringConvertibleP", "date"]
@@ -69,8 +77,12 @@ depends-member:
 - !private ["s23CustomStringConvertibleP", "reminderDate"]
 - !private ["s23CustomStringConvertibleP", "reminderType"]
 - !private ["s23CustomStringConvertibleP", "save"]
+- !private ["s23CustomStringConvertibleP", "set"]
 - !private ["s23CustomStringConvertibleP", "sortDescriptors"]
+- !private ["s23CustomStringConvertibleP", "standard"]
+- !private ["s23CustomStringConvertibleP", "string"]
 - ["9Celebrate10DataHelperC", "AnyObject"]
+- ["9Celebrate10DataHelperC", "Bool"]
 - !private ["9Celebrate10DataHelperC", "DateFormatter"]
 - !private ["9Celebrate10DataHelperC", "NSEntityDescription"]
 - !private ["9Celebrate10DataHelperC", "NSFetchRequest"]
@@ -80,11 +92,13 @@ depends-member:
 - !private ["9Celebrate10DataHelperC", "NSSortDescriptor"]
 - !private ["9Celebrate10DataHelperC", "Reminder"]
 - !private ["9Celebrate10DataHelperC", "ReminderHelper"]
+- !private ["9Celebrate10DataHelperC", "UserDefaults"]
 - ["9Celebrate10DataHelperC", "context"]
 - ["9Celebrate10DataHelperC", "deinit"]
 - ["9Celebrate10DataHelperC", "deleteAllReminders"]
 - ["9Celebrate10DataHelperC", "getAllReminders"]
 - ["9Celebrate10DataHelperC", "init"]
+- ["9Celebrate10DataHelperC", "isAppAlreadyLaunchedOnce"]
 - !private ["9Celebrate10DataHelperC", "print"]
 - ["9Celebrate10DataHelperC", "printAllReminders"]
 - ["9Celebrate10DataHelperC", "seedDataStore"]
@@ -106,7 +120,10 @@ depends-member:
 - !private ["s9EquatableP", "reminderDate"]
 - !private ["s9EquatableP", "reminderType"]
 - !private ["s9EquatableP", "save"]
+- !private ["s9EquatableP", "set"]
 - !private ["s9EquatableP", "sortDescriptors"]
+- !private ["s9EquatableP", "standard"]
+- !private ["s9EquatableP", "string"]
 - !private ["s43ExpressibleByExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s26ExpressibleByStringLiteralP", "init"]
 - !private ["s33ExpressibleByUnicodeScalarLiteralP", "init"]
@@ -125,7 +142,10 @@ depends-member:
 - !private ["s8HashableP", "reminderDate"]
 - !private ["s8HashableP", "reminderType"]
 - !private ["s8HashableP", "save"]
+- !private ["s8HashableP", "set"]
 - !private ["s8HashableP", "sortDescriptors"]
+- !private ["s8HashableP", "standard"]
+- !private ["s8HashableP", "string"]
 - !private ["s25LosslessStringConvertibleP", "init"]
 - !private ["s10MirrorPathP", "init"]
 - !private ["So8NSCodingP", "date"]
@@ -176,7 +196,10 @@ depends-member:
 - !private ["So8NSObjectC", "reminderDate"]
 - !private ["So8NSObjectC", "reminderType"]
 - !private ["So8NSObjectC", "save"]
+- !private ["So8NSObjectC", "set"]
 - !private ["So8NSObjectC", "sortDescriptors"]
+- !private ["So8NSObjectC", "standard"]
+- !private ["So8NSObjectC", "string"]
 - !private ["So16NSObjectProtocolP", "date"]
 - !private ["So16NSObjectProtocolP", "dateFormat"]
 - !private ["So16NSObjectProtocolP", "delete"]
@@ -189,7 +212,10 @@ depends-member:
 - !private ["So16NSObjectProtocolP", "reminderDate"]
 - !private ["So16NSObjectProtocolP", "reminderType"]
 - !private ["So16NSObjectProtocolP", "save"]
+- !private ["So16NSObjectProtocolP", "set"]
 - !private ["So16NSObjectProtocolP", "sortDescriptors"]
+- !private ["So16NSObjectProtocolP", "standard"]
+- !private ["So16NSObjectProtocolP", "string"]
 - !private ["So24NSPersistentStoreRequestC", "sortDescriptors"]
 - !private ["So14NSSecureCodingP", "init"]
 - !private ["So16NSSortDescriptorC", "init"]
@@ -209,6 +235,9 @@ depends-member:
 - !private ["s14StringProtocolP", "init"]
 - !private ["s16TextOutputStreamP", "init"]
 - !private ["s20TextOutputStreamableP", "init"]
+- !private ["So12UserDefaultsC", "set"]
+- !private ["So12UserDefaultsC", "standard"]
+- !private ["So12UserDefaultsC", "string"]
 - !private ["s23_BidirectionalIndexableP", "init"]
 - !private ["s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP", "init"]
 - !private ["s34_ExpressibleByBuiltinStringLiteralP", "init"]
@@ -230,7 +259,10 @@ depends-member:
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "reminderDate"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "reminderType"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "save"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "set"]
 - !private ["10Foundation27_KeyValueCodingAndObservingP", "sortDescriptors"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "standard"]
+- !private ["10Foundation27_KeyValueCodingAndObservingP", "string"]
 - !private ["s21_ObjectiveCBridgeableP", "init"]
 - !private ["s26_RangeReplaceableIndexableP", "init"]
 - !private ["s16_SwiftStringViewP", "init"]
@@ -282,6 +314,7 @@ depends-nominal:
 - !private "s14StringProtocolP"
 - !private "s16TextOutputStreamP"
 - !private "s20TextOutputStreamableP"
+- !private "So12UserDefaultsC"
 - !private "s23_BidirectionalIndexableP"
 - !private "s51_ExpressibleByBuiltinExtendedGraphemeClusterLiteralP"
 - !private "s34_ExpressibleByBuiltinStringLiteralP"
@@ -312,4 +345,4 @@ depends-external:
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/Swift.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/UIKit.swiftmodule"
 - "/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib/swift/iphonesimulator/x86_64/SwiftOnoneSupport.swiftmodule"
-interface-hash: "6ae320c6e98b031f05e2d48deb01cc78"
+interface-hash: "84106070aab9e0651d4aa9a9d2b03aa5"

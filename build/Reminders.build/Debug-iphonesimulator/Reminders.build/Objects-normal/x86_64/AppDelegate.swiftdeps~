@@ -340,6 +340,7 @@ depends-member:
 - ["s23CustomStringConvertibleP", ""]
 - !private ["9Celebrate10DataHelperC", "deleteAllReminders"]
 - !private ["9Celebrate10DataHelperC", "init"]
+- !private ["9Celebrate10DataHelperC", "isAppAlreadyLaunchedOnce"]
 - !private ["9Celebrate10DataHelperC", "printAllReminders"]
 - !private ["9Celebrate10DataHelperC", "seedDataStore"]
 - !private ["s9DecodableP", "_getBuiltinLogicValue"]

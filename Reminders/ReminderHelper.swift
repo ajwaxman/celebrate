@@ -46,8 +46,8 @@ open class ReminderHelper {
     
     class func scheduleLocalNotification(_ reminder: Reminder) {
         let localNotification = UILocalNotification()
-        localNotification.fireDate = ReminderHelper.getCurrentTime().addingTimeInterval(60)
-        // localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date)
+        // localNotification.fireDate = ReminderHelper.getCurrentTime().addingTimeInterval(60)
+        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date)
         localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
         localNotification.alertAction = "View reminder"
         localNotification.category = "reminderCategory"
