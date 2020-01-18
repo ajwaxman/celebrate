@@ -51,11 +51,11 @@ class ReminderTableViewCell: UITableViewCell {
                 reminderRemainingDays.text = "🎈"
             } else {
                 reminderRemainingDays.text = reminder.remainingDays?.stringValue
+                let currentFont = reminderRemainingDays.font
+                reminderRemainingDays.font = UIFont.systemFont(ofSize: (currentFont?.pointSize)!, weight:UIFont.Weight.light)
             }
             let currentFont = reminderRemainingDays.font
-            let fontName = currentFont?.fontName.components(separatedBy: "-").first
-            let newFont = UIFont(name: "\(fontName!)-Light", size: (currentFont?.pointSize)!)
-            reminderRemainingDays.font = newFont
+            reminderRemainingDays.font = UIFont.systemFont(ofSize: (currentFont?.pointSize)!, weight:UIFont.Weight.light)
         }
         
         createReminderCircle()
@@ -110,9 +110,7 @@ class ReminderTableViewCell: UITableViewCell {
         
         if CFloat(reminder!.remainingDays!) < 30 {
             let currentFont = reminderRemainingDays.font
-            let fontName = currentFont?.fontName.components(separatedBy: "-").first
-            let newFont = UIFont(name: "\(fontName!)-Medium", size: (currentFont?.pointSize)!)
-            reminderRemainingDays.font = newFont
+            reminderRemainingDays.font = UIFont.systemFont(ofSize: (currentFont?.pointSize)!, weight:UIFont.Weight.medium)
         }
     }
     

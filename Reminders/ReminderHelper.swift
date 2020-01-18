@@ -45,38 +45,63 @@ open class ReminderHelper {
     }
     
     class func scheduleLocalNotification(_ reminder: Reminder) {
-        let localNotification = UILocalNotification()
+        let localNotificationContent = UNMutableNotificationContent()
+        localNotificationContent.body = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
+        localNotificationContent.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.uriRepresentation().absoluteString]
+        
         // localNotification.fireDate = ReminderHelper.getCurrentTime().addingTimeInterval(60)
-        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date)
-        localNotification.alertBody = "It's \(reminder.name!)'s \(reminder.reminderType!) today. Send a note!"
-        localNotification.alertAction = "View reminder"
-        localNotification.category = "reminderCategory"
-        localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.uriRepresentation().absoluteString]
-        localNotification.repeatInterval = NSCalendar.Unit.year
-        UIApplication.shared.scheduleLocalNotification(localNotification)
-        print(localNotification)
+        let nextTriggerDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date)
+        let comps = Calendar.current.dateComponents([.year, .month, .day], from: nextTriggerDate)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: true)
+        
+        let request = UNNotificationRequest(identifier: "Reminder", content: localNotificationContent, trigger: trigger) // Schedule the notification.
+
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+             if let theError = error {
+                 // Handle any errors
+                print("There was an error")
+             }
+        }
+        print(localNotificationContent)
     }
     
     class func scheduleWeekBeforeLocalNotification(_ reminder: Reminder) {
-        let localNotification = UILocalNotification()
+        let localNotificationContent = UNMutableNotificationContent()
+        localNotificationContent.body = "\(reminder.name!)'s \(reminder.reminderType!) is 1 week away. Present time?"
+        localNotificationContent.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.uriRepresentation().absoluteString]
+
+        
         // localNotification.fireDate = ReminderHelper.getCurrentTime()
-        localNotification.fireDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date).addingTimeInterval(-7*24*60*60)
-        localNotification.alertBody = "\(reminder.name!)'s \(reminder.reminderType!) is 1 week away. Present time?"
-        localNotification.alertAction = "View reminder"
-        localNotification.category = "reminderCategory"
-        localNotification.userInfo = ["phoneNumber": reminder.phoneNumber!, "reminderObjectId": reminder.objectID.uriRepresentation().absoluteString]
-        localNotification.repeatInterval = NSCalendar.Unit.year
-        UIApplication.shared.scheduleLocalNotification(localNotification)
+        let nextTriggerDate = ReminderHelper.getNextOccurenceOfReminderDate(reminder.reminderDate! as Date).addingTimeInterval(-7*24*60*60)
+        let comps = Calendar.current.dateComponents([.year, .month, .day], from: nextTriggerDate)
+        let trigger = UNCalendarNotificationTrigger(dateMatching: comps, repeats: true)
+
+        let request = UNNotificationRequest(identifier: "Reminder", content: localNotificationContent, trigger: trigger) // Schedule the notification.
+
+        let center = UNUserNotificationCenter.current()
+        center.add(request) { (error : Error?) in
+             if let theError = error {
+                 // Handle any errors
+                print("There was an error")
+             }
+        }
+        print(localNotificationContent)
     }
     
-    class func getNotifications() -> [UILocalNotification] {
-        return UIApplication.shared.scheduledLocalNotifications! as [UILocalNotification] // loop through notifications...
-    }
+    
+//    class func getNotifications() -> [UNNotificationRequest] {
+//        let center = UNUserNotificationCenter.current()
+//        return center.getPendingNotificationRequests(completionHandler: { requests in
+//            for request in requests {
+//                print(request)
+//            }
+//        })
+//    }
     
     class func cancelAllNotifications() {
-        for notification in (UIApplication.shared.scheduledLocalNotifications! as [UILocalNotification]) { // loop through notifications...
-            UIApplication.shared.cancelLocalNotification(notification)
-        }
+        let center = UNUserNotificationCenter.current()
+        center.removeAllPendingNotificationRequests()
     }
     
     
